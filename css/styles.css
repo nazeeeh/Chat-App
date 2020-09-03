@@ -1,0 +1,15 @@
+/** Author: Team Infinity **/
+*{
+    box-sizing: border-box;
+    margin:0;
+    padding:0;
+}
+
+/** Default Styling **/
+/*======================*/
+html, body {
+	font-family: Roboto, Tahoma, Geneva, Verdana, sans-serif;
+	line-height: 1.7em;
+	background: #FEFEFE;
+	scroll-behavior: smooth;
+}
