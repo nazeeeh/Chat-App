@@ -10,6 +10,12 @@
 /*** yellow -- secondary color - #FAEE1C ***/
 /*** skyblue -- light color - #87CEEB  ***/
 
+:root {
+    --primary-color: #110E4C;
+    --secondary-color: #FAEE1C;
+    --light-color: #87CEEB;
+}
+
 
 /** Default Styling **/
 /*======================*/
@@ -18,4 +24,57 @@ html, body {
 	line-height: 1.7em;
 	background: #FEFEFE;
 	scroll-behavior: smooth;
+	color: var(--primary-color);
+}
+
+main {
+	margin: 2rem 0;
+}
+
+.hero {
+	display: flex;
+}
+
+.hero-box {
+	width: 50%;
+
+}
+
+.hero-t {
+	align-self: center;
+}
+
+.hero-text {
+	width: 80%;
+	margin-left: auto;
+	text-align: center;
+}
+
+.hero-text h1 {
+
+}
+
+.hero-text span {
+	color: #E2D70C;
+}
+
+.hero-img img {
+	width: 100%;
+}
+
+
+.hero-btn {
+	margin-top: 3em;
+}
+
+.user-j {
+	background-color: var(--secondary-color);
+}
+
+.user-img {
+	width: 50%;
+}
+
+.dashboard {
+	height: 50vh;
 }
