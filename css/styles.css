@@ -1,85 +1,229 @@
 /** Author: Team Infinity **/
-*{
-    box-sizing: border-box;
-    margin:0;
-    padding:0;
-}
-
-/*** Default Colors - Pick it here ***/
-/*** darkblue -- primary color - #110E4C ***/
-/*** yellow -- secondary color - #FAEE1C ***/
-/*** skyblue -- light color - #87CEEB  ***/
-
-:root {
-    --primary-color: #110E4C;
-    --secondary-color: #FAEE1C;
-    --light-color: #87CEEB;
-}
-
-
-/** Default Styling **/
-/*======================*/
-html, body {
+body{
+	padding: 0px;
+	margin: 0px;
 	font-family: Roboto, Tahoma, Geneva, Verdana, sans-serif;
-	line-height: 1.7em;
-	background: #FEFEFE;
-	scroll-behavior: smooth;
-	color: var(--primary-color);
 }
 
-main {
-	margin: 2rem 0;
+.container{
+	width: 90%;/** screen width**/
+	height: 600px;
+	margin:auto;
+	overflow: hidden;
+	display: block;
 }
 
-.hero {
-	display: flex;
-}
-
-.hero-box {
-	width: 50%;
-
-}
-
-.hero-t {
-	align-self: center;
-}
-
-.hero-text {
-	width: 80%;
-	margin-left: auto;
+.container h2{
 	text-align: center;
-}
-
-.hero-text h1 {
-
-}
-
-.hero-text span {
-	color: #E2D70C;
-}
-
-.hero-img img {
-	width: 100%;
+	color: #110E4C;
+	font-size: 30px;
+	letter-spacing: 2px;
+	margin-bottom: 50px;
 }
 
 
-.hero-btn {
-	margin-top: 3em;
+.contact{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	margin: 30px;
 }
 
-.user-j {
-	background-color: var(--secondary-color);
+.contact i{
+	font-size: 20px;
+	padding: 0px;
+	margin: 0px;
+	color:#E2D70C;
 }
 
-.user-img {
+.contact i:hover{
+	border: 2px solid #000;
+	border-radius: 30px;
+	cursor: pointer  ;
+}
+
+.form-info{
+	font-size: 16px;
+	font-style: italic;
+	color: #110E4C;
+	letter-spacing: 2px;
+	margin-left:-7px;
+}
+
+input{
+	padding: 10px;
+	margin: 10px;
+	margin-left: 22%;
 	width: 50%;
+	background-color:  #110E4C;
+	color: #fff;
+	border: none;
+	outline: none;
+	border: 2px solid #E2D70C;
 }
 
-.dashboard {
-	height: 50vh;
+input::placeholder{
+	color: #fff;
+} 
+
+textarea{
+	padding: 10px;
+	margin: 10px;
+	margin-left: 22%;
+	width: 50%;
+	height: 20%;
+	background-color: #110E4C;
+	color: #fff;
+	border: none;
+	outline: none;
+	border: 2px solid #E2D70C;
+}
+
+/* User Journey Button */
+.user-btn {
+	margin: 2rem;
+}
+
+.sign-up {
+	text-decoration: none;
+	color: #fff;
+	font-weight: bold;
+	padding: 14px 20px;
+	font-size: 20px;
+	border-radius: 10px;
+	background: var(--primary-color);
+	box-shadow: 4px 5px 6px 2px var(--primary-color);
+	margin: 1rem;
+}
+
+.sign-up:hover {
+	background: var(--secondary-color);
+	color: #fff;
+}
+
+.login {
+	text-decoration: none;
+	color: var(--primary-color);
+	font-weight: bold;
+	padding: 14px 20px;
+	font-size: 20px;
+	border-radius: 10px;
+	background: #fff;
+	box-shadow: 4px 5px 6px 2px var(--primary-color);
+	margin: 1rem;
+}
+
+.login:hover {
+	background: var(--secondary-color);
+	color: var(--primary-color);
+	font-weight: bold;
+}
+
+/* small devices (tablets, 576px and up)*/
+@media (min-width: 576px) {
+	html {
+		font-size: 18px;
+	}
+}
+
+/* Medium devices (tablets, 768px and up)*/
+@media (min-width: 768px) {
+	html {
+		font-size: 22px;
+	}
+
+	.hero {
+		flex-direction: row;
+		padding-bottom: 0px;
+		align-items: center;
+	}
+
+	.first-text {
+		width: 100%;
+		margin: 0 -6rem 0 0;
+		padding: 20px;
+	}
+	
+	.hero-text {
+		width: 90%;
+		border-radius: none;
+		box-shadow: none;
+		margin: 0 auto;
+		transform: none;
+	}
+
+	.hero-text:hover {
+		background: none;
+		box-shadow: none;
+	}
+
+	.hero-t h2 {
+		text-transform: none;
+		font-size: 1.4rem;
+		padding: 14px 0 0px;
+		line-height: 38px;
+	}
+	
+	.hero-t p {
+		text-transform: none;
+		padding: 30px 0;
+		font-size: 1rem;
+	}
+
+	.hero-t h1 {
+		text-shadow: 4px 4px 0px var(--light-color);
+		mix-blend-mode: normal;
+	}
+
+	.hero-btn {
+		margin-top: 2em;
+	}
+
+	.hero-img {
+		width: 60%;
+	}
+	
+	.user-box {	
+		width: 40%;
+	}
+	
+	.user-img {
+		width: 80%;
+	}
+}
+
+textarea::placeholder{
+	color: #fff;
+}
+
+.submit{
+	width: 25%;
+	background: #110E4C;
+	padding: 4px;
+	outline: none;
+	font-size: 13px;
+	font-weight: bold;
+	letter-spacing: 2px;
+	height: 33px;
+	text-align: center;
+	cursor: pointer;
+	margin-left: 35%;
+	margin-bottom: 4%;
+	border: 2px solid #E2D70C;
+	color: #fff;
+}
+
+.submit:hover{
+	background: #E2D70C;
+	border: 2px solid #110E4C;
+	color: #110E4C;
+	font-weight: bold;
 }
 
 /*Styling for about.html*/
+body{
+	color: #110E4C;
+}
 
 .heading h3{
 	text-align:center;
