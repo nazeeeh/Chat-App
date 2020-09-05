@@ -365,3 +365,68 @@ textarea::placeholder{
 		width: 80%;
 	}
 }
+
+
+/*Styling for about.html*/
+.heading h3{
+	text-align:center;
+	font-size:30px;
+	margin:20px;
+}
+
+h3 span{
+	color:#FAEE1C;
+}
+
+div > span{
+	font-size:20px;
+	display:block;
+	font-weight: 700;
+	padding:30px;
+}
+
+.about-items{
+	display:flex;
+	flex-direction: column;
+	margin: auto;
+	width:90%;
+}
+
+.items{
+	display:flex;
+	width:100%;
+	justify-content: space-between;
+	margin-bottom: 30px;
+}
+
+.item-1, .item-3, .item-5{
+	flex-direction: row;
+}
+
+.item-2, .item-4{
+	flex-direction: row-reverse;
+}
+
+.text{
+	width:30%;
+	padding-top:50px;
+}
+
+@media screen and (max-width:700px) {
+	
+	.item-1, .item-3, .item-5{
+		flex-direction: column;
+	}
+	
+	.item-2, .item-4{
+		flex-direction: column;
+	}
+
+	.text{
+		width:100%;
+		padding-top:20px;
+	}
+
+}
+
+
