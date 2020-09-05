@@ -1,4 +1,5 @@
 /** Author: Team Infinity **/
+<<<<<<< HEAD
 *{
     box-sizing: border-box;
     margin:0;
@@ -20,13 +21,15 @@
 /** Default Styling **/
 /*======================*/
 html, body {
+=======
+body{
+	padding: 0px;
+	margin: 0px;
+>>>>>>> 5d975391a3be86c2bba0ca399d6f4f10d628ebf8
 	font-family: Roboto, Tahoma, Geneva, Verdana, sans-serif;
-	line-height: 1.7em;
-	background: #FEFEFE;
-	scroll-behavior: smooth;
-	color: var(--primary-color);
 }
 
+<<<<<<< HEAD
 main {
 	margin: 2rem 0 0;
 }
@@ -122,11 +125,83 @@ main {
 	width: 80%;
 	margin-left: auto;
 }
-
-.hero-btn {
-	margin-top: 3em;
+=======
+.container{
+	width: 90%;/** screen width**/
+	height: 600px;
+	margin:auto;
+	overflow: hidden;
+	display: block;
 }
 
+.container h2{
+	text-align: center;
+	color: #110E4C;
+	font-size: 30px;
+	letter-spacing: 2px;
+	margin-bottom: 50px;
+}
+
+
+.contact{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	margin: 30px;
+}
+
+.contact i{
+	font-size: 20px;
+	padding: 0px;
+	margin: 0px;
+	color:#E2D70C;
+}
+
+.contact i:hover{
+	border: 2px solid #000;
+	border-radius: 30px;
+	cursor: pointer  ;
+}
+
+.form-info{
+	font-size: 16px;
+	font-style: italic;
+	color: #110E4C;
+	letter-spacing: 2px;
+	margin-left:-7px;
+}
+
+input{
+	padding: 10px;
+	margin: 10px;
+	margin-left: 22%;
+	width: 50%;
+	background-color:  #110E4C;
+	color: #fff;
+	border: none;
+	outline: none;
+	border: 2px solid #E2D70C;
+}
+
+input::placeholder{
+	color: #fff;
+} 
+>>>>>>> 5d975391a3be86c2bba0ca399d6f4f10d628ebf8
+
+textarea{
+	padding: 10px;
+	margin: 10px;
+	margin-left: 22%;
+	width: 50%;
+	height: 20%;
+	background-color: #110E4C;
+	color: #fff;
+	border: none;
+	outline: none;
+	border: 2px solid #E2D70C;
+}
+
+<<<<<<< HEAD
 /* User Journey Styling */
 .user-j {
 	background: var(--light-color);
@@ -270,3 +345,32 @@ main {
 		width: 80%;
 	}
 }
+=======
+textarea::placeholder{
+	color: #fff;
+}
+
+.submit{
+	width: 25%;
+	background: #110E4C;
+	padding: 4px;
+	outline: none;
+	font-size: 13px;
+	font-weight: bold;
+	letter-spacing: 2px;
+	height: 33px;
+	text-align: center;
+	cursor: pointer;
+	margin-left: 35%;
+	margin-bottom: 4%;
+	border: 2px solid #E2D70C;
+	color: #fff;
+}
+
+.submit:hover{
+	background: #E2D70C;
+	border: 2px solid #110E4C;
+	color: #110E4C;
+	font-weight: bold;
+}
+>>>>>>> 5d975391a3be86c2bba0ca399d6f4f10d628ebf8
