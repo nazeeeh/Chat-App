@@ -370,12 +370,11 @@ textarea::placeholder{
 	}
 }
 
-
 /*Styling for about.html*/
 .heading h3{
 	text-align:center;
 	font-size:30px;
-	margin:20px;
+	margin-top:100px;
 }
 
 h3 span{
@@ -418,7 +417,7 @@ div > span{
 
 @media screen and (max-width:700px) {
 	
-	.item-1, .item-3, .item-5{
+	/*.item-1, .item-3, .item-5{
 		flex-direction: column;
 	}
 	
@@ -429,10 +428,31 @@ div > span{
 	.text{
 		width:100%;
 		padding-top:20px;
+	}*/
+
+	.heading h3{
+		margin-top: 50px;
 	}
 
-}
+	div > img{
+		width:250px;
+	}
 
+	.text{
+		width:60%;
+		padding-top: 20px;
+	}
+
+	.item-1, .item-3, .item-5{
+		flex-direction: column;
+		align-items: flex-start;
+	}
+
+	.item-2, .item-4{
+		flex-direction: column;
+		align-items: flex-end;
+	}
+}
 
 /** Chat **/
 /* The side navigation menu */
