@@ -11,12 +11,10 @@ a {
 /* Nav bar */
 #navbar {
     position: fixed;
-    top: 0;
-    left:0;
     width: 100vw;
-    height: 77px;
     left: 0px;
     top: 0px;
+    z-index: 2;
     background: #110E4C;
 }
 
