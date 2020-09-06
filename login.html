@@ -6,45 +6,34 @@
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<meta name="Description" content="i2talk">
 	<meta name="Keywords" content="Chat App, Chat rooms, Message Scheduling, Location-based User search, chats, iDiary, iSchedule, iReminder, iSearch">
+			
 		
-		
-	<script src="https://kit.fontawesome.com/eba2568509.js" crossorigin="anonymous"></script>	
 	<link rel="stylesheet" href="./css/all.css">
-	<link rel="stylesheet" href="./css/styles.css">
-	<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;1,300&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./css/tstyles.css">
-    <link rel="stylesheet" media="screen and (max-width:768px)" href="./css/mobile.css">
+    <link rel="stylesheet" href="./css/styles.css">
 	
 	<title>i2talk | Log In</title>
 </head>
 
 <body>
-	<header>
-		<nav id="navbar">
-			<div class="nav-container" >
-				<div class="site-logo">
-				<a  href="./index.html"><img src="./assets/img/i2talk.png" alt="i2talk"></a>
-				</div>
-				<div class="menu-wrap">
-					<input type="checkbox" class="toggler">
-					<div class="hamburger"><div></div></div>
-					<div class="menu">
-						<div>
-							<div>
-								<ul>
-									<li><a href="./index.html">HOME</a></li>
-									<li><a href="./about.html">ABOUT</a></li>
-									<li><a href="./signup.html">SIGN UP</a></li>
-									<li><a class="current" href="./login.html">LOG IN</a></li>
-									<li><a href="./contact.html">CONTACT US</a></li>
-								</ul>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-        </nav>
-    </header>
+	<!-- Header -->
+	<header class="section">
+		<!-- Navigation Bar -->
+		
+   		<nav>
+    		<ul class="navbar navbar-container">
+        		<li class="logo"><a href="./index.html"><img class="logo-img" src="./assets/logo.svg"></a></li>
+        		<li class="item"><a href="./index.html">HOME</a></li>
+        		<li class="item"><a href="./about.html">ABOUT</a></li>        		
+        		<li class="item"><a href="./signup.html">SIGN UP</a></li>
+        		<li class="item"><a href="./login.html" class="current">LOG IN</a></li>
+				<li class="item"><a href="./contact.html">CONTACT US</a></li>
+        		<li class="toggle"><a href="#"><i class="fas fa-bars"></i></a></li>
+    		</ul>
+    		
+		</nav>
+		
+	</header>
+
         
     <main>
         <div id="signup">
@@ -61,79 +50,53 @@
                     </div>
                     <input type="submit" value="Log In">
             </form>
-                    <p>Don't have an Account? <a href="signup.html" target="_blank"> Sign Up</a></p>
+                    <p style="color: #110E4C;">Don't have an Account? <a href="signup.html" target="_blank" style="color: #110E4C;"> Sign Up</a></p>
                     </div>
             </form>
         </div>
     </main>
 
-<footer>
-    <div class="footer-container">
-        <div>
-            <h1>Sign Up for Our Newsletter</h1>
-        </div>
-        <div id="news-form">
-            <div>
-                <p>Sign up to get updated on new features and updates. <br>You also get special offers and tips for optimal experience</p>
-            </div>
-            <div>
-                <form name="subscribe-form" id="subscribe-form" method="POST" data-netlify="true">
-                <input type="email" name="email" id="email" placeholder="Enter your email address" required><input type="submit" value="Subscribe" class="submit">
-                </form>
-            </div>
-        </div>
-        <div id="footer-info">
-            <div id="info1">
-                <div>
-                    <h2>Our Company</h2>
-                </div>
+		<!-- Footer -->		
+		<footer id="footer">
+			<div class="row">
+				<div class="box">
+				<h3><span class="text-primary">Quicklinks</span></h3>
+				<!-- Social Links -->
                 <div>
                     <ul>
-                        <li>About Us</li>
-                        <li>Contact Us</li>
-                        <li>Security & Privacy</li>
+                        <li><a href="#">Features</a></li>
+                        <li><a href="#">FAQs</a></li>
+                        <li><a href="#">Help</a></li>
                     </ul>
                 </div>
-            </div>
-            <div id="info2">
-                <div>
-                    <h2>Quicklinks</h2>
-                </div>
+				</div>
+				<div class="box">
+					<h3><span class="text-primary">Products</span></h3>
+					<!-- Social Links -->
                 <div>
                     <ul>
-                        <li>features</li>
-                        <li>FAQs</li>
-                        <li>Help</li>
+                        <li><a href="#">Explore</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Help Center</a></li>
                     </ul>
                 </div>
-            </div>
-            <div id="info3">
-                <div>
-                    <h2>Product</h2>
-                </div>
+				</div>
+				<div class="box">
+					<h3><span class="text-primary">Our Company</span></h3>
+					<!-- Social Links -->
                 <div>
                     <ul>
-                        <li>Explore</li>
-                        <li>Terms of Service</li>
-                        <li>Help Center</li>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">Security &amp; Privacy</a></li>
                     </ul>
                 </div>
-            </div>
-        </div>
-        <div id="footer-end">
-            <div>
-                <p>Address: 3 Geshonm Avenue, New London, Nigeria.</p>
-            </div>
-            <div id="socials" class="contact">
-                <a href="tel:#"><i class="fas fa-phone"></i><span>+234(0)12345678</span></a>
-                <a href="mailto:#"><i class="fas fa-envelope-open-text"></i><span>support@i2talk.com</span></a>
-                <a href="#" target="_blank"><i class="fab fa-twitter"></i><span>Twitter</span></a>
-                <a href="#" target="_blank"><i class="fab fa-linkedin"></i><span>linkedin</span></a>
-                <a href="#" target="_blank"><i class="fa fa-instagram"></i><span>Instagram</span></a>
-            </div>
-        </div>
-    </div>
-</footer>
+				</div>
+				</div>		
+			<div class="footer-bar"><p>i2talk &copy; 2020, All Rights Reserved.</p></div>
+		</footer>
 
-</body>
+		<!-- Javascript -->
+		<script src="./script.js"></script>
+	</body>
 </html>

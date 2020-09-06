@@ -25,6 +25,184 @@ html, body {
 	font-family: Roboto, Tahoma, Geneva, Verdana, sans-serif;
 	color: var(--primary-color);
 }
+nav {
+    background: var(--primary-color);
+	width: 100%;
+}
+a {
+    color: white;
+    text-decoration: none;
+}
+
+
+/** Nav Bar Defaults **/
+/*======================*/
+.navbar-container {   
+    width: 90%
+}
+
+.navbar {   
+    list-style-type: none;
+	padding: 0px 20px;
+	margin: auto;
+}
+
+
+.navbar.li:hover {   
+	background: var(--secondary-color);
+}
+
+.logo {
+ 	padding: 0;
+	margin-right: auto;
+}
+
+.logo-img {
+ 	width: 50px;
+	height: 40px;
+}
+
+.item {
+	display: block;
+    padding: 15px 15px;
+	transition: all 0.8s ease;
+	
+}
+
+.current {
+	background: var(--secondary-color);
+    color: var(--primary-color);
+}
+
+.item:not(.logo) a:hover,
+.item a:hover::after {
+	background: var(--secondary-color);
+    color: var(--primary-color);
+	transition: all 0.8s ease;
+}
+
+.section {
+	display: flex;
+}
+
+/** Responsive Design For The Nav Bar **/
+/*==============*/
+/* Mobile View */
+.navbar {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+.navbar li a {
+    display: block;
+    padding: 15px 15px;
+	transition: all 0.8s ease;
+	border-radius: 5px;
+}
+
+.toggle {
+    order: 1;
+    font-size: 20px;
+}
+.item {
+    order: 2;
+    width: 100%;
+    text-align: center;
+    display: none;
+}
+
+.active .item {
+    display: block;
+}
+
+.logo a {
+	text-align: left;
+}
+
+
+/* Tablet menu */
+@media all and (min-width: 750px) {
+    .navbar {
+        justify-content: center;
+    }
+    .logo {
+        flex: 0;
+    }
+    .toggle {
+        flex: 1;
+        text-align: right;
+        order: 1;
+    }
+}
+
+/* Desktop menu */
+@media all and (min-width: 960px) {
+    .navbar {
+        align-items: flex-start;     
+        flex-wrap: nowrap;
+        background: none;
+    }
+    .logo {
+        order: 0;
+    }
+    .item {
+        order: 1;
+        position: relative;
+        display: block; 
+        width: auto;
+    }
+    .toggle {
+        display: none;
+    }
+
+}
+/** Footer Defaults **/
+/*======================*/
+.row {  
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: row;
+	font-size: 18px;
+	line-height: 1.5em;
+}
+
+#footer a {
+	color: white;
+}
+
+#footer a:hover {
+	color: var(--secondary-color);
+}
+
+.footer-bar {
+	background: rgba(17,14,76,0.85);
+	color: white;
+	padding: 20px;
+	font-size: 18px;
+	text-align: center;
+	margin: 0;
+}
+
+#footer ul {
+	list-style: none;	
+}
+.box {
+	flex: 33%;
+	padding: 30px;
+	text-align: center;
+	color: white;
+	background: var(--primary-color);
+}
+
+/* Mobile menu */
+@media all and (max-width: 768px) {
+.box {
+	flex: 100%;
+	padding: 10px 30px;
+}
+}
+
 
 /* Hero Section Styling */
 
@@ -32,12 +210,12 @@ html, body {
 	display: flex;
 	flex-direction: column-reverse;
 	text-align: center;
-	margin-top: 3.8rem;
+	margin-top: 3rem;
 	padding-bottom: 40px;
 }
 
 .hero-box {
-	width: 100%;
+	width: 95%;
 }
 
 .hero-text {
@@ -175,27 +353,28 @@ html, body {
 	margin: 10px 0;
 	border-radius: 30px 0 30px 30px;
 	width: 50%;
-	background-color:  #110E4C;
-	color: #fff;
-	border: none;
+	background-color:  white;
+	color: #110E4C;
 	outline: none;
-	border: 2px solid #E2D70C;
+	border: 2px solid #110E4C;
 }
 
 input::placeholder{
-	color: var(--light-color);
+	color: #110E4C;
 } 
 
 textarea{
 	padding: 20px;
 	margin: 10px;
 	width: 50%;
-	background-color: #110E4C;
+	background-color: white;
 	border-radius: 30px 0 30px 30px;
-	color: #fff;
-	border: none;
+	color: #110E4C;
 	outline: none;
-	border: 2px solid #E2D70C;
+	border: 2px solid #110E4C;
+}
+textarea::placeholder{
+	color: #110E4C;
 }
 
 /* User Journey Styling */
@@ -269,10 +448,6 @@ textarea{
 	font-weight: bold;
 }
 
-/* Contact Form Page */
-textarea::placeholder{
-	color: #fff;
-}
 
 .submit{
 	width: 25%;
@@ -340,6 +515,7 @@ textarea::placeholder{
 
 label {
     display: block;
+	margin-bottom: 3px;
 }
 
 .signup-box input:focus {
@@ -348,7 +524,9 @@ label {
 
 .signup-box input {
 	color: var(--primary-color);
-	background-color: var(--primary-color);
+	background-color: white;
+	padding: 10px;
+	border-radius: 5px;
     border-top: none;
     border-right: none;
     border-left: none;
@@ -366,6 +544,10 @@ label {
     text-align: center;
     font-size: 20px;
     color: var(--light-color);
+}
+.sub-signup input[type=submit]:hover {
+    color: var(--primary-color);
+	background: var(--light-color);
 }
 
 .sub-signup p {
