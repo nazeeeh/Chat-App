@@ -478,14 +478,13 @@ textarea::placeholder{
 	background: var(--light-color);
 	display: flex;
 	justify-content: center;
-	padding-top: 4rem;
 }
 
 .signup-form {
-	margin: 3rem 0;
+	margin: 2rem 0;
     background: var(--primary-color);
 	border-radius: 30px;
-	width: 80%;
+	width: 500px;
 }
 
 .signup-form h3 {
@@ -558,6 +557,14 @@ label {
     text-align: center;
 }
 
+@media all and (max-width: 768px) {
+	.signup-form {
+		margin: 2rem 0;
+		background: var(--primary-color);
+		border-radius: 30px;
+		width: 75%;
+	}
+}
 /* small devices (tablets, 576px and up)*/
 @media (min-width: 576px) {
 	html {
