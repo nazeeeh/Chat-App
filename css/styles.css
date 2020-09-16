@@ -373,8 +373,21 @@ textarea{
 	outline: none;
 	border: 2px solid #110E4C;
 }
+
 textarea::placeholder{
 	color: #110E4C;
+}
+
+.contact ul {
+    padding: 0;
+}
+
+.contact-list li {
+    list-style: none;
+}
+
+.contact-list li a {
+	color: var(--primary-color);
 }
 
 /* User Journey Styling */
