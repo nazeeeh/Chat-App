@@ -378,17 +378,38 @@ textarea::placeholder{
 	color: #110E4C;
 }
 
-.contact ul {
+.contact-container {
+	width: 80%;
+	margin: 0 auto;
+}
+
+.contact-list {
+	text-align: center;
     padding: 0;
 }
 
 .contact-list li {
-    list-style: none;
+	list-style: none;
+	padding: 0 0.8rem;
+	display: inline-block;
+	font-size: 0.8rem;
+}
+
+.contact-list li span {
+	display: none;
 }
 
 .contact-list li a {
 	color: var(--primary-color);
 }
+
+.contact-list li a:hover {
+	background: var(--primary-color);
+	color: #fff;
+	padding: 8px;
+	border-radius: 45%;
+}
+
 
 /* User Journey Styling */
 .user-j {
@@ -577,11 +598,31 @@ label {
 		border-radius: 30px;
 		width: 75%;
 	}
+
 }
 /* small devices (tablets, 576px and up)*/
 @media (min-width: 576px) {
 	html {
 		font-size: 18px;
+	}
+
+	.contact-list li {
+		padding: 0.2rem 0.8rem;
+	}
+
+	.contact-list li:hover {
+		background: var(--primary-color);
+		border-radius: 12px 0px 12px 12px;
+		border: 1px solid var(--secondary-color);
+	}
+	
+	.contact-list li span {
+		display: inline-block;
+	}
+
+	.contact-list li a:hover {
+		border-radius: none;
+		padding: 0;
 	}
 }
 
