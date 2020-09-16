@@ -931,3 +931,35 @@ h3 span{
 	}
 	
 }
+
+
+/*The faq page*/
+.faq-heading{
+	text-align:center;
+}
+
+.faq-heading span img{
+	margin-right:10px;
+}
+
+.faq-questions{
+	width:70%;
+}
+
+.faq-questions h4:hover{
+	background-color:#FAEE1C;
+	padding:5px;
+	box-shadow: 4px 5px 6px 2px var(--primary-color);
+	border-bottom-right-radius: 20px;
+}
+
+.faq-questions p{
+	padding-top:20px;
+	padding-left: 80px;
+}
+
+@media screen and (max-width:700px){
+	.faq-questions{
+		width:90%;
+	}
+}
