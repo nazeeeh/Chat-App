@@ -274,15 +274,17 @@ label {
 /*--------------------------------------
               FAQ PAGE  
 ----------------------------------------*/
-.faq-heading{
-	text-align:center;
+.faq-heading  img{
+    display:block;
+    margin: auto;
 }
 
-.faq-heading span img{
-	margin-right:10px;
+.faq-heading h3{
+    text-align:center;
 }
 
 .faq-questions{
+    padding-left:50px;
 	width:70%;
 }
 
@@ -294,6 +296,7 @@ label {
 }
 
 .faq-questions p{
+    display:none;
 	padding-top:20px;
 	padding-left: 80px;
 }
@@ -338,7 +341,7 @@ label {
     
 
     /* ---------------------------------------------
-                    CHAT DASBOARD
+                    CHAT DASHBOARD
     ------------------------------------------------*/
     /* Tablet Menu*/
     .chat-container {
@@ -355,6 +358,7 @@ label {
                     FAQ PAGE
     --------------------------------------------------*/
     .faq-questions{
+        padding-left:0px;
 		width:90%;
 	}
 }
@@ -390,6 +394,14 @@ label {
         flex: 100%;
         display: none;
     }
+
+    /* ---------------------------------------------------
+                    FAQ PAGE
+    --------------------------------------------------*/
+    .faq-questions{
+        padding-left:0px;
+		width:100%;
+	}
         
 }
     
