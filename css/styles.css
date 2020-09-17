@@ -521,7 +521,7 @@ textarea::placeholder{
 	width: 500px;
 }
 
-.signup-form h3 {
+.signup-form h3, .signup-form p {
     padding: 20px;
     text-align: center;
     color: var(--light-color);
@@ -596,7 +596,7 @@ label {
 		margin: 2rem 0;
 		background: var(--primary-color);
 		border-radius: 30px;
-		width: 75%;
+		width: 85%;
 	}
 
 }
