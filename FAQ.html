@@ -6,16 +6,16 @@
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<meta name="Description" content="i2talk">
 	<meta name="Keywords" content="Chat App, Chat rooms, Message Scheduling, Location-based User search, chats, iDiary, iSchedule, iReminder, iSearch">
-			
+		
 		
 	<link rel="stylesheet" href="./css/all.css">
     <link rel="stylesheet" href="./css/styles.css">
 	
-	<title>i2talk | Reset Password</title>
+	<title>i2talk | FAQs</title>
 </head>
 
 <body>
-	<!-- Header -->
+    <!-- Header -->
 	<header class="section">
 		<!-- Navigation Bar -->
 		
@@ -32,24 +32,42 @@
     		
 		</nav>
 		
-	</header>
+    </header>
 
-        
     <main>
-        <div id="signup">
-            <form class="signup-form" method="post" data-netlify="true">
-                <p> Please enter your Email address below. You will receive a link to create a new password via email.</p>
-                <div class="sub-signup">
-                    <div class="signup-box">
-                        <label for="email">Email</label>
-                        <input type="email" name="email" placeholder="example@email.com" required>
-                    </div>
-                    <input type="submit" value="Reset my password">
-			</form>
-        </div>
-    </main>
+        <br>
+        <h2 class= "faq-heading"><span><img src="./assets/img/faq.svg" alt="" width="50px" height="50px"></span>Frequently Asked Questions</h2>
+        <br>
+        <div class="faq-questions">
+            <h4 onclick="answers1()"> + &nbsp Why should I use the i2talk chat application</h4>
+            <p id="answer1"></p>
+            <br>
+            <h4 onclick="answers2()"> + &nbsp How do I find other users</h4>
+            <p id="answer2"></p>
+            <br>
+            <h4 onclick="answers3()"> + &nbsp What do I do when I forget my password</h4>
+            <p id="answer3"></p>
+            <br>
+            <h4 onclick="answers4()"> + &nbsp How do I save a message to iDiary</h4>
+            <p id="answer4"></p>
+            <br>
+            <h4 onclick="answers5()"> + &nbsp How do I schedule a message</h4>
+            <p id="answer5"></p>
+            <br>
+            <h4 onclick="answers6()"> + &nbsp How do I use the iReminder option</h4>
+            <p id="answer6"></p>
+            <br>
+            <h4 onclick="answers7()"> + &nbsp How do I join a chatroom</h4>
+            <p id="answer7"></p>
+            <br>
 
-		<!-- Footer -->		
+        </div>
+
+
+
+    </main>
+    
+    <!-- Footer -->		
 		<footer id="footer">
 			<div class="row">
 				<div class="box">
@@ -58,7 +76,7 @@
                 <div>
                     <ul>
                         <li><a href="./about.html">Features</a></li>
-                        <li><a href="#">FAQs</a></li>
+                        <li><a href="./FAQ.html">FAQs</a></li>
                         <li><a href="./contact.html">Help</a></li>
                     </ul>
                 </div>
@@ -69,7 +87,7 @@
                 <div>
                     <ul>
                         <li><a href="./about.html">Explore</a></li>
-                        <li><a href="./FAQ.html">Terms of Service</a></li>
+                        <li><a href="#">Terms of Service</a></li>
                         <li><a href="./contact.html">Help Center</a></li>
                     </ul>
                 </div>
@@ -91,5 +109,5 @@
 
 		<!-- Javascript -->
 		<script src="./script.js"></script>
-	</body>
+</body>
 </html>
