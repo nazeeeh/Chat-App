@@ -43,10 +43,9 @@ a {
 
 .navbar {   
     list-style-type: none;
-	padding: 0px 20px;
+	padding: 0px 14px;
 	margin: auto;
 }
-
 
 .navbar.li:hover {   
 	background: var(--secondary-color);
@@ -65,8 +64,7 @@ a {
 .item {
 	display: block;
     padding: 15px 15px;
-	transition: all 0.8s ease;
-	
+	transition: all 0.8s ease;	
 }
 
 .current {
@@ -121,42 +119,6 @@ a {
 }
 
 
-/* Tablet menu */
-@media all and (min-width: 750px) {
-    .navbar {
-        justify-content: center;
-    }
-    .logo {
-        flex: 0;
-    }
-    .toggle {
-        flex: 1;
-        text-align: right;
-        order: 1;
-    }
-}
-
-/* Desktop menu */
-@media all and (min-width: 960px) {
-    .navbar {
-        align-items: flex-start;     
-        flex-wrap: nowrap;
-        background: none;
-    }
-    .logo {
-        order: 0;
-    }
-    .item {
-        order: 1;
-        position: relative;
-        display: block; 
-        width: auto;
-    }
-    .toggle {
-        display: none;
-    }
-
-}
 /** Footer Defaults **/
 /*======================*/
 .row {  
@@ -187,6 +149,7 @@ a {
 #footer ul {
 	list-style: none;	
 }
+
 .box {
 	flex: 33%;
 	padding: 30px;
@@ -194,15 +157,6 @@ a {
 	color: white;
 	background: var(--primary-color);
 }
-
-/* Mobile menu */
-@media all and (max-width: 768px) {
-.box {
-	flex: 100%;
-	padding: 10px 30px;
-}
-}
-
 
 /* Hero Section Styling */
 
@@ -297,7 +251,9 @@ a {
 	margin-left: auto;
 }
 
-/* Contact Form Page */
+/*--------------------------------------------
+			 Contact Us Page
+--------------------------------------------- */
 
 .contact-form-body {
 	background: var(--light-color);
@@ -483,7 +439,6 @@ textarea::placeholder{
 	font-weight: bold;
 }
 
-
 .submit{
 	width: 25%;
 	border-radius: 30px 0 30px 30px;
@@ -506,100 +461,7 @@ textarea::placeholder{
 	color: #110E4C;
 }
 
-	
-/* Sign up and Login Pages*/
-#signup {
-	background: var(--light-color);
-	display: flex;
-	justify-content: center;
-}
 
-.signup-form {
-	margin: 2rem 0;
-    background: var(--primary-color);
-	border-radius: 30px;
-	width: 500px;
-}
-
-.signup-form h3, .signup-form p {
-    padding: 20px;
-    text-align: center;
-    color: var(--light-color);
-}
-
-.sub-signup{
-    background: var(--secondary-color);
-    border-top-left-radius: 30px;
-    border-bottom-left-radius: 30px;
-    border-bottom-right-radius: 30px;
-    padding: 50px 30px;
-    font-size: 0.75rem;
-    color: var(--light-color);
-}
-
-.signup-box {
-    display: block;
-    background: var(--primary-color);
-    border-top-left-radius: 20px;
-    border-bottom-left-radius: 20px;
-    border-bottom-right-radius: 20px;
-    padding: 20px;
-    margin-bottom: 10px;
-}
-
-label {
-    display: block;
-	margin-bottom: 3px;
-}
-
-.signup-box input:focus {
-    border: 2px solid var(--secondary-color);
-}
-
-.signup-box input {
-	color: var(--primary-color);
-	background-color: white;
-	padding: 10px;
-	border-radius: 5px;
-    border-top: none;
-    border-right: none;
-    border-left: none;
-    width: 100%;
-    outline: none;
-}
-
-.sub-signup input[type=submit] {
-    width: 100%;
-    padding: 20px;
-    border-top-left-radius: 20px;
-    border-bottom-left-radius: 20px;
-    border-bottom-right-radius: 20px;
-    background: var(--primary-color);
-    text-align: center;
-    font-size: 20px;
-    color: var(--light-color);
-}
-.sub-signup input[type=submit]:hover {
-    color: var(--primary-color);
-	background: var(--light-color);
-}
-
-.sub-signup p {
-    box-sizing: border-box;
-    color: var(--light-color);
-    padding-top: 20px;
-    text-align: center;
-}
-
-@media all and (max-width: 768px) {
-	.signup-form {
-		margin: 2rem 0;
-		background: var(--primary-color);
-		border-radius: 30px;
-		width: 85%;
-	}
-
-}
 /* small devices (tablets, 576px and up)*/
 @media (min-width: 576px) {
 	html {
@@ -632,6 +494,27 @@ label {
 		font-size: 22px;
 	}
 
+	/* Navbar Styling */
+    .navbar {
+        justify-content: center;
+    }
+    .logo {
+        flex: 0;
+    }
+    .toggle {
+        flex: 1;
+        text-align: right;
+        order: 1;
+	}
+	
+
+	/* Footer styling */
+	.box {
+		flex: 100%;
+		padding: 10px 30px;
+	}
+	
+	/* Hero Section Home Page */
 	.hero {
 		flex-direction: row;
 		padding-bottom: 0px;
@@ -683,6 +566,7 @@ label {
 		width: 60%;
 	}
 	
+	/* User Journey Section Homepage */
 	.user-box {	
 		width: 40%;
 	}
@@ -691,6 +575,7 @@ label {
 		width: 80%;
 	}
 
+	/* Contact Us Page */
 	.contact span {
 		display: flex;
 		justify-content: center;
@@ -698,268 +583,29 @@ label {
 	}
 }
 
-/*Styling for about.html*/
-.about-heading h3{
-	text-align: center;
-	font-size: 1.6rem;
-	margin-top: 8rem;
-}
-
-h3 span{
-	color: #FAEE1C;
-}
-
-.text h4 {
-	font-size: 1.4rem;
-	display: block;
-	padding: 30px;
-}
-
-.about-items{
-	display: flex;
-	flex-direction: column;
-	margin: 0 auto;
-	width: 90%;
-	text-align: center;
-}
-
-.items {
-	display: flex;
-	align-items: center;
-	width: 100%;
-	justify-content: space-around;
-	margin: 3rem auto;
-}
-
-.item-1, .item-3, .item-5{
-	flex-direction: row;
-}
-
-.item-2, .item-4{
-	flex-direction: row-reverse;
-}
-
-.about-img {
-	width: 50%;
-}
-
-.about-img img {
-	width: 100%;
-}
-
-.text {
-	width: 40%;
-}
-
-@media screen and (max-width:700px) {
-	
-	.about-heading{
-		margin-top: 5rem;
-		padding: 0 2rem;
-	}
-
-	.text{
-		width:60%;
-		padding-top: 20px;
-	}
-
-	.item-1, .item-3, .item-5{
-		flex-direction: column;
-		align-items: flex-start;
-	}
-
-	.item-2, .item-4{
-		flex-direction: column;
-		align-items: flex-end;
-	}
-}
-
-/** Chat **/
-/* The side navigation menu */
-.chat-container {
-	display: grid;
-	grid-template-columns: 220px 410px auto;
-	grid-gap: 1px;
-	background-color: var(--primary-color);
-	padding: 0;
-	min-height: 100vh;
-}
-
-/** The Side Navigation menu ***/
-.side-bar {
-	background-color: var(--primary-color);
-	color: white;
-}
-
-.profile {
-	text-align: center;
-	padding: 10px 10px 5px 10px;
-	font-size: 12px;
-}
-
-.profile img {
-	border-radius: 50%;
-	height: 120px;
-	width: 120px;
-
-}
-
-.profile-box {
-	background-color: white;
-	color: var(--primary-color);
-	text-align: center;
-	padding: 8px;
-	margin: 5px 0px 0px;
-}
-
-.side-menu {
-	margin: 0px;
-	padding: 0px;
-	list-style: none;
-}
-
-.side-menu > li {
-	border-bottom: 1px solid;
-	padding: 10px;
-}
-
-.side-menu > li:hover {
-	color: var(--primary-color);
-	background: var(--secondary-color);
-}
-
-/* The Chat menu */
-.chat-menu {
-	background-color: white;
-}
-.chat-header {
-	background: rgba(17,14,76,0.80);
-	color: white;
-	padding: 15px;
-}
-.chat-counter {
-	border-radius: 50%;
-	font-size: 10px;
-	background-color: var(--primary-color);
-	color: white;
-	padding: 4px 6px 4px 4px;
-}
-.chat-box {
-	display: grid;
-	grid-template-columns: 80px auto 60px;
-	border-bottom: solid 1px;
-}
-.chat-box:hover {
-	background: var(--primary-color);
-	color: white;
-}
-.chat-box-img {
-	padding: 2px 0px;
-}
-.chat-box-img img {
-	border-radius: 50%;
-	width: 80px;
-	height: 80px;
-}
-.chat-box-msg {
-	padding: 5px 10px;
-}
-.chat-box-msg h4 {
-	margin-bottom: 10px;
-	font-size: 17px;
-}
-.chat-box-msg p {
-	font-size: 15px;
-}
-.chat-box-stats {
-	text-align: center;
-}
-.chat-box-stats p {
-	margin-bottom: 10px;
-}
-.chat-box-stats h7 {
-	font-size: 15px;
-}
-/* The Chat Message menu */
-.chat-message {
-	background-color: #dfdfdf;
-	padding: 100px;
-	text-align: center;
-}
-.chat-message img {
-	border-radius: 50%;
-	width: 290px;
-	height: 290px;
-}
-.chat-message h1 {
-	font-size: 40px;
-	font-weight: bold;
-	line-height: 1.2em;
-}
-/* Tablet Menu*/
-@media all and (max-width: 768px) {
-.chat-container {
-	display: grid;
-	grid-template-columns: 0px 368px auto;
-	grid-gap: 1px;
-	background-color: var(--primary-color);
-	padding: 0;
-	min-height: 100vh;
-
-	}
-}
-/* Mobile Menu*/
-@media all and (max-width: 450px) {
-.chat-container {
-	display: flex;
-	flex-direction: column;
-	background-color: var(--primary-color);
-	padding: 0;
-}
-.side-bar {
-	flex: 100%;
-	background-color: white;
-	display: none;
-	}
-.chat-menu {
-	flex: 100%;
-	background-color: white;
-}
-.chat-message {
-	flex: 100%;
-	display: none;
-	}
-	
-}
 
 
-/*The faq page*/
-.faq-heading{
-	text-align:center;
-}
+/* Large devices (desktop, 768px and up)*/
+@media all and (min-width: 960px) {
 
-.faq-heading span img{
-	margin-right:10px;
-}
+	/* Desktop Nav menu */
 
-.faq-questions{
-	width:70%;
-}
+    .navbar {
+        align-items: flex-start;     
+        flex-wrap: nowrap;
+        background: none;
+    }
+    .logo {
+        order: 0;
+    }
+    .item {
+        order: 1;
+        position: relative;
+        display: block; 
+        width: auto;
+    }
+    .toggle {
+        display: none;
+    }
 
-.faq-questions h4:hover{
-	background-color:#FAEE1C;
-	padding:5px;
-	box-shadow: 4px 5px 6px 2px var(--primary-color);
-	border-bottom-right-radius: 20px;
-}
-
-.faq-questions p{
-	padding-top:20px;
-	padding-left: 80px;
-}
-
-@media screen and (max-width:700px){
-	.faq-questions{
-		width:90%;
-	}
 }
