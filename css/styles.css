@@ -29,7 +29,7 @@ nav {
     background: var(--primary-color);
 	width: 100%;
 }
-a {
+li a {
     color: white;
     text-decoration: none;
 }
@@ -251,6 +251,101 @@ a {
 	margin-left: auto;
 }
 
+/* User Journey Styling */
+.user-j {
+	background: var(--light-color);
+	text-align: center;
+	padding: 2.4rem 0;
+}
+
+.userjny {
+	display: flex;
+	flex-wrap: wrap;
+	padding-top: 2rem;
+}
+
+.user-box {
+	margin: 1rem auto;
+	padding: 1rem;
+	width: 80%;
+	border-radius: 10px;
+	background: var(--secondary-color);
+	box-shadow: 4px 5px 6px 2px var(--primary-color);
+}
+
+.user-box:hover {
+	background: #fff;
+}
+
+.user-img {
+	width: 80%;
+}
+
+/* User Journey Buttons */
+.user-btn {
+	margin: 2rem;
+	white-space: nowrap;
+}
+
+.sign-up {
+	text-decoration: none;
+	color: #fff;
+	font-weight: bold;
+	padding: 14px 20px;
+	font-size: 20px;
+	border-radius: 10px;
+	background: var(--primary-color);
+	box-shadow: 4px 5px 6px 2px var(--primary-color);
+	margin: 1rem;
+}
+
+.sign-up:hover {
+	background: var(--secondary-color);
+	color: var(--primary-color);
+}
+
+.login {
+	text-decoration: none;
+
+	color: var(--primary-color);
+	font-weight: bold;
+	padding: 14px 20px;
+	font-size: 20px;
+	border-radius: 10px;
+	background: #fff;
+	box-shadow: 4px 5px 6px 2px var(--primary-color);
+	margin: 1rem;
+}
+
+.login:hover {
+	background: var(--secondary-color);
+	color: var(--primary-color);
+	font-weight: bold;
+}
+
+.submit{
+	width: 25%;
+	border-radius: 30px 0 30px 30px;
+	background: #110E4C;
+	padding: 0.4rem;
+	outline: none;
+	font-size: 13px;
+	font-weight: bold;
+	letter-spacing: 2px;
+	text-align: center;
+	cursor: pointer;
+	margin-bottom: 4%;
+	border: 2px solid #E2D70C;
+	color: #fff;
+}
+
+.submit:hover{
+	background: #E2D70C;
+	border: 2px solid #110E4C;
+	color: #110E4C;
+}
+
+
 /*--------------------------------------------
 			 Contact Us Page
 --------------------------------------------- */
@@ -366,99 +461,41 @@ textarea::placeholder{
 	border-radius: 45%;
 }
 
-
-/* User Journey Styling */
-.user-j {
-	background: var(--light-color);
-	text-align: center;
-	padding: 2.4rem 0;
+/* ----------------------------------------------------
+				TERMS OF SERVICE PAGE
+------------------------------------------------------*/
+.tos{
+	background-color: var(--light-color);
+	padding-bottom: 4rem;
 }
 
-.userjny {
-	display: flex;
-	flex-wrap: wrap;
+.tos img {
+	width: 40%;
+	display: block;
+	margin: 0 auto;
 	padding-top: 2rem;
 }
 
-.user-box {
-	margin: 1rem auto;
-	padding: 1rem;
-	width: 80%;
-	border-radius: 10px;
-	background: var(--secondary-color);
-	box-shadow: 4px 5px 6px 2px var(--primary-color);
-}
-
-.user-box:hover {
+.terms-container {
+	margin: 0 20px;
+	padding: 1rem 1.5rem 2rem;
+	border: 0.5px solid;
+	border-radius: 14px 0 14px 14px;
 	background: #fff;
 }
 
-.user-img {
-	width: 80%;
-}
-
-/* User Journey Buttons */
-.user-btn {
-	margin: 2rem;
-	white-space: nowrap;
-}
-
-.sign-up {
-	text-decoration: none;
-	color: #fff;
-	font-weight: bold;
-	padding: 14px 20px;
-	font-size: 20px;
-	border-radius: 10px;
-	background: var(--primary-color);
-	box-shadow: 4px 5px 6px 2px var(--primary-color);
-	margin: 1rem;
-}
-
-.sign-up:hover {
-	background: var(--secondary-color);
-	color: var(--primary-color);
-}
-
-.login {
-	text-decoration: none;
-
-	color: var(--primary-color);
-	font-weight: bold;
-	padding: 14px 20px;
-	font-size: 20px;
-	border-radius: 10px;
-	background: #fff;
-	box-shadow: 4px 5px 6px 2px var(--primary-color);
-	margin: 1rem;
-}
-
-.login:hover {
-	background: var(--secondary-color);
-	color: var(--primary-color);
-	font-weight: bold;
-}
-
-.submit{
-	width: 25%;
-	border-radius: 30px 0 30px 30px;
-	background: #110E4C;
-	padding: 0.4rem;
-	outline: none;
-	font-size: 13px;
-	font-weight: bold;
-	letter-spacing: 2px;
+.terms-head {
 	text-align: center;
-	cursor: pointer;
-	margin-bottom: 4%;
-	border: 2px solid #E2D70C;
-	color: #fff;
+	padding: 2rem 0 3rem;
 }
 
-.submit:hover{
-	background: #E2D70C;
-	border: 2px solid #110E4C;
-	color: #110E4C;
+.terms-container h4 {
+	padding: 2rem 0 1rem;
+}
+
+.terms-container p:not(:last-of-type) {
+	border-bottom: 1px solid;
+	padding-bottom: 1.5rem;
 }
 
 
@@ -581,6 +618,20 @@ textarea::placeholder{
 		justify-content: center;
 		font-size: 0.8rem;
 	}
+
+	/* ----------------------------------------------------
+				TERMS OF SERVICE PAGE
+	------------------------------------------------------*/
+	.terms-container {
+		width: 80%;
+		max-width: 900px;
+		margin: 0 auto;
+		border: none;
+		-webkit-box-shadow: 10px 10px 16px -1px rgba(17,14,76,1);
+		-moz-box-shadow: 10px 10px 16px -1px rgba(17,14,76,1);
+		box-shadow: 10px 10px 16px -1px rgba(17,14,76,1);
+	}
+
 }
 
 
