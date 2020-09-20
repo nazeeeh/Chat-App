@@ -25,85 +25,43 @@ toggle.addEventListener("click", toggleMenu, false);
 //##Declaration of functions for faq answers##//
 
 function answers1(){
-    let x=document.getElementById("answer1");
-    
-    if(x.style.display==="none"){
-        x.style.display="block"
-    }
+    let answer=`i2talk is an online chatting platform that infuses a diary for message storage, schedular and reminder to notify you of events as well  as location-based user search. These amazing features make communication easier and effective `
 
-    else{
-        x.style.display= "none"
-    }
+    document.getElementById("answer1").innerHTML= answer
 }
 
 function answers2(){
-    let x=document.getElementById("answer2")
-    
-    if(x.style.display==="none"){
-        x.style.display="block"
-    }
+    let answer=`To find other users, you have to turn on locations on your device settings, go to your profile dashboard and click iSearch.`
 
-    else{
-        x.style.display= "none"
-    }
+    document.getElementById("answer2").innerHTML= answer
 }
 
 function answers3(){
-    let x=document.getElementById("answer3")
+    let answer=`If you forget your password while trying to login, click the forget password link and it takes you to a page to input the email address you used in creating your accounnt. After submitting this, a reset password/link is sent to that e-mail address and you are good to go.`
 
-    if(x.style.display==="none"){
-        x.style.display="block"
-    }
-
-    else{
-        x.style.display= "none"
-    }
+    document.getElementById("answer3").innerHTML= answer
 }
 
 function answers4(){
-    let x=document.getElementById("answer4")
+    let answer=`To save a message to iDiary, select the message and click the "iDiary" option. To eventually access the message, go to your profile dashboard and select "iDiary", all your saved messages become visible.`
 
-    if(x.style.display==="none"){
-        x.style.display="block"
-    }
-
-    else{
-        x.style.display= "none"
-    }
+    document.getElementById("answer4").innerHTML= answer
 }
 
 function answers5(){
-    let x=document.getElementById("answer5")
+    let answer=`To schedule a message or status, go to your profile dashboard and select "iSchedule". Input the message to be scheduled as well as the recipient of this message. The recipient can be a friend or your status that is if you want the message to be posted on your status. After this, select the time and date for the message to be sent. `
 
-    if(x.style.display==="none"){
-        x.style.display="block"
-    }
-
-    else{
-        x.style.display= "none"
-    }
+    document.getElementById("answer5").innerHTML= answer
 }
 
 function answers6(){
-    let x=document.getElementById("answer6")
+    let answer=`To use the iReminder option, go to your profile dashboard and select "iReminder". Input the topic of reminder ,date and time to be reminded. `
 
-    if(x.style.display==="none"){
-        x.style.display="block"
-    }
-
-    else{
-        x.style.display= "none"
-    }
+    document.getElementById("answer6").innerHTML= answer
 }
 
 function answers7(){
-    let x=document.getElementById("answer7")
+    let answer=`Go to your profile dashboard, select "chatrooms". Input the topic you're looking for and select from suggestions provided and you're in!`
 
-    if(x.style.display==="none"){
-        x.style.display="block"
-    }
-
-    else{
-        x.style.display= "none"
-    }
+    document.getElementById("answer7").innerHTML= answer
 }
