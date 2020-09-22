@@ -151,8 +151,8 @@ li a {
 }
 
 .box {
-	flex: 33%;
-	padding: 30px;
+	flex: 100%;
+	padding: 10px 30px;
 	text-align: center;
 	color: white;
 	background: var(--primary-color);
@@ -164,7 +164,7 @@ li a {
 	display: flex;
 	flex-direction: column-reverse;
 	text-align: center;
-	margin-top: 3rem;
+	margin-top: 1rem;
 	padding-bottom: 40px;
 }
 
@@ -174,8 +174,8 @@ li a {
 
 .hero-text {
 	width: 85%;
-	padding: 20px 20px;
-	margin: 2rem auto 4rem;
+	padding: 8px 20px 20px;
+	margin: 0.8rem auto 2.5rem;
 }
 
 .hero-t {
@@ -203,16 +203,11 @@ li a {
 
 }
 
-.hero-t h2 {
-	text-transform: uppercase;
-}
-
 .first-text {
-	margin: 2rem auto;
+	margin: 0.7rem auto;
 }
 
 .hero-t p {
-	text-transform: uppercase;
 	padding: 20px 0;
 }
 
@@ -220,8 +215,7 @@ li a {
 	font-size: 48px;
 	text-shadow: 4px 4px 0px var(--light-color);
 	mix-blend-mode: normal;
-	/* animation: fadeIn 2.5s linear forwards; */
-	padding-bottom: 26px;
+	padding-bottom: 12px;
 }
 
 /* Fade In Animation */
@@ -247,7 +241,7 @@ li a {
 
 /* hero Image */
 .hero-img {
-	width: 80%;
+	width: 50%;
 	margin-left: auto;
 }
 
@@ -547,8 +541,8 @@ textarea::placeholder{
 
 	/* Footer styling */
 	.box {
-		flex: 100%;
-		padding: 10px 30px;
+		flex: 33%;
+		padding: 30px;
 	}
 	
 	/* Hero Section Home Page */
@@ -600,7 +594,7 @@ textarea::placeholder{
 	}
 
 	.hero-img {
-		width: 60%;
+		width: 50%;
 	}
 	
 	/* User Journey Section Homepage */
