@@ -7,11 +7,12 @@
 	<meta name="Description" content="i2talk">
 	<meta name="Keywords" content="Chat App, Chat rooms, Message Scheduling, Location-based User search, chats, iDiary, iSchedule, iReminder, iSearch">
 		
+		
 	<link rel="stylesheet" href="./css/all.css">
     <link rel="stylesheet" href="./css/styles.css">
     <link rel="stylesheet" href="./css/desktop.css">
 	
-	<title>i2talk | Sign Up</title>
+	<title>i2talk | Chat beyond limits</title>
 </head>
 
 <body>
@@ -22,9 +23,9 @@
    		<nav>
     		<ul class="navbar navbar-container">
         		<li class="logo"><a href="./index.html"><img class="logo-img" src="./assets/logo.svg"></a></li>
-        		<li class="item"><a href="./index.html">HOME</a></li>
+        		<li class="item"><a href="./index.html" class="current">HOME</a></li>
         		<li class="item"><a href="./about.html">ABOUT</a></li>        		
-        		<li class="item"><a href="./signup.html" class="current">SIGN UP</a></li>
+        		<li class="item"><a href="./signup.html">SIGN UP</a></li>
         		<li class="item"><a href="./login.html">LOG IN</a></li>
 				<li class="item"><a href="./contact.html">CONTACT US</a></li>
         		<li class="toggle"><a href="#"><i class="fas fa-bars"></i></a></li>
@@ -32,48 +33,52 @@
     		
 		</nav>
 		
-	</header>
-
-            
-    <main>
-        <div id="signup">
-            <form class="signup-form" method="post" data-netlify="true">
-                <h3>Signup Form</h3>
-                <div class="sub-signup">
-                    <div class="signup-box">
-                        <label for="first-name">First Name</label>
-                        <input type="text" name="first-name" placeholder="first name" required>
-                    </div>
-
-                    <div class="signup-box">
-                        <label for="last-name">Last Name</label>
-                        <input type="text" name="last-name" placeholder="last name" required>
-                    </div>
-
-                    <div class="signup-box">
-                        <label for="email">Email</label>
-                        <input type="email" name="email" placeholder="example@email.com" required>
-                    </div>
-
-                    <div class="signup-box">
-                        <label for="password">Password</label>
-                        <input type="password" name="password" placeholder="•••••••" required>
-                    </div>
-
-                    <div class="signup-box">
-                        <label for="confirm-password">Confirm Password</label>
-                        <input type="password" name="confirm-password" placeholder="•••••••" required>
-                    </div>
-
-                    <input type="submit" value="Sign Up">
-
-                    <p style="color: #110E4C;">Already have an Account? <a href="login.html" target="_blank" style="color: #110E4C;">Sign In</a></p>
+    </header>
+    <body>
+        <div id="sp-flex">
+            <div id="sp1"> 
+                <div id="sp1-image"></div>
+                <div id="sp1-content">
+                    <div id="profile"><a href="#">profile</a></div>
+                    <div id="history"><a href="#">History</a></div>
+                    <div id="bookmarks"><a href="#">Bookmarks</a></div>
+                    <div id="logout"><a href="#">Log out</a></div>
+                </div> 
+            </div>
+            <div id="sp2">
+                <div id="Privacy">
+                    <h2>Privacy</h2>
+                    <div><a href="#">Choose themes</a></div>
+                    <div><a href="#">Location setting</a></div>
+                    <div><a href="#">Manage profile</a></div>
+                    <div><a href="#">Activity log</a></div>
+                    <div><a href="#">Search history</a></div>
+                    <div><a href="#"></a></div>
                 </div>
-            </form>
+            </div>
+            <div id="sp3">
+                <div id="sec">
+                    <h2>Account Security</h2>
+                    <div><a href="#">Update personal information</a></div>
+                    <div><a href="#">Change password</a></div>
+                    <div><a href="#">Get alerts about unrecognized log in</a></div>
+                    <div><a href="#">Use two-factor verification</a></div>
+                    <div><a href="#">Use two-factor verification</a></div>
+                </div>
+            </div>
+            
+            <div id="sp4">
+                <h2>Legal and Policies</h2>
+                <div>
+                    <div><a href="#">Terms of Service</a></div>
+                    <div><a href="#">Data policy</a></div>
+                    <div><a href="#">Cookies policy</a></div>
+                    <div><a href="#">Community Standards</a></div>
+                </div>
+            </div>
         </div>
-    </main>
-
-		<!-- Footer -->		
+    </body>
+    <!-- Footer -->		
 		<footer id="footer">
 			<div class="row">
 				<div class="box">
@@ -82,7 +87,7 @@
                 <div>
                     <ul>
                         <li><a href="./about.html">Features</a></li>
-                        <li><a href="./faq.html">FAQs</a></li>
+                        <li><a href="#">FAQs</a></li>
                         <li><a href="./contact.html">Help</a></li>
                     </ul>
                 </div>
@@ -93,7 +98,7 @@
                 <div>
                     <ul>
                         <li><a href="./about.html">Explore</a></li>
-                        <li><a href="./terms.html">Terms of Service</a></li>
+                        <li><a href="#">Terms of Service</a></li>
                         <li><a href="./contact.html">Help Center</a></li>
                     </ul>
                 </div>
@@ -115,5 +120,6 @@
 
 		<!-- Javascript -->
 		<script src="./script.js"></script>
+
 </body>
 </html>
