@@ -4,6 +4,13 @@
 const toggle = document.querySelector(".toggle");
 const navbar = document.querySelector(".navbar");
  
+
+const chat_box = document.getElementById("chatbox");
+
+chat_box.style.display = "none";
+
+const chat_box_button = document.getElementById("chatBoxButton");
+ 
 /** Toggle mobile menu **/
 function toggleMenu() {
     if (navbar.classList.contains("active")) {
@@ -107,3 +114,26 @@ function answers7(){
         x.style.display="none"
     }
 }
+
+/** Event Listener **/
+toggle.addEventListener("click", toggleMenu, false);
+
+function toggleChatBox(e){
+
+    e.preventDefault();
+
+    console.log(chat_box.style.display);
+    //const chat_box = document.getElementById("chatbox");
+
+    if(chat_box.style.display == "none"){
+        
+        chat_box.style.display = "block"
+    }else{
+        chat_box.style.display = "none"
+    }
+    
+}
+
+chat_box_button.addEventListener("click", toggleChatBox, false);
+
+//toggleChatBox();
