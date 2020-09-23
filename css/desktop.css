@@ -293,6 +293,7 @@ label {
 	padding:5px;
 	box-shadow: 4px 5px 6px 2px var(--primary-color);
 	border-bottom-right-radius: 20px;
+    cursor: pointer;
 }
 
 .faq-questions p{
