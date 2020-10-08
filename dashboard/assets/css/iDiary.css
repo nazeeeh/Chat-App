@@ -1,6 +1,7 @@
 
 	#iDiary-container{
 		background-color:var(--light-color);
+		width: 100%;
 	}
 
 	#title-bar{
@@ -15,7 +16,7 @@
 	}
 
 	#title-bar > span{
-		margin-left: 85%;
+		margin-left: 80%;
 	}
 
 	#title-bar > span >i:hover{
@@ -109,7 +110,6 @@
 		display:block;
 		margin-top:20px;
 		margin-left:90px;
-		width: 90%;
 	}
 
 	#records{
@@ -164,7 +164,20 @@
 	}
 
 
-	
+	.swal-button.swal-button--confirm{
+		background-color: var(--primary-color);
+	}
+
+	.swal-button.swal-button--confirm:hover{
+		background-color: var(--secondary-color);
+		box-shadow: 2px 2px 2px 2px var(--secondary-color)
+	}
+
+	#idiary-loader, #idiary-back-loader{
+		display:none;
+		margin-right: 10px;
+	}
+
 	@media screen and (max-width:500px){
 		#top{
 			margin-left:40px;
