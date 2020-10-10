@@ -31,6 +31,10 @@ nav {
     background: var(--primary-color);
 	width: 100%;
 }
+<<<<<<< HEAD
+=======
+
+>>>>>>> 46f6aa9dff5c06bb0e11001b6d76ab6cf686beb3
 
 a {
 	text-decoration: none;
@@ -56,6 +60,10 @@ a {
 	background: var(--secondary-color);
 	border-radius: 10px;
 	transition: all 0.8s ease;
+}
+.navbar li a {
+    color: white;
+    text-decoration: none;
 }
 
 .navbar .current a {
@@ -317,6 +325,34 @@ a {
 	font-weight: bold;
 }
 
+<<<<<<< HEAD
+/* FORGOT PASSWORD PAGE */
+.forgot-img {
+	margin-top: 2rem;
+=======
+.submit{
+	width: 25%;
+	border-radius: 10px;
+	background: #110E4C;
+	padding: 0.4rem;
+	outline: none;
+	font-size: 13px;
+	font-weight: bold;
+	letter-spacing: 2px;
+	text-align: center;
+	cursor: pointer;
+	margin-bottom: 4%;
+	border: 2px solid #E2D70C;
+	color: #fff;
+>>>>>>> 46f6aa9dff5c06bb0e11001b6d76ab6cf686beb3
+}
+.forgot-form {
+	width: 80%;
+	margin: 2rem auto 5rem;
+}
+
+<<<<<<< HEAD
+=======
 /* FORGOT PASSWORD PAGE */
 .forgot-img {
 	margin-top: 2rem;
@@ -326,6 +362,7 @@ a {
 	margin: 2rem auto 5rem;
 }
 
+>>>>>>> 46f6aa9dff5c06bb0e11001b6d76ab6cf686beb3
 .forgot-form button {
 	width: 30%;
 	margin-top: 10px;
@@ -488,6 +525,7 @@ textarea::placeholder{
 	color:#E2D70C;
 	font-size: 22px;
 	border-radius: 100%;
+<<<<<<< HEAD
 	border: 2px solid var(--secondary-color)
 }
 
@@ -502,8 +540,12 @@ textarea::placeholder{
 	height: 100%;
 	overflow: auto;
 	background-color: rgba(17,14,76, 0.8);
+=======
+	border: 1px solid var(--secondary-color)
+>>>>>>> 46f6aa9dff5c06bb0e11001b6d76ab6cf686beb3
 }
 
+/* Live Chat Styling */
 .livechatbox{
 	position: fixed;
 	width: 90%;
@@ -624,6 +666,7 @@ textarea::placeholder{
 }
 
 /* 	--------------------------------------------------
+<<<<<<< HEAD
 				 Sign Up And Log In Page
 ----------------------------------------------------- */
 .signup-page-container {
@@ -632,6 +675,10 @@ textarea::placeholder{
 	flex-direction: column;
 }
 
+=======
+				 Sign Up And Sign Up Page
+----------------------------------------------------- */
+>>>>>>> 46f6aa9dff5c06bb0e11001b6d76ab6cf686beb3
 .desktop-img{
 	display: none;
 }
@@ -641,6 +688,7 @@ textarea::placeholder{
 	max-width: 600px;
 }
 
+<<<<<<< HEAD
 .form-tab{
 	display:flex;
 	flex-direction: column;
@@ -710,16 +758,56 @@ textarea::placeholder{
 
 .sign-form input:focus {
     border: 2px solid var(--primary-color);
+=======
+.form-tab {
+	background: var(--light-color);
+	margin: 2rem auto;
+	border-radius: 10px;
+	padding-bottom: 20px;
+	max-width: 500px;
+}
+
+.form-tab ul li {
+	margin: 0 auto;
+}
+
+.form-tab .nav li a {
+	color: var(--primary-color);
+	padding: 0.5rem 2rem;
+}
+
+.nav-pills .nav-link.active {
+	background-color: var(--primary-color);
+	border-bottom: 3px solid #E2D70C;
+}
+
+.tab-content {
+	width: 90%;
+	margin: 0 auto;
+}
+
+label {
+    display: block;
+	margin: 0.5rem 0 0.2rem;
+}
+
+.sign-form input:focus {
+    border: 2px solid var(--secondary-color);
+>>>>>>> 46f6aa9dff5c06bb0e11001b6d76ab6cf686beb3
 }
 
 .sign-form input {
 	padding: 10px;
+<<<<<<< HEAD
 	margin: 0 0 10px;
+=======
+>>>>>>> 46f6aa9dff5c06bb0e11001b6d76ab6cf686beb3
 	border-radius: 8px;
 	border-top: none;
 	border-right: 2px solid var(--primary-color);
 	border-left: 2px solid var(--primary-color);
 	border-bottom: 2px solid var(--secondary-color);
+<<<<<<< HEAD
     width: 80%;
 	outline: none;
 }
@@ -735,12 +823,30 @@ textarea::placeholder{
 	transition: all 0.6s ease;
 }
 
+=======
+    width: 100%;
+    outline: none;
+}
+
+.signbtn {
+    width: 50%;
+    padding: 5px 10px;
+    border-radius: 10px;
+	background: var(--primary-color);
+	border-bottom: 3px solid #E2D70C;
+
+    text-align: center;
+    font-size: 20px;
+    color: var(--light-color);
+}
+>>>>>>> 46f6aa9dff5c06bb0e11001b6d76ab6cf686beb3
 .signbtn:hover {
     color: var(--primary-color);
 	background: var(--light-color);
 }
 
 .sign-form p {
+<<<<<<< HEAD
 	padding: 14px 16px;
 	margin-bottom: 10px;
 	line-height: 1rem;
@@ -748,6 +854,13 @@ textarea::placeholder{
 	font-size: 0.8rem;
 }
 
+=======
+	padding: 14px 0;
+	margin-bottom: 10px;
+	line-height: 1rem;
+    text-align: center;
+}
+>>>>>>> 46f6aa9dff5c06bb0e11001b6d76ab6cf686beb3
 
 /* ----------------------------------------------------
 				TERMS OF SERVICE PAGE
@@ -1297,6 +1410,7 @@ textarea::placeholder{
     .toggle {
         display: none;
 	}
+<<<<<<< HEAD
 
 	/* Home Page */
 	.hero-img {
@@ -1314,12 +1428,19 @@ textarea::placeholder{
 	.desktop-img{
 		display: block;
 		width: 100%;
+=======
+	
+	/* Sign-up Form */
+	.desktop-img{
+		display: block;
+>>>>>>> 46f6aa9dff5c06bb0e11001b6d76ab6cf686beb3
 	}
 
 	.mobile-img{
 		display: none;
 	}
 
+<<<<<<< HEAD
 	.form-img{
 		width: 50%;
 	}
@@ -1358,3 +1479,20 @@ textarea::placeholder{
 
 /* Extra large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) { ... }
+=======
+}
+
+/* Error Reporting */
+#error-login {
+	background-color: maroon;
+	color: white; font-size: 16px;
+	padding: 10px; border-radius: 5px;
+	display: none; margin: 10px 0 4px;
+}
+#error-signup {
+	background-color: maroon;
+	color: white; font-size: 16px;
+	padding: 10px; border-radius: 5px;
+	display: none; margin: 10px 0 4px;
+}
+>>>>>>> 46f6aa9dff5c06bb0e11001b6d76ab6cf686beb3
