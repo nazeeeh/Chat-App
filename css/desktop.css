@@ -5,14 +5,18 @@
                     ABOUT PAGE
     ---------------------------------------------------*/
 
+.about-main{
+	background-color: var(--light-color);
+	padding-top: 4rem;
+}
+
 .about-heading h3{
     text-align: center;
     font-size: 1.6rem;
-    margin-top: 8rem;
 }
 
 h3 span{
-    color: #FAEE1C;
+    color: var(--secondary-color);
 }
 
 .text h4 {
@@ -56,94 +60,6 @@ h3 span{
 .text {
     width: 40%;
 }
-
-    
-/*---------------------------------------------- 
-			Sign up and Login Pages
--------------------------------------------------*/
-#signup {
-	background: var(--light-color);
-	display: flex;
-	justify-content: center;
-}
-
-.signup-form {
-	margin: 2rem 0;
-    background: var(--primary-color);
-	border-radius: 30px;
-	width: 500px;
-}
-
-.signup-form h3, .signup-form p {
-    padding: 20px;
-    text-align: center;
-    color: var(--light-color);
-}
-
-.sub-signup{
-    background: var(--secondary-color);
-    border-top-left-radius: 30px;
-    border-bottom-left-radius: 30px;
-    border-bottom-right-radius: 30px;
-    padding: 50px 30px;
-    font-size: 0.75rem;
-    color: var(--light-color);
-}
-
-.signup-box {
-    display: block;
-    background: var(--primary-color);
-    border-top-left-radius: 20px;
-    border-bottom-left-radius: 20px;
-    border-bottom-right-radius: 20px;
-    padding: 20px;
-    margin-bottom: 10px;
-}
-
-label {
-    display: block;
-	margin-bottom: 3px;
-}
-
-.signup-box input:focus {
-    border: 2px solid var(--secondary-color);
-}
-
-.signup-box input {
-	color: var(--primary-color);
-	background-color: white;
-	padding: 10px;
-	border-radius: 5px;
-    border-top: none;
-    border-right: none;
-    border-left: none;
-    width: 100%;
-    outline: none;
-}
-
-.sub-signup input[type=submit] {
-    width: 100%;
-    padding: 20px;
-    border-top-left-radius: 20px;
-    border-bottom-left-radius: 20px;
-    border-bottom-right-radius: 20px;
-    background: var(--primary-color);
-    text-align: center;
-    font-size: 20px;
-    color: var(--light-color);
-}
-.sub-signup input[type=submit]:hover {
-    color: var(--primary-color);
-	background: var(--light-color);
-}
-
-.sub-signup p {
-    box-sizing: border-box;
-    color: var(--light-color);
-    padding-top: 20px;
-    text-align: center;
-}
-
 
 /**-------------------------------------------------
             CHAT DASHBOARD
@@ -305,60 +221,44 @@ label {
 /*--------------------------------------
               PRIVACY AND SECURITY 
 ----------------------------------------*/
+.security-main {
+	background-color: var(--light-color);
+}
+
+.security-img {
+	padding-top: 2rem;
+	text-align: center;
+}
+
+.security-img img {
+	width: 50%;
+}
 
 #sp-flex {
 	display: flex;
-	flex-direction: row;
+	width: 90%;
 	flex: 1;
-	justify-content: space-evenly;
-	height: 100vh;
-	margin: auto;
-margin-top: 50px;	
-	
-}
-#sp-flex a{
-    text-decoration: none;
-    	
-    }
-    #sp-flex a:hover{
-        color: var(--primary-color);
-    }
-#sp1 {
-	background: var(--primary-color);
-	width: 20vw;
-	margin-bottom: 15px;
-}
-#sp1-content #profile {
-	background: var(--light-color);
-	padding: 10px;
-	margin-bottom: 10px;
-}
-#sp1-content #history {
-	background: var(--light-color);
-	padding: 10px;
-	margin-bottom: 10px;
-}
-#sp1-content #bookmarks {
-	background: var(--light-color);
-	padding: 10px;
-	margin-bottom: 10px;
-}
-#sp1-content #logout {
-	background: var(--light-color);
-	padding: 10px;
-	margin-bottom: 10px;
-}
-#sp1-image{
-	background: url(../users/Kristina.jpg) no-repeat center center/cover;
-	border-radius: 50%;
-	margin-bottom: 50px;
-	height: 200px;
-	width: 50%;
-	margin: 20px auto; 
+	justify-content: space-between;
+	margin: 2rem auto 0;
+	padding-bottom: 4rem;
+	text-align: center;	
 }
 
-#sp2 a, #sp3 a, #sp4 a {
-line-height: 3rem;
+#sp-flex a{
+	text-decoration: none;
+	color: var(--primary-color);  	
+}
+
+#sp-flex a:hover{
+	color: var(--secondary-color);
+	background: var(--primary-color);
+	padding: 6px;
+	border-radius: 6px;
+}
+
+#sp-flex p {
+	padding: 10px 0;
+	font-size: 16px;
 }
 
 
@@ -372,7 +272,7 @@ line-height: 3rem;
                     ABOUT PAGE
     =--------------------------------------------------*/
 	.about-heading{
-		margin-top: 5rem;
+		margin-top: 3rem;
 		padding: 0 2rem;
 	}
 
@@ -391,17 +291,6 @@ line-height: 3rem;
 		align-items: flex-end;
     }
     
-    /* -------------------------------------------------
-                    SIGNUP PAGE
-    =--------------------------------------------------*/
-	.signup-form {
-		margin: 2rem 0;
-		background: var(--primary-color);
-		border-radius: 30px;
-		width: 85%;
-    }
-    
-
     /* ---------------------------------------------
                     CHAT DASHBOARD
     ------------------------------------------------*/
@@ -420,8 +309,8 @@ line-height: 3rem;
                     FAQ PAGE
     --------------------------------------------------*/
     .faq-questions{
-        padding-left:0px;
-		width:90%;
+        padding-left: 40px;
+		width:80%;
 	}
 }
 
@@ -430,7 +319,7 @@ line-height: 3rem;
 /*  *   *   *   *   *   *   *   *   *   *   *   *   *   *   *
                     MOBILE VIEW
 *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   */
-@media all and (max-width: 450px) {
+@media all and (max-width: 576px) {
 
     /* -----------------------------------------
                      CHAT DASHBOARD
@@ -447,7 +336,7 @@ line-height: 3rem;
         flex: 100%;
         background-color: white;
         display: none;
-        }
+    }
     .chat-menu {
         flex: 100%;
         background-color: white;
@@ -461,9 +350,26 @@ line-height: 3rem;
                     FAQ PAGE
     --------------------------------------------------*/
     .faq-questions{
-        padding-left:0px;
-		width:100%;
+        padding-left: 16px;
+		width:90%;
 	}
-        
+
+	/* SECURITY AND PRIVACY PAGE */
+	.security-img img {
+		width: 80%;
+	}
+
+	#sp-flex {
+		flex-direction: column;
+		text-align: center;
+	}
+
+	.sp-box {
+		margin: 1rem auto;
+	}
+	
+	.sp-box h4 {
+		padding-bottom: 10px;
+	}
 }
     
