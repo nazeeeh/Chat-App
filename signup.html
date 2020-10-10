@@ -7,7 +7,11 @@
         <meta name="Description" content="i2talk">
         <meta name="Keywords" content="Chat App, Chat rooms, Message Scheduling, Location-based User search, chats, iDiary, iSchedule, iReminder, iSearch">
         <!-- Bootstrap CDN -->
+<<<<<<< HEAD
+        <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> -->
+=======
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+>>>>>>> 46f6aa9dff5c06bb0e11001b6d76ab6cf686beb3
 
         <link rel="stylesheet" href="./css/all.css">
         <link rel="stylesheet" href="./css/styles.css">
@@ -20,6 +24,132 @@
     <body>
         <!-- Header -->
         <header class="section">
+<<<<<<< HEAD
+          <!-- Navigation Bar -->
+            
+          <nav>
+            <ul class="navbar navbar-container">
+              <li class="logo"><a href="./index.html"><img class="logo-img" src="./assets/logo.svg"></a></li>
+              <li class="item"><a href="./index.html">HOME</a></li>
+              <li class="item"><a href="./about.html">ABOUT</a></li>        		
+              <li class="item current" id="sign-page"><a href="./signup.html">SIGN UP</a></li>
+              <li class="item" id="log-page"><a href="./signup.html">LOG IN</a></li>
+              <li class="item"><a href="./contact.html">CONTACT US</a></li>
+              <li class="toggle"><a href="#"><i class="fas fa-bars"></i></a></li>
+            </ul>
+          </nav>
+            
+        </header>
+
+       <main>
+          <div class="signup-page-container">
+            <div class="form-img">
+              <img src="./assets/img/mobile-login.svg" class="mobile-img" alt="Responsive image">
+              <img src="./assets/img/desktop-login.svg" class="desktop-img" alt="Responsive image">
+            </div>
+
+            <div class="form-tab-container">
+              <div class="form-tab">
+                <div class="form-tab-nav">
+                  <ul class="tablist">
+                    <li class="signup-tab-btn"><button onclick="tabForm('signup')">Sign Up</button></li>
+                    <li class="login-tab-btn"><button onclick="tabForm('login')">Log In</button></li>
+                  </ul>
+                </div>
+
+                <div class="form-tab-body">
+                  <div class="signup-form" id="signup-tab">
+                    <h4>Sign Up</h4>
+                    <form class="" method="post" data-netlify="true">
+                      <div class="sign-form">
+                        <input type="text" id="full-name" placeholder="full name" required>
+
+                        <input type="text" id="username" placeholder="username" required>
+                    
+                        <input type="email" id="email" placeholder="example@email.com" required>
+
+                        <input type="password" id="password" placeholder="password" required>
+                        
+                        <input type="password" id="c-password" placeholder="confirm password" required>
+
+                        <p><small>By clicking Sign Up, you agree to our <a href="./terms.html" style="color: #ded304;">Terms</a>, 
+                          <a href="./security&privacy.html" style="color: #ded304;">Security and Privacy Policy</a>. 
+                          You may receive email notifications from us and can opt out at any time.</small>
+                        </p>
+                        
+                        <button class="signbtn" type="submit">Sign Up</button>
+                      </div>
+                    </form>
+                  </div>
+                  <div class="login-form" id="login-tab">
+                    <h4>Log In</h4>
+                    <form class="" method="post" data-netlify="true" id="signin-form">
+                      <div class="sign-form">
+                        <input type="text" name="email" placeholder="enter your username" required>
+                    
+                        <input type="password" name="password" placeholder="•••••••" required>
+                        
+                        <p><a href="lost_password.html" style="color: #110E4C;">Forgot password?</a></p>
+                        
+                        <button class="signbtn" type="submit">Log In</button>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </main> 
+
+        <!-- Footer -->		
+        <footer id="footer">
+            <div class="footer-row">
+                <div class="box">
+                    <h3><span class="">Quicklinks</span></h3>
+                <!-- Social Links -->
+                    <div>
+                        <ul>
+                            <li><a href="./about.html">Features</a></li>
+                            <li><a href="./faq.html">FAQs</a></li>
+                            <li><a href="./contact.html">Help</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="box">
+                    <h3><span class="">Products</span></h3>
+                    <!-- Social Links -->
+                    <div>
+                        <ul>
+                            <li><a href="./about.html">Explore</a></li>
+                            <li><a href="./terms.html">Terms of Service</a></li>
+                            <li><a href="./contact.html">Help Center</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="box">
+                    <h3><span class="">Our Company</span></h3>
+                    <!-- Social Links -->
+                    <div>
+                        <ul>
+                            <li><a href="./about.html">About Us</a></li>
+                            <li><a href="./contact.html">Contact Us</a></li>
+                            <li><a href="./security&privacy.html">Security &amp; Privacy</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>		
+            <div class="footer-bar">
+                <p>i2talk &copy; 2020, All Rights Reserved.</p>
+            </div>
+        </footer>
+
+        <!-- Javascript -->
+        <script src="./script.js"></script>
+        <!-- Bootstrap JS -->
+        <!-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script> -->
+=======
             <!-- Navigation Bar -->
             
             <nav>
@@ -148,5 +278,6 @@
             form.addEventListener('submit', addUser);
         </script>
 
+>>>>>>> 46f6aa9dff5c06bb0e11001b6d76ab6cf686beb3
     </body>
 </html>

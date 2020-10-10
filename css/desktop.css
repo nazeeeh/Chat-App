@@ -5,14 +5,18 @@
                     ABOUT PAGE
     ---------------------------------------------------*/
 
+.about-main{
+	background-color: var(--light-color);
+	padding-top: 4rem;
+}
+
 .about-heading h3{
     text-align: center;
     font-size: 1.6rem;
-    margin-top: 8rem;
 }
 
 h3 span{
-    color: #FAEE1C;
+    color: var(--secondary-color);
 }
 
 .text h4 {
@@ -217,60 +221,44 @@ h3 span{
 /*--------------------------------------
               PRIVACY AND SECURITY 
 ----------------------------------------*/
+.security-main {
+	background-color: var(--light-color);
+}
+
+.security-img {
+	padding-top: 2rem;
+	text-align: center;
+}
+
+.security-img img {
+	width: 50%;
+}
 
 #sp-flex {
 	display: flex;
-	flex-direction: row;
+	width: 90%;
 	flex: 1;
-	justify-content: space-evenly;
-	height: 100vh;
-	margin: auto;
-margin-top: 50px;	
-	
-}
-#sp-flex a{
-    text-decoration: none;
-    	
-    }
-    #sp-flex a:hover{
-        color: var(--primary-color);
-    }
-#sp1 {
-	background: var(--primary-color);
-	width: 20vw;
-	margin-bottom: 15px;
-}
-#sp1-content #profile {
-	background: var(--light-color);
-	padding: 10px;
-	margin-bottom: 10px;
-}
-#sp1-content #history {
-	background: var(--light-color);
-	padding: 10px;
-	margin-bottom: 10px;
-}
-#sp1-content #bookmarks {
-	background: var(--light-color);
-	padding: 10px;
-	margin-bottom: 10px;
-}
-#sp1-content #logout {
-	background: var(--light-color);
-	padding: 10px;
-	margin-bottom: 10px;
-}
-#sp1-image{
-	background: url(../users/Kristina.jpg) no-repeat center center/cover;
-	border-radius: 50%;
-	margin-bottom: 50px;
-	height: 200px;
-	width: 50%;
-	margin: 20px auto; 
+	justify-content: space-between;
+	margin: 2rem auto 0;
+	padding-bottom: 4rem;
+	text-align: center;	
 }
 
-#sp2 a, #sp3 a, #sp4 a {
-line-height: 3rem;
+#sp-flex a{
+	text-decoration: none;
+	color: var(--primary-color);  	
+}
+
+#sp-flex a:hover{
+	color: var(--secondary-color);
+	background: var(--primary-color);
+	padding: 6px;
+	border-radius: 6px;
+}
+
+#sp-flex p {
+	padding: 10px 0;
+	font-size: 16px;
 }
 
 
@@ -284,7 +272,7 @@ line-height: 3rem;
                     ABOUT PAGE
     =--------------------------------------------------*/
 	.about-heading{
-		margin-top: 5rem;
+		margin-top: 3rem;
 		padding: 0 2rem;
 	}
 
@@ -321,8 +309,8 @@ line-height: 3rem;
                     FAQ PAGE
     --------------------------------------------------*/
     .faq-questions{
-        padding-left:0px;
-		width:90%;
+        padding-left: 40px;
+		width:80%;
 	}
 }
 
@@ -331,7 +319,7 @@ line-height: 3rem;
 /*  *   *   *   *   *   *   *   *   *   *   *   *   *   *   *
                     MOBILE VIEW
 *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   */
-@media all and (max-width: 450px) {
+@media all and (max-width: 576px) {
 
     /* -----------------------------------------
                      CHAT DASHBOARD
@@ -362,9 +350,26 @@ line-height: 3rem;
                     FAQ PAGE
     --------------------------------------------------*/
     .faq-questions{
-        padding-left:0px;
-		width:100%;
+        padding-left: 16px;
+		width:90%;
 	}
-        
+
+	/* SECURITY AND PRIVACY PAGE */
+	.security-img img {
+		width: 80%;
+	}
+
+	#sp-flex {
+		flex-direction: column;
+		text-align: center;
+	}
+
+	.sp-box {
+		margin: 1rem auto;
+	}
+	
+	.sp-box h4 {
+		padding-bottom: 10px;
+	}
 }
     

@@ -14,6 +14,10 @@ const logInPage = document.getElementById("log-page");
 const signUpPage = document.getElementById("sign-page");
 const logInTab = document.querySelector("#login-tab");
 const signUpTab = document.querySelector("#signup-tab");
+<<<<<<< HEAD
+
+
+=======
 const adminUserSetting1 = document.getElementById("admin-user-setting1");
 const adminUserSetting2 = document.getElementById("admin-user-setting2");
 const adminUserSetting3 = document.getElementById("admin-user-setting3");
@@ -31,6 +35,7 @@ const adminSupportTicket1 = document.getElementById("admin-support-ticket1");
 const adminSupportTicket2 = document.getElementById("admin-support-ticket2");
 const adminSupportTicket3 = document.getElementById("admin-support-ticket3");
  
+>>>>>>> 46f6aa9dff5c06bb0e11001b6d76ab6cf686beb3
 /** Toggle mobile menu **/
 function toggleMenu() {
     if (navbar.classList.contains("show")) {
@@ -152,9 +157,15 @@ function toggleChatBox(e){
 }
 
 chatboxButton.addEventListener("click", toggleChatBox, false);
+<<<<<<< HEAD
 
 // toggleChatBox();
 
+=======
+
+// toggleChatBox();
+
+>>>>>>> 46f6aa9dff5c06bb0e11001b6d76ab6cf686beb3
 // LOGIN AND SIGN UP TAB
 
 function tabForm(param) {
@@ -171,6 +182,13 @@ function tabForm(param) {
     }
 }
 
+<<<<<<< HEAD
+function reveal(x){
+    if(document.getElementById(x).style.display === "none"){
+        document.getElementById(x).style.display = "block";
+    } else {
+        document.getElementById(x).style.display = "none";
+=======
 function dropDown(use) {
     switch (use) {
         case 1:
@@ -230,5 +248,6 @@ function reveal(x){
         x.style.display = "block";
     } else {
         x.style.display = "none";
+>>>>>>> 46f6aa9dff5c06bb0e11001b6d76ab6cf686beb3
     }
 }
