@@ -5,18 +5,14 @@
                     ABOUT PAGE
     ---------------------------------------------------*/
 
-.about-main{
-	background-color: var(--light-color);
-	padding-top: 4rem;
-}
-
 .about-heading h3{
     text-align: center;
     font-size: 1.6rem;
+    margin-top: 8rem;
 }
 
 h3 span{
-    color: var(--secondary-color);
+    color: #FAEE1C;
 }
 
 .text h4 {
@@ -221,44 +217,60 @@ h3 span{
 /*--------------------------------------
               PRIVACY AND SECURITY 
 ----------------------------------------*/
-.security-main {
-	background-color: var(--light-color);
-}
-
-.security-img {
-	padding-top: 2rem;
-	text-align: center;
-}
-
-.security-img img {
-	width: 50%;
-}
 
 #sp-flex {
 	display: flex;
-	width: 90%;
+	flex-direction: row;
 	flex: 1;
-	justify-content: space-between;
-	margin: 2rem auto 0;
-	padding-bottom: 4rem;
-	text-align: center;	
+	justify-content: space-evenly;
+	height: 100vh;
+	margin: auto;
+margin-top: 50px;	
+	
 }
-
 #sp-flex a{
-	text-decoration: none;
-	color: var(--primary-color);  	
-}
-
-#sp-flex a:hover{
-	color: var(--secondary-color);
+    text-decoration: none;
+    	
+    }
+    #sp-flex a:hover{
+        color: var(--primary-color);
+    }
+#sp1 {
 	background: var(--primary-color);
-	padding: 6px;
-	border-radius: 6px;
+	width: 20vw;
+	margin-bottom: 15px;
+}
+#sp1-content #profile {
+	background: var(--light-color);
+	padding: 10px;
+	margin-bottom: 10px;
+}
+#sp1-content #history {
+	background: var(--light-color);
+	padding: 10px;
+	margin-bottom: 10px;
+}
+#sp1-content #bookmarks {
+	background: var(--light-color);
+	padding: 10px;
+	margin-bottom: 10px;
+}
+#sp1-content #logout {
+	background: var(--light-color);
+	padding: 10px;
+	margin-bottom: 10px;
+}
+#sp1-image{
+	background: url(../users/Kristina.jpg) no-repeat center center/cover;
+	border-radius: 50%;
+	margin-bottom: 50px;
+	height: 200px;
+	width: 50%;
+	margin: 20px auto; 
 }
 
-#sp-flex p {
-	padding: 10px 0;
-	font-size: 16px;
+#sp2 a, #sp3 a, #sp4 a {
+line-height: 3rem;
 }
 
 
@@ -272,7 +284,7 @@ h3 span{
                     ABOUT PAGE
     =--------------------------------------------------*/
 	.about-heading{
-		margin-top: 3rem;
+		margin-top: 5rem;
 		padding: 0 2rem;
 	}
 
@@ -309,8 +321,8 @@ h3 span{
                     FAQ PAGE
     --------------------------------------------------*/
     .faq-questions{
-        padding-left: 40px;
-		width:80%;
+        padding-left:0px;
+		width:90%;
 	}
 }
 
@@ -319,7 +331,7 @@ h3 span{
 /*  *   *   *   *   *   *   *   *   *   *   *   *   *   *   *
                     MOBILE VIEW
 *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   */
-@media all and (max-width: 576px) {
+@media all and (max-width: 450px) {
 
     /* -----------------------------------------
                      CHAT DASHBOARD
@@ -350,26 +362,9 @@ h3 span{
                     FAQ PAGE
     --------------------------------------------------*/
     .faq-questions{
-        padding-left: 16px;
-		width:90%;
+        padding-left:0px;
+		width:100%;
 	}
-
-	/* SECURITY AND PRIVACY PAGE */
-	.security-img img {
-		width: 80%;
-	}
-
-	#sp-flex {
-		flex-direction: column;
-		text-align: center;
-	}
-
-	.sp-box {
-		margin: 1rem auto;
-	}
-	
-	.sp-box h4 {
-		padding-bottom: 10px;
-	}
+        
 }
     
