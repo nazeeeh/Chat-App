@@ -217,8 +217,6 @@ a {
 	background-color: #E5E5E5;
 	padding: 100px;
 	text-align: center;
-	height: 100vh;
-	overflow-y: scroll;
 }
 .iSearch-page img {
 	border-radius: 50%;
@@ -251,7 +249,7 @@ a {
 	font-family: Roboto;
 	font-style: normal;
 	font-weight: bold;
-	font-size: 29px;
+	font-size: 20px;
 	line-height: 34px;
 	text-align: left;
 	margin-left: -70px;
@@ -264,7 +262,7 @@ a {
 	margin-left: -70px;
 	background: #CCCCCC;
 	border-radius: 10px;
-	height: 50px;
+	height: 40px;
 	float: left;
 	font-size: 29px;
 	line-height: 34px;
@@ -272,19 +270,18 @@ a {
 	margin-bottom: 20px;
 	width: 100%;
 }
-#iSearch-form button {
+#iSearch-form button, #isearch-geolocation {
 	border-radius: 10px;
-	height: 50px;
+	height: 40px;
 	font-size: 15px;
-	line-height: 34px;
+	font-weight: bold;
 	padding: 5px;
-	margin-top: 10px;
-	margin-bottom: 20px;
+	margin-top: 5px;
+	margin-bottom: 15px;
 	width: 50%;
 	margin-left: 5px;
 	background: var(--primary-color);
 	color: var(--light-color);
-	font-size: 25px;
 }
 .iSearchInfo img{
 	border-radius: 50%;
@@ -297,18 +294,15 @@ a {
 	background: #C4C4C4;
 	margin-top: 10px;
 	padding: 10px;
-	overflow-y: scroll;
 }
 #iSearch-result {
-	margin-top: 20px;
+	margin-top: 10px;
 	margin-left: -70px;
-	overflow-y: scroll;
 }
 .iSearch-container {
 	padding: 5px;
 	color: #000000;
 	text-align: left;
-	overflow-y: scroll;
 }
 .iSearchResults .btn {
 	height: 50px;

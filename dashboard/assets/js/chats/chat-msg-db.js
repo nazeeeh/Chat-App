@@ -55,7 +55,7 @@ ichats = [
         }
     ];
     //This gives room for the data to be accessible from any browser in any device (Apart from Internet Explorer)
-    localStorage.setItem("iusers", JSON.stringify(ichats)); //Stores the data in the Local Storage
+    localStorage.setItem("ichats", JSON.stringify(ichats)); //Stores the data in the Local Storage
     ichats = JSON.parse(localStorage.getItem("ichats"));
 }
 
