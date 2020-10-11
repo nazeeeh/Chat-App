@@ -345,6 +345,7 @@ a {
 .show{
 	display: block;
 }
+
 #admin-head {
 	display: flex;
 	padding: 1rem 0;
