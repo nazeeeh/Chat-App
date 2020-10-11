@@ -22,7 +22,7 @@ iusers = [
             "userType" : "user",
             "level" : "0",
             "ban" : "0" ,
-            "latlong" : [6.4516,3.3894]
+            "latlong" : [6.443261653,3.391531071]
         },
         {
             "userID" : 2,
@@ -37,7 +37,7 @@ iusers = [
             "userType" : "user",
             "level" : "0",
             "ban" : "0" ,
-            "latlong" : [9.0667,7.4833]
+            "latlong" : [9.083333149,7.533328002]
         },
         {
             "userID" : 3,
@@ -52,7 +52,7 @@ iusers = [
             "userType" : "user",
             "level" : "0",
             "ban" : "0" ,
-            "latlong" : [9.0667,7.4833]
+            "latlong" : [9.083333149,7.533328002]
         },
         {						
             "userID" : 4,
@@ -67,7 +67,7 @@ iusers = [
             "userType" : "admin",
             "level" : "1",
             "ban" : "0" ,
-            "latlong" : [9.0667,7.4833]
+            "latlong" : [9.083333149,7.533328002]
         },
         {
             "userID" : 5,
@@ -82,7 +82,7 @@ iusers = [
             "userType" : "admin",
             "level" : "2",
             "ban" : "0" ,
-            "latlong" : [7.4233,3.9846]
+            "latlong" : [7.970016092,3.590002806]
         }
     ];
     //This gives room for the data to be accessible from any browser in any device (Apart from Internet Explorer)
