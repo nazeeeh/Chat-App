@@ -3,8 +3,6 @@
 /** Declaring Variables **/
 const toggle = document.querySelector(".toggle");
 const navbar = document.querySelector(".navbar");
- 
-
 const chat_box = document.getElementById("chatbox");
 
 // chat_box.style.display = "none";
@@ -124,11 +122,7 @@ function toggleChatBox(e){
 
     e.preventDefault();
 
-    console.log(chat_box.style.display);
-    //const chat_box = document.getElementById("chatbox");
-
     if(chat_box.style.display == "none"){
-        
         chat_box.style.display = "block"
     }else{
         chat_box.style.display = "none"
@@ -136,7 +130,7 @@ function toggleChatBox(e){
     
 }
 
-// chatboxButton.addEventListener("click", toggleChatBox, false);
+chatboxButton.addEventListener("click", toggleChatBox, false);
 
 // toggleChatBox();
 
