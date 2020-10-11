@@ -60,7 +60,7 @@ searchGeo.addEventListener("click", function() {
         var ilocation = iusers[i].latlong;
         var distance = latlon.distanceTo(new LatLon(Number(ilocation[0]),Number(ilocation[1])));
         var newDistance = parseInt(distance)
-        if (distance < 2000000) {
+        if (distance < 200000) {
             locationuser[locationuser.length] = 
     {   "img" : iusers[i].img,
         "fullName" : iusers[i].fullName,
