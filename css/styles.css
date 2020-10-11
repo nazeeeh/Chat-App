@@ -31,10 +31,6 @@ nav {
     background: var(--primary-color);
 	width: 100%;
 }
-<<<<<<< HEAD
-=======
-
->>>>>>> 46f6aa9dff5c06bb0e11001b6d76ab6cf686beb3
 
 a {
 	text-decoration: none;
@@ -325,11 +321,6 @@ a {
 	font-weight: bold;
 }
 
-<<<<<<< HEAD
-/* FORGOT PASSWORD PAGE */
-.forgot-img {
-	margin-top: 2rem;
-=======
 .submit{
 	width: 25%;
 	border-radius: 10px;
@@ -344,15 +335,12 @@ a {
 	margin-bottom: 4%;
 	border: 2px solid #E2D70C;
 	color: #fff;
->>>>>>> 46f6aa9dff5c06bb0e11001b6d76ab6cf686beb3
 }
 .forgot-form {
 	width: 80%;
 	margin: 2rem auto 5rem;
 }
 
-<<<<<<< HEAD
-=======
 /* FORGOT PASSWORD PAGE */
 .forgot-img {
 	margin-top: 2rem;
@@ -362,7 +350,6 @@ a {
 	margin: 2rem auto 5rem;
 }
 
->>>>>>> 46f6aa9dff5c06bb0e11001b6d76ab6cf686beb3
 .forgot-form button {
 	width: 30%;
 	margin-top: 10px;
@@ -525,7 +512,6 @@ textarea::placeholder{
 	color:#E2D70C;
 	font-size: 22px;
 	border-radius: 100%;
-<<<<<<< HEAD
 	border: 2px solid var(--secondary-color)
 }
 
@@ -540,9 +526,6 @@ textarea::placeholder{
 	height: 100%;
 	overflow: auto;
 	background-color: rgba(17,14,76, 0.8);
-=======
-	border: 1px solid var(--secondary-color)
->>>>>>> 46f6aa9dff5c06bb0e11001b6d76ab6cf686beb3
 }
 
 /* Live Chat Styling */
@@ -666,7 +649,6 @@ textarea::placeholder{
 }
 
 /* 	--------------------------------------------------
-<<<<<<< HEAD
 				 Sign Up And Log In Page
 ----------------------------------------------------- */
 .signup-page-container {
@@ -675,10 +657,6 @@ textarea::placeholder{
 	flex-direction: column;
 }
 
-=======
-				 Sign Up And Sign Up Page
------------------------------------------------------ */
->>>>>>> 46f6aa9dff5c06bb0e11001b6d76ab6cf686beb3
 .desktop-img{
 	display: none;
 }
@@ -688,77 +666,6 @@ textarea::placeholder{
 	max-width: 600px;
 }
 
-<<<<<<< HEAD
-.form-tab{
-	display:flex;
-	flex-direction: column;
-	margin-bottom: 4rem;
-}
-
-.form-tab-nav{
-	width: 80%;
-	margin: 0 auto;
-	max-width: 450px;
-}
-
-.form-tab-nav ul{
-	display:flex;
-	justify-content: center;
-	list-style: none;
-	width: 100%;
-}
-.form-tab-nav ul li {
-	width: 100%;
-}
-.form-tab-nav .tablist button {
-	width: 100%;
-	border-style: none;
-	padding: 10px;
-	background-color: var(--primary-color);
-	color:#fff;
-	font-weight: bold;
-}
-
-.signup-tab-btn button {
-	border-radius: 10px 0 0 0;
-	transition: all 0.6s ease;
-}
-
-.login-tab-btn button {
-	border-radius: 0 10px 0 0;
-	transition: all 0.6s ease;
-}
-
-.signup-tab-btn button:hover,
-.login-tab-btn button:hover{
-	border: 2px solid var(--secondary-color);
-}
-
-.signup-tab-btn button:focus,
-.login-tab-btn button:focus {
-	background-color: var(--secondary-color);
-	color: var(--primary-color);
-	outline: none;
-}
-
-.form-tab-body {
-	width: 80%;
-	max-width: 450px;
-	margin: 0 auto;
-	padding: 20px 0;
-	background-color: var(--light-color);
-}
-.form-tab-body h4 {
-	padding-bottom: 20px;
-}
-
-.form-tab-body .login-form {
-	display: none;
-}
-
-.sign-form input:focus {
-    border: 2px solid var(--primary-color);
-=======
 .form-tab {
 	background: var(--light-color);
 	margin: 2rem auto;
@@ -793,37 +700,15 @@ label {
 
 .sign-form input:focus {
     border: 2px solid var(--secondary-color);
->>>>>>> 46f6aa9dff5c06bb0e11001b6d76ab6cf686beb3
 }
 
 .sign-form input {
 	padding: 10px;
-<<<<<<< HEAD
-	margin: 0 0 10px;
-=======
->>>>>>> 46f6aa9dff5c06bb0e11001b6d76ab6cf686beb3
 	border-radius: 8px;
 	border-top: none;
 	border-right: 2px solid var(--primary-color);
 	border-left: 2px solid var(--primary-color);
 	border-bottom: 2px solid var(--secondary-color);
-<<<<<<< HEAD
-    width: 80%;
-	outline: none;
-}
-
-.signbtn {
-    padding: 10px 10px;
-    border-radius: 10px;
-	background: var(--primary-color);
-	border-bottom: 3px solid #E2D70C;
-    text-align: center;
-    font-size: 0.8rem;
-	color: var(--light-color);
-	transition: all 0.6s ease;
-}
-
-=======
     width: 100%;
     outline: none;
 }
@@ -839,28 +724,17 @@ label {
     font-size: 20px;
     color: var(--light-color);
 }
->>>>>>> 46f6aa9dff5c06bb0e11001b6d76ab6cf686beb3
 .signbtn:hover {
     color: var(--primary-color);
 	background: var(--light-color);
 }
 
 .sign-form p {
-<<<<<<< HEAD
-	padding: 14px 16px;
-	margin-bottom: 10px;
-	line-height: 1rem;
-	text-align: center;
-	font-size: 0.8rem;
-}
-
-=======
 	padding: 14px 0;
 	margin-bottom: 10px;
 	line-height: 1rem;
     text-align: center;
 }
->>>>>>> 46f6aa9dff5c06bb0e11001b6d76ab6cf686beb3
 
 /* ----------------------------------------------------
 				TERMS OF SERVICE PAGE
@@ -1410,76 +1284,16 @@ label {
     .toggle {
         display: none;
 	}
-<<<<<<< HEAD
-
-	/* Home Page */
-	.hero-img {
-		width: 38%;
-	}
-	
-	
-	/* Sign-up Form */
-	.signup-page-container {
-		flex-direction: row;
-		align-items: center;
-		justify-items: center;
-	}
-
-	.desktop-img{
-		display: block;
-		width: 100%;
-=======
 	
 	/* Sign-up Form */
 	.desktop-img{
 		display: block;
->>>>>>> 46f6aa9dff5c06bb0e11001b6d76ab6cf686beb3
 	}
 
 	.mobile-img{
 		display: none;
 	}
 
-<<<<<<< HEAD
-	.form-img{
-		width: 50%;
-	}
-
-	.form-tab{
-		margin: 4rem 0;
-	}
-
-	/* Admin Dashboard*/
-	.admin-body{
-		display: flex;
-		flex-wrap: wrap;
-	}
-	.admin-container {
-		width: 80%;
-		margin: 2rem auto 1rem;
-	}
-	.admin-chathistory {
-		margin: 3rem 0.5rem;
-		width: 40%;
-		font-size: 16px;
-		height: 500px;
-	}
-	.admin-activities {
-		width: 50%;
-		font-size: 18px;
-	}
-	.timeline__box {
-		padding-top: 20px;
-		margin-top: 0.5rem;
-	}
-	.livechat-body {
-		display: block;
-	}
-}
-
-/* Extra large devices (large desktops, 1200px and up) */
-@media (min-width: 1200px) { ... }
-=======
 }
 
 /* Error Reporting */
@@ -1495,4 +1309,3 @@ label {
 	padding: 10px; border-radius: 5px;
 	display: none; margin: 10px 0 4px;
 }
->>>>>>> 46f6aa9dff5c06bb0e11001b6d76ab6cf686beb3
