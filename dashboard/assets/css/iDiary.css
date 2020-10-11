@@ -4,22 +4,16 @@
 		width: 100%;
 	}
 
-	#title-bar{
+	.title-bar{
 		background-color: lightslategrey;
-		padding:10px;
+		display:flex;
+		flex-direction: row;
+		justify-content: space-between;
+		padding: 10px 20px 9px 20px;
 		margin-bottom: 30px;
 	}
 
-	#featureTitle{
-		display:inline-block;
-		padding-left:10px;
-	}
-
-	#title-bar > span{
-		margin-left: 80%;
-	}
-
-	#title-bar > span >i:hover{
+	.title-bar > span >i:hover{
 		font-size: 30px;
 	}
 
