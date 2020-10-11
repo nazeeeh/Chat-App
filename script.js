@@ -151,7 +151,7 @@ function toggleChatBox(e){
     
 }
 
-chatboxButton.addEventListener("click", toggleChatBox, false);
+// chatboxButton.addEventListener("click", toggleChatBox, false);
 
 // toggleChatBox();
 

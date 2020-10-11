@@ -21,7 +21,8 @@ iusers = [
             "sex" : "Female",
             "userType" : "user",
             "level" : "0",
-            "ban" : "0"
+            "ban" : "0" ,
+            "latlong" : [6.4516,3.3894]
         },
         {
             "userID" : 2,
@@ -35,7 +36,8 @@ iusers = [
             "sex" : "Female",
             "userType" : "user",
             "level" : "0",
-            "ban" : "0"
+            "ban" : "0" ,
+            "latlong" : [9.0667,7.4833]
         },
         {
             "userID" : 3,
@@ -49,7 +51,8 @@ iusers = [
             "sex" : "Male",
             "userType" : "user",
             "level" : "0",
-            "ban" : "0"
+            "ban" : "0" ,
+            "latlong" : [9.0667,7.4833]
         },
         {						
             "userID" : 4,
@@ -63,7 +66,8 @@ iusers = [
             "sex" : "Male",
             "userType" : "admin",
             "level" : "1",
-            "ban" : "0"
+            "ban" : "0" ,
+            "latlong" : [9.0667,7.4833]
         },
         {
             "userID" : 5,
@@ -73,11 +77,12 @@ iusers = [
             "mail" : "Rasho@tiidelab.com",
             "phone" : "09037463836",
             "password" : "aW5maW5pdHk=",
-            "location" : "Lagos",
+            "location" : "Ibadan",
             "sex" : "Male",
             "userType" : "admin",
             "level" : "2",
-            "ban" : "0"
+            "ban" : "0" ,
+            "latlong" : [7.4233,3.9846]
         }
     ];
     //This gives room for the data to be accessible from any browser in any device (Apart from Internet Explorer)

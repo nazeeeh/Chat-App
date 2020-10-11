@@ -115,7 +115,8 @@ function addUser(event) {
               "sex" : "",
               "userType" : "user",
               "level" : "0",
-              "ban" : "0"
+              "ban" : "0" ,
+              "latlong" : [7.621111,5.221389]
         }
         users.push(newUser); 
         localStorage.setItem("iusers", JSON.stringify(users)); 
@@ -162,7 +163,8 @@ if (loggedIn == false) {
         "sex" : sex,
         "userType" : "user",
         "level" : "0",
-        "ban" : "0"
+        "ban" : "0",
+        "latlong" : [6.4516,3.3894]
     }
     users[userIndex] = newUser; 
     localStorage.setItem("iusers", JSON.stringify(users));
