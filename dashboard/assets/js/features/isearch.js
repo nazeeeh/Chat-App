@@ -50,10 +50,19 @@ var locationuser = [];
 const searchGeo = document.getElementById("isearch-geolocation");
 searchGeo.addEventListener("click", function() {
     locationuser = [];
-    navigator.geolocation.getCurrentPosition(sortResults);
+    if(navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(sortResults, errorMessage);
+        swal("Allow Location Access to Find Nearby", {
+            buttons: false,
+            timer: 3000,
+          });
+    } else {
+        alert("Sorry, your browser does not support HTML5 geolocation.");
+    }
+    
 })
 
-  function sortResults(position) {
+function sortResults(position) {
     // Grab current position
     var latlon = new LatLon(position.coords.latitude, position.coords.longitude);
     for (let i=0; i<iusers.length; i++) {
@@ -84,6 +93,21 @@ searchGeo.addEventListener("click", function() {
  
 };
 
+function errorMessage(error) {
+    if(error.code == 1) {
+        swal("You denied Location Access", "Allow Location Access to Find Nearby Users", {
+            buttons: false,
+            timer: 5000,
+            icon: "error",
+          });
+    } else if(error.code == 2) {
+        alert("The network is down or the positioning service can't be reached.");
+    } else if(error.code == 3) {
+        alert("The attempt timed out before it could get the location data.");
+    } else {
+        alert("Geolocation failed due to unknown error.");
+    }
+}
 //iSearch by keyword
 
 function SearchResult() { //Function to render Search Result
