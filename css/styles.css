@@ -112,10 +112,6 @@ a {
     order: 1;
     font-size: 20px;
 }
-.item {
-   
-    /* display: none; */
-}
 
 .show .item {
     display: block;
