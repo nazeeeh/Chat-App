@@ -16,34 +16,34 @@ if(userType != "admin") {
     isAdmin = true; 
 
 
-//////////////////////////////////////////
-adminHead = `<div id="admin-head-img"><img src="../../users/${loggedUserRecord.img}" alt=""></div>
-<h3>Welcome back, <span>${loggedUserRecord.fullName}</span>!</h3> <a href="../index.html"><i class="fas fa-reply-all fa-1x"></i> Back to Chats</a>`;
-document.getElementById("admin-head").innerHTML = adminHead;
+    //////////////////////////////////////////
+    adminHead = `<div id="admin-head-img"><img src="../../users/${loggedUserRecord.img}" alt=""></div>
+    <h3>Welcome back, <span>${loggedUserRecord.fullName}</span>!</h3> <a href="../index.html"><i class="fas fa-reply-all fa-1x"></i> Back to Chats</a>`;
+    document.getElementById("admin-head").innerHTML = adminHead;
 
-////////////////////////////////////////////
-users = getUsers();
-originalUsers = getUsers();
-adminBoxBody = `<i class="fas fa-user-plus dash-icon"></i>
-<h2>${users.length}</h2>
-<p>User Sign-ups</p>`;
-document.getElementById("admin-dashboard-box-body").innerHTML = adminBoxBody;
+    ////////////////////////////////////////////
+    users = getUsers();
+    originalUsers = getUsers();
+    adminBoxBody = `<i class="fas fa-user-plus dash-icon"></i>
+    <h2>${users.length}</h2>
+    <p>User Sign-ups</p>`;
+    document.getElementById("admin-dashboard-box-body").innerHTML = adminBoxBody;
 
-///////////////////////////////////////////////
-function searchUser() {
-    //search for all results using filter & includes (Part match but case insensitive)
-    param = (document.getElementById("user-search").value).toLowerCase();
-        users = originalUsers.filter(x=>x.userName.toLowerCase().includes(param));
-        if(users == undefined || users == null || users == "") {
-            alert(`No record found for ${param}.`);
-        } else {
-            //document.getElementById("recordBar").style.display = "block";
-            //setRecord(fellows.length);
-            displayInfo(users);
-        }
+    ///////////////////////////////////////////////
+    function searchUser() {
+        //search for all results using filter & includes (Part match but case insensitive)
+        param = (document.getElementById("user-search").value).toLowerCase();
+            users = originalUsers.filter(x=>x.userName.toLowerCase().includes(param));
+            if(users == undefined || users == null || users == "") {
+                alert(`No record found for ${param}.`);
+            } else {
+                //document.getElementById("recordBar").style.display = "block";
+                //setRecord(fellows.length);
+                displayInfo(users);
+            }
     }
 
-function displayInfo(users) { //Displays the Info
+    function displayInfo(users) { //Displays the Info
         showUsers = "";
         if(users.length > 4) {
             arrLength = 4;
