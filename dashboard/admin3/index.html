@@ -21,8 +21,8 @@
                 <div class="admin-dashboard-box">
                     <div id="admin-dashboard-box-body"></div>
                     <div class="admin-dashboard-box-foot">
-                        <a onclick="dropDown(9)">View details </a>
-                        <a onclick="dropDown(9)"><i class="fas fa-angle-down"></i></a>
+                        <a onclick="reveal('admin-user-list')">View details </a>
+                        <a onclick="reveal('admin-user-list')"><i class="fas fa-angle-down"></i></a>
                     </div>
                     <div class="admin-dashboard-details" id="admin-user-list">
                         <input type="search" id="user-search"  placeholder="Search user...">
@@ -38,8 +38,8 @@
                         <p>Active Chatrooms</p>
                     </div>
                     <div class="admin-chatrooms2 admin-dashboard-box-foot">
-                        <a onclick="dropDown(10)">View details </a>
-                        <a onclick="dropDown(10)"><i class="fas fa-angle-down"></i></a>
+                        <a onclick="reveal('admin-chatroom-list')">View details </a>
+                        <a onclick="reveal('admin-chatroom-list')"><i class="fas fa-angle-down"></i></a>
                     </div>
                     <div class="admin-dashboard-details" id="admin-chatroom-list">
                         <p>Create chat room <i class="fas fa-plus-circle"></i></p>
@@ -48,7 +48,7 @@
                         <div class="admin-user-results">
                             <div class="admin-user-search">
                                 <a href="">Football</a>
-                                <a onclick="dropDown(5);"><i class="fas fa-ellipsis-v"></i></a>
+                                <a onclick="reveal('admin-chat-setting1')"><i class="fas fa-ellipsis-v"></i></a>
                                 <div class="admin-user-function" id="admin-chat-setting1">
                                     <p>Edit chat room details</p>
                                     <p>Delete chat room</p>
@@ -57,7 +57,7 @@
                             </div>
                             <div class="admin-user-search">
                                 <a href="">Politics</a>
-                                <a onclick="dropDown(6);"><i class="fas fa-ellipsis-v"></i></a>
+                                <a onclick="reveal('admin-chat-setting2')"><i class="fas fa-ellipsis-v"></i></a>
                                 <div class="admin-user-function" id="admin-chat-setting2">
                                     <p>Edit chat room details</p>
                                     <p>Delete chat room</p>
@@ -66,7 +66,7 @@
                             </div>
                             <div class="admin-user-search">
                                 <a href="">Naija Gossip</a>
-                                <a onclick="dropDown(7);"><i class="fas fa-ellipsis-v"></i></a>
+                                <a onclick="reveal('admin-chat-setting3')"><i class="fas fa-ellipsis-v"></i></a>
                                 <div class="admin-user-function" id="admin-chat-setting3">
                                     <p>Edit chat room details</p>
                                     <p>Delete chat room</p>
@@ -75,7 +75,7 @@
                             </div>
                             <div class="admin-user-search">
                                 <a href="">Love & Relationships</a>
-                                <a onclick="dropDown(8);"><i class="fas fa-ellipsis-v"></i></a>
+                                <a onclick="reveal('admin-chat-setting4')"><i class="fas fa-ellipsis-v"></i></a>
                                 <div class="admin-user-function" id="admin-chat-setting4">
                                     <p>Edit chat room details</p>
                                     <p>Delete chat room</p>
@@ -94,7 +94,7 @@
                     </div>
                     <div class="admin-dashboard-box-foot">
                         <a href="">View details </a>
-                        <a onclick="dropDown(12)"><i class="fas fa-angle-down"></i></a>
+                        <a onclick="reveal('admin-livechat-active')"><i class="fas fa-angle-down"></i></a>
                     </div>
                     <div class="admin-dashboard-details" id="admin-livechat-active">
                         <div class="livechat-list">
@@ -157,12 +157,12 @@
                     </div>
                     <div class="admin-dashboard-box-foot">
                         <a href="">View details</a>
-                        <a onclick="dropDown(13)"><i class="fas fa-angle-down"></i></a>
+                        <a onclick="reveal('admin-support-ticket')"><i class="fas fa-angle-down"></i></a>
                     </div>
                     <div class="admin-dashboard-details" id="admin-support-ticket">
                         <div class="admin-user-search">
                             <a href="">Flag Reported Post</a>
-                            <a onclick="dropDown(14);"><i class="fas fa-ellipsis-v"></i></a>
+                            <a onclick="reveal('admin-support-ticket1')"><i class="fas fa-ellipsis-v"></i></a>
                             <div class="admin-user-function" id="admin-support-ticket1">
                                 <p>Mark "in progress"</p>
                                 <p>Mark "done"</p>
@@ -171,7 +171,7 @@
                         </div>
                         <div class="admin-user-search">
                             <a href="">Create "Hairstyles" chatroom</a>
-                            <a onclick="dropDown(15);"><i class="fas fa-ellipsis-v"></i></a>
+                            <a onclick="reveal('admin-support-ticket2')"><i class="fas fa-ellipsis-v"></i></a>
                             <div class="admin-user-function" id="admin-support-ticket2">
                                 <p>Mark "in progress"</p>
                                 <p>Mark "done"</p>
@@ -180,7 +180,7 @@
                         </div>
                         <div class="admin-user-search">
                             <a href="">Disable User Account</a>
-                            <a onclick="dropDown(16);"><i class="fas fa-ellipsis-v"></i></a>
+                            <a onclick="reveal('admin-support-ticket3')"><i class="fas fa-ellipsis-v"></i></a>
                             <div class="admin-user-function" id="admin-support-ticket3">
                                 <p>Mark "in progress"</p>
                                 <p>Mark "done"</p>
@@ -287,7 +287,7 @@
             <div class="admin-chathistory">
                 <div class="livechat-head">
                     <h3>Live Support Chat History</h3>
-                    <a onclick="dropDown(11);"><i class="fas fa-angle-down"></i></a>
+                    <a onclick="reveal('admin-livechat-list')"><i class="fas fa-angle-down"></i></a>
                 </div>
                 <div class="livechat-body" id="admin-livechat-list">
                     <div class="livechat-list">
