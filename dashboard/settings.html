@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, intial-scale=1.0">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<meta name="Description" content="i2talk">
 	<meta name="Keywords" content="Chat App, Chat rooms, Message Scheduling, Location-based User search, chats, iDiary, iSchedule, iReminder, iSearch">
@@ -109,13 +109,74 @@
 
   </div>
   <!-- Message Menu-->
-  <div class="chat-message">
-  	<div id="main-container">
-	<img src="../assets/connect.jpg">
-  	<h1>Welcome to i2talk</h1>
-  	<p>No conversation in sync. Please, search for users and start chat.</p>
-  </div> 	  
-</div> 
+  <div class="settings-container">
+
+    <nav class="settings-title-bar">
+
+        <h2 id="settingsTitle">Settings</h2>
+        
+        <span style="font-size:25px; color:#110E4C;">
+          <i class="fas fa-ellipsis-v"></i>
+            <i class="fas fa-cog"></i>
+        </span>
+      
+    </nav>
+
+     <div id="editBioForm">
+        <textarea type="text" placeholder="" name="bio" id="editBioInput" rows="3" cols="60"></textarea>
+        <button class="button"  onclick="displayEditedBio()">Add Changes</button>
+        <button  class="button" onclick="backBio()">Cancel</button>
+     </div>
+
+    <div id="settings-main">
+      <div class="profile-block">
+        <div id="settings-profile-box"></div>
+        <button class="button"><i class="far fa-edit"></i>Edit Profile</button>
+      </div>
+
+      <h2>Account</h2>
+
+      <div class="settings-item">
+        <h3>Bio</h3>
+        <p id="profile-bio-details">Hi, I'm new to the i2talk chatting platform</p>
+        <button id="editBio-btn" class="button" onclick="changeBio()"><i class="far fa-edit"></i>Edit Bio</button>
+      </div>
+
+      <div class="settings-item">
+        <h3>Phone Number</h3>
+        <p id="profile-phone-number"></p>
+      </div>
+
+      <div class="settings-item">
+        <h3>Location</h3>
+        <p id="profile-location"></p>
+      </div>
+
+      <h2>Settings</h2>
+
+      <div class="settings-item">
+         <h3><i class="fas fa-user-shield"></i> &nbsp Privacy and Security</h3>
+      </div>
+
+      <div class="settings-item">  
+        <h3> <i class="fas fa-bell"></i> &nbsp Notifications and Sound</h3>
+      </div>
+
+      <div class="settings-item">  
+        <h3><i class="fas fa-user-cog"></i> &nbsp Chat Settings</h3>
+      </div>
+
+      <div class="settings-item">  
+        <h3><i class="fas fa-server"></i> &nbsp Data and Storage</h3>
+      </div>
+
+      <div class="settings-item">
+        <h3><i class="fas fa-question-circle"></i> &nbsp Help</h3>
+      </div>
+
+    </div>
+
+  </div>
 </div>
 <script src="./assets/js/users/users-db.js"></script>
 <script src="./assets/js/chats/chat-msg-db.js"></script>
