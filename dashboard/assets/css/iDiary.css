@@ -1,15 +1,18 @@
 
 	#iDiary-container{
 		background-color:var(--light-color);
-		width: 100%;
+		width: 60%;
 	}
 
 	.title-bar{
-		background-color: lightslategrey;
+		background-color: var(--primary-color);
+		position: sticky;
+		top: 0;
+		color: #fff;
 		display:flex;
 		flex-direction: row;
 		justify-content: space-between;
-		padding: 10px 20px 9px 20px;
+		padding: 20px 16px;
 		margin-bottom: 30px;
 	}
 

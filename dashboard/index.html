@@ -17,21 +17,42 @@
 <body>
 <div class="chat-container">
   <!-- Side Bar Menu-->
-  <div class="side-bar">
-  	<div id="profile"></div>
+  <div class="side-bar" id="user-side-bar">
+	<div class="chat-header">
+		<a class="profile-back-arrow" onclick="showSideBar('user-chat-menu', 'user-side-bar')"><i class="fas fa-long-arrow-alt-left"></i></a>
+		<h3>Profile</h3>
+	</div>
+  	<div id="profile" class="side-bar-profile"></div>
   	<div id="profile-box"></div>
-  	<div id="side-menu-container"></div>
+  	<div id="side-menu-container" class="side-menu"></div>
   </div>
+  
   <!-- Chat Menu-->
-  <div class="chat-menu">
+  <div class="chat-menu" id="user-chat-menu">
+	<div class="chat-menu-profile">
+		<div id="menu-profile" onclick="showSideBar('user-side-bar', 'user-chat-menu')" class="chat-menu-open side-bar-profile"></div>
+		<div class="tooltip">
+			<a href="./isearch.html"><i class="fas fa-search fa-1x"></i></a>
+			<p class="tooltiptext">iSearch</p>
+		</div>
+		<div class="tooltip">
+			<a href=""><i class="far fa-comment-dots"></i></a>
+			<p class="tooltiptext">New Chat</p>
+		</div>
+		<div class="tooltip">
+			<a onclick=""><i class="fas fa-ellipsis-v"></i></a>
+			<p class="tooltiptext">Menu</p>
+		</div>
+	</div>
   	<div class="chat-header">
-  		Chats <span class="chat-counter">7</span>
+		<span>Chats</span>
+		<span class="chat-counter">7</span>
   	</div>
   	<div class="chat-box">
   		<div class="chat-box-img">
   			<img src="../users/mira.jfif">
   		</div>
-  		<div class="chat-box-msg">
+  		<div class="chat-box-msg" onclick="showSideBar('user-direct-chat', 'user-chat-menu')">
   			<h4>Mum</h4>
   			<p>Mum, I need more money...</p>
   		</div>
@@ -40,11 +61,11 @@
   			<h6>9:23pm</h6>
   		</div>
   	</div>
-  	  	<div class="chat-box">
+  	<div class="chat-box">
   		<div class="chat-box-img">
   			<img src="../users/user3.png">
   		</div>
-  		<div class="chat-box-msg">
+  		<div class="chat-box-msg" onclick="showSideBar('user-direct-chat', 'user-chat-menu')">
   			<h4>TIIDELab Cohorts 2</h4>
   			<p>Biggie is calling all of you...</p>
   		</div>
@@ -53,11 +74,11 @@
   			<h6>8:30pm</h6>
   		</div>
   	</div>
-  	  	<div class="chat-box">
+  	<div class="chat-box">
   		<div class="chat-box-img">
   			<img src="../users/user4.png">
   		</div>
-  		<div class="chat-box-msg">
+  		<div class="chat-box-msg" onclick="showSideBar('user-direct-chat', 'user-chat-menu')">
   			<h4>Jane</h4>
   			<p>When are you going there?</p>
   		</div>
@@ -66,11 +87,11 @@
   			<h6>6:01pm</h6>
   		</div>
   	</div>
-  	  	<div class="chat-box">
+  	<div class="chat-box">
   		<div class="chat-box-img">
   			<img src="../users/deven.jpg">
   		</div>
-  		<div class="chat-box-msg">
+  		<div class="chat-box-msg" onclick="showSideBar('user-direct-chat', 'user-chat-menu')">
   			<h4>Kate</h4>
   			<p>I was able to get those stuffs.</p>
   		</div>
@@ -79,11 +100,11 @@
   			<h6>5:13pm</h6>
   		</div>
   	</div>
-  	  	<div class="chat-box">
+  	<div class="chat-box">
   		<div class="chat-box-img">
   			<img src="../users/user7.jpg">
   		</div>
-  		<div class="chat-box-msg">
+  		<div class="chat-box-msg" onclick="showSideBar('user-direct-chat', 'user-chat-menu')">
   			<h4>Mr. Samuel</h4>
   			<p>I'm waiting till next week...</p>
   		</div>
@@ -92,11 +113,11 @@
   			<h6>4:20pm</h6>
   		</div>
   	</div>
-  	  	<div class="chat-box">
+  	<div class="chat-box">
   		<div class="chat-box-img">
   			<img src="../users/Kristina.jpg">
   		</div>
-  		<div class="chat-box-msg">
+  		<div class="chat-box-msg" onclick="showSideBar('user-direct-chat', 'user-chat-menu')">
   			<h4>Kristi</h4>
   			<p>Mum, I need more money...</p>
   		</div>
@@ -107,21 +128,56 @@
   	</div>
 
   </div>
-  <!-- Message Menu-->
-  <div class="chat-message">
-  	<div id="main-container">
-	<img src="../assets/connect.jpg">
-  	<h1>Welcome to i2talk</h1>
-  	<p>No conversation in sync. Please, search for users and start chat.</p>
-  </div> 	  
-</div> 
+  	<!-- Message Menu-->
+  	<!-- <div class="chat-message">
+		<div id="main-container">
+			<img src="../assets/connect.jpg">
+			<h1>Welcome to i2talk</h1>
+			<p>No conversation in sync. Please, search for users and start chat.</p>
+		</div> 	  
+	</div> -->
+	<div class="chat-message-container">
+		<div class="chat-message" id="user-direct-chat">
+			<!-- Enter your code here -->
+			<div class="chat-header">
+				<a class="message-back-arrow" onclick="showSideBar('user-chat-menu', 'user-direct-chat')"><i class="fas fa-long-arrow-alt-left"></i></a>
+				<div class="chat-head-img">
+					<img src="/users/deven.jpg">
+				</div>
+				<div class="chat-head-username">
+					<span>Mum</span>
+				</div>
+				<div class="chat-head-menu">
+					<a onclick="reveal('chat-menu-list')"><i class="fas fa-ellipsis-v"></i></a>
+				</div>
+				<ul class="" id="chat-menu-list">
+					<li>View contact</li>
+					<li>Mute notifications</li>
+					<li>Search</li>
+					<li>Report</li>
+					<li>Block</li>
+				</ul>
+			</div>
+			<div class="chat-body"></div>
+			<div class="chat-form">
+				<form action="">
+					<input type="text" id="chat-text-area" placeholder="Type message here ...">
+					<textarea id="chat-text-area" placeholder="Type message here ..." cols="30" rows="10"></textarea>
+					<button onclick="">Send</button>
+				</form>
+			</div>
+		</div>
+	</div>
+	
 </div>
+<script src="/script.js"></script>
 <script src="./assets/js/users/users-db.js"></script>
 <script src="./assets/js/chats/chat-msg-db.js"></script>
 <script src="./assets/js/common/users.js"></script>
 <script src="./assets/js/common/chat.js"></script>
 <script src="./assets/js/users/users-mgt.js"></script>
 <script src="./assets/js/common/dashboard.js"></script>
+<script src="./assets/js/users/users-settings.js"></script>
 
 
 </body>

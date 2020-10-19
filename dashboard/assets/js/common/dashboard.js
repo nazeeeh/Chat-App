@@ -9,10 +9,14 @@ else {
 //GET USER RECORD
 loggedUserRecord = getUserByUsername(loggedUser);
 
-profile = `<img src="../users/${loggedUserRecord.img}">
+profile = `<div class="chat-box-img">
+<img src="../users/${loggedUserRecord.img}">
+</div>
 <p>@${loggedUserRecord.userName}</p>
 `;
 document.getElementById("profile").innerHTML = profile; 
+
+// document.getElementById("menu-profile").innerHTML = profile; 
 
 profileBox = `<h3><a href="./profile.html">${loggedUserRecord.fullName}</a></h3>`;
 document.getElementById("profile-box").innerHTML = profileBox; 

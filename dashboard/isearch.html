@@ -17,15 +17,35 @@
 <body>
 	<div class="chat-container">
 		<!-- Side Bar Menu-->
-		<div class="side-bar">
-			<div id="profile"></div>
+		<div class="side-bar"  id="user-side-bar">
+			<div class="chat-header">
+				<a class="profile-back-arrow" onclick="showSideBar('user-chat-menu', 'user-side-bar')"><i class="fas fa-long-arrow-alt-left"></i></a>
+				<h3>Profile</h3>
+			</div>
+			<div id="profile" class="side-bar-profile"></div>
 			<div id="profile-box"></div>
-			<div id="side-menu-container"></div>
+			<div id="side-menu-container" class="side-menu"></div>
 		</div>
 		<!-- Chat Menu-->
-		<div class="chat-menu">
+		<div class="chat-menu" id="user-chat-menu">
+			<div class="chat-menu-profile">
+				<div id="menu-profile" onclick="displayMsgContainer('user-side-bar', 'user-chat-menu')" class="chat-menu-open side-bar-profile"></div>
+				<div class="tooltip">
+					<a href="./isearch.html"><i class="fas fa-search fa-1x"></i></a>
+					<p class="tooltiptext">iSearch</p>
+				</div>
+				<div class="tooltip">
+					<a href=""><i class="far fa-comment-dots"></i></a>
+					<p class="tooltiptext">New Chat</p>
+				</div>
+				<div class="tooltip">
+					<a onclick=""><i class="fas fa-ellipsis-v"></i></a>
+					<p class="tooltiptext">Menu</p>
+				</div>
+			</div>
 			<div class="chat-header">
-				Chats <span class="chat-counter">7</span>
+				<span>Chats</span>
+				<span class="chat-counter">7</span>
 			</div>
 			<div class="chat-box">
 				<div class="chat-box-img">
@@ -40,7 +60,7 @@
 					<h6>9:23pm</h6>
 				</div>
 			</div>
-				  <div class="chat-box">
+			<div class="chat-box">
 				<div class="chat-box-img">
 					<img src="../users/user3.png">
 				</div>
@@ -53,7 +73,7 @@
 					<h6>8:30pm</h6>
 				</div>
 			</div>
-				  <div class="chat-box">
+			<div class="chat-box">
 				<div class="chat-box-img">
 					<img src="../users/user4.png">
 				</div>
@@ -66,7 +86,7 @@
 					<h6>6:01pm</h6>
 				</div>
 			</div>
-				  <div class="chat-box">
+			<div class="chat-box">
 				<div class="chat-box-img">
 					<img src="../users/deven.jpg">
 				</div>
@@ -79,7 +99,7 @@
 					<h6>5:13pm</h6>
 				</div>
 			</div>
-				  <div class="chat-box">
+			<div class="chat-box">
 				<div class="chat-box-img">
 					<img src="../users/user7.jpg">
 				</div>
@@ -92,7 +112,7 @@
 					<h6>4:20pm</h6>
 				</div>
 			</div>
-				  <div class="chat-box">
+			<div class="chat-box">
 				<div class="chat-box-img">
 					<img src="../users/Kristina.jpg">
 				</div>
@@ -107,29 +127,36 @@
 			</div>
 	  
 		</div>
-  <!-- Message Menu-->
-  <div class="iSearch-page">
-	  <!-- Enter your code here --> 
-	  <div id="iSearch-top">
-		  <p>iSearch</p>
-	  </div>
-	  <p id="iSearch-header">Search for Users by Location</p>
-	  <form id="iSearch-form" action="#">
-		<input id="iSearchInput" type="text" placeholder="Type location here e.g Lagos" required>
-		<button>Search</button> 
-	  </form>
-	  <button id="isearch-geolocation">Search Nearby Users</button>
-	  <div id="iSearch-result"></div>
-</div>
+		<!-- Message Menu-->
+		<div class="chat-message-container" id="user-message-container">
+			<div class="iSearch-page" id="user-iSearch-page">
+				<!-- Enter your code here --> 
+				<div id="iSearch-top">
+					<a class="message-back-arrow" onclick="displayMsgContainer('user-chat-menu', 'user-iSearch-page')"><i class="fas fa-long-arrow-alt-left"></i></a>
+					<p>iSearch</p>
+				</div>
+				<p id="iSearch-header">Search for Users by Location</p>
+				<form id="iSearch-form" action="#">
+					<input id="iSearchInput" type="text" placeholder="Type location here e.g Lagos" required>
+					<button>Search</button> 
+				</form>
+				<button id="isearch-geolocation">Search Nearby Users</button>
+				<div id="iSearch-result"></div>
+			</div>
 
-<!-- Add Your JS scripts here -->
-<script type="module" src="./assets/js/features/isearch.js"></script>
-<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-<script src="./assets/js/users/users-db.js"></script>
-<script src="./assets/js/chats/chat-msg-db.js"></script>
-<script src="./assets/js/common/users.js"></script>
-<script src="./assets/js/common/chat.js"></script>
-<script src="./assets/js/users/users-mgt.js"></script>
-<script src="./assets/js/common/dashboard.js"></script>
+		</div>
+		
+	</div>
+
+	<!-- Add Your JS scripts here -->
+	<script type="module" src="./assets/js/features/isearch.js"></script>
+	<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+	<script src="./assets/js/users/users-db.js"></script>
+	<script src="./assets/js/chats/chat-msg-db.js"></script>
+	<script src="./assets/js/common/users.js"></script>
+	<script src="./assets/js/common/chat.js"></script>
+	<script src="./assets/js/users/users-mgt.js"></script>
+	<script src="./assets/js/common/dashboard.js"></script>
+	<script src="./assets/js/users/users-settings.js"></script>
 </body>
 </html>

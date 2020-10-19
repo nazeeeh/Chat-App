@@ -18,15 +18,36 @@
 <body>
 <div class="chat-container">
   <!-- Side Bar Menu-->
-  <div class="side-bar">
-  	<div id="profile"></div>
+  <div class="side-bar" id="user-side-bar">
+	<div class="chat-header">
+		<a class="profile-back-arrow" onclick="showSideBar('user-chat-menu', 'user-side-bar')"><i class="fas fa-long-arrow-alt-left"></i></a>
+		<h3>Profile</h3>
+	</div> 
+	<div id="profile" class="side-bar-profile"></div>
   	<div id="profile-box"></div>
-  	<div id="side-menu-container"></div>
+  	<div id="side-menu-container" class="side-menu"></div>
   </div>
+
   <!-- Chat Menu-->
-  <div class="chat-menu">
-  	<div class="chat-header">
-  		Chats <span class="chat-counter">7</span>
+  <div class="chat-menu" id="user-chat-menu">
+	<div class="chat-menu-profile">
+		<div id="menu-profile" onclick="showSideBar('user-side-bar', 'user-chat-menu')" class="chat-menu-open side-bar-profile"></div>
+		<div class="tooltip">
+			<a href="./isearch.html"><i class="fas fa-search fa-1x"></i></a>
+			<p class="tooltiptext">iSearch</p>
+		</div>
+		<div class="tooltip">
+			<a href=""><i class="far fa-comment-dots"></i></a>
+			<p class="tooltiptext">New Chat</p>
+		</div>
+		<div class="tooltip">
+			<a onclick=""><i class="fas fa-ellipsis-v"></i></a>
+			<p class="tooltiptext">Menu</p>
+		</div>
+	</div>
+	<div class="chat-header">
+		<span>Chats</span>
+		<span class="chat-counter">7</span>
   	</div>
   	<div class="chat-box">
   		<div class="chat-box-img">
@@ -112,54 +133,54 @@
   <div id="iDiary-container">
 
     <nav class="title-bar">
-
+		<a class="message-back-arrow" onclick="showSideBar('user-chat-menu', 'user-direct-chat')"><i class="fas fa-long-arrow-alt-left"></i></a>
         <h2 id="featureTitle">iDiary</h2>
         
-        <span style="font-size:25px; color:#110E4C;">
+        <span style="font-size:25px; color:#fff;">
             <i class="fas fa-cog"></i>
         </span>
       
     </nav>
       
-      <!--SEARCH MESSAGES-->
-      <div id="top">
-        <input type="text" id="searchInput" placeholder="Search saved notes" />
-        <button onclick="displayLoader()" id="search-btn"><img src="../assets/img/ajax-loader.gif" width="15px" id="idiary-loader">Search</button>
-        <button id="addNew-btn" onclick="addNewMessage()">+ Add New Note</button>
-      </div>
+	<!--SEARCH MESSAGES-->
+	<div id="top">
+		<input type="text" id="searchInput" placeholder="Search saved notes" />
+		<button onclick="displayLoader()" id="search-btn"><img src="../assets/img/ajax-loader.gif" width="15px" id="idiary-loader">Search</button>
+		<button id="addNew-btn" onclick="addNewMessage()">+ Add New Note</button>
+	</div>
 
 
-      <!--DISPLAY THE NUMBER OF RECORDS FOUND AFTER SEARCH-->
-      <h3 id="records"></h3>
+	<!--DISPLAY THE NUMBER OF RECORDS FOUND AFTER SEARCH-->
+	<h3 id="records"></h3>
 
 
-      <!--BUTTON TO GO BACK TO ALL MESSAGES DISPLAY AFTER SEARCH-->
-      <button id="back-btn" onclick="displayBackLoader()"><img src="../assets/img/ajax-loader.gif" width="15px" id="idiary-back-loader">Back to notes</button>
+	<!--BUTTON TO GO BACK TO ALL MESSAGES DISPLAY AFTER SEARCH-->
+	<button id="back-btn" onclick="displayBackLoader()"><img src="../assets/img/ajax-loader.gif" width="15px" id="idiary-back-loader">Back to notes</button>
 
 
-      <!--FORM TO ADD NEW MESSAGE-->
-      <div id="addNew">
-        <textarea type="text" placeholder="Enter your message" name="message" id="messageInput" rows="3" cols="60"></textarea>
-        <button id="submitNewMessage-btn" onclick="displayAddedMessage()">Add</button>
-        <button id="cancel" onclick="back()">Cancel</button>
-      </div>
+	<!--FORM TO ADD NEW MESSAGE-->
+	<div id="addNew">
+	<textarea type="text" placeholder="Enter your message" name="message" id="messageInput" rows="3" cols="60"></textarea>
+	<button id="submitNewMessage-btn" onclick="displayAddedMessage()">Add</button>
+	<button id="cancel" onclick="back()">Cancel</button>
+	</div>
 
 
-      <!--FORM TO EDIT MESSAGE-->
-      <div id="editNew">
-        <input type="hidden" id="messageId">
-        <textarea type="text" placeholder="" name="message" id="editMessageInput" rows="3" cols="60"></textarea>
-        <button id="editedMessage-btn" onclick="displayEditedMessage()">Add Changes</button>
-        <button id="cancel" onclick="back()">Cancel</button>
-      </div>
+	<!--FORM TO EDIT MESSAGE-->
+	<div id="editNew">
+	<input type="hidden" id="messageId">
+	<textarea type="text" placeholder="" name="message" id="editMessageInput" rows="3" cols="60"></textarea>
+	<button id="editedMessage-btn" onclick="displayEditedMessage()">Add Changes</button>
+	<button id="cancel" onclick="back()">Cancel</button>
+	</div>
 
-      <h3 id="top-heading">Saved Notes</h3>
+	<h3 id="top-heading">Saved Notes</h3>
 
 
-      <!--ALL MESSAGES ARE DISPLAYED HERE-->
-      <div id="messages">
-      
-      </div>	
+	<!--ALL MESSAGES ARE DISPLAYED HERE-->
+	<div id="messages">
+	
+	</div>	
 </div>
 </div>	  
 
