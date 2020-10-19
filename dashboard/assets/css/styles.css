@@ -923,6 +923,7 @@ a {
 .settings-container{
 	background-color:var(--light-color);
 	width: 100%;
+	overflow-y: scroll;
 }
 
 .settings-title-bar{
