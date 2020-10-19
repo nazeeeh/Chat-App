@@ -109,13 +109,14 @@
 
   </div>
   <!-- Message Menu-->
-  <div id="iDiary-container">
+  <div class="iDiary-container">
 
     <nav class="title-bar">
 
         <h2 id="featureTitle">iDiary</h2>
         
         <span style="font-size:25px; color:#110E4C;">
+        	<i class="fas fa-ellipsis-v"></i>
             <i class="fas fa-cog"></i>
         </span>
       
@@ -125,7 +126,7 @@
       <div id="top">
         <input type="text" id="searchInput" placeholder="Search saved notes" />
         <button onclick="displayLoader()" id="search-btn"><img src="../assets/img/ajax-loader.gif" width="15px" id="idiary-loader">Search</button>
-        <button id="addNew-btn" onclick="addNewMessage()">+ Add New Note</button>
+        <button id="addNew-btn" onclick="addNewMessage()"><i class="fas fa-plus-circle"></i> Add New Note</button>
       </div>
 
 

@@ -1,5 +1,5 @@
 
-	#iDiary-container{
+	.iDiary-container{
 		background-color:var(--light-color);
 		width: 100%;
 	}
@@ -9,8 +9,12 @@
 		display:flex;
 		flex-direction: row;
 		justify-content: space-between;
-		padding: 10px 20px 9px 20px;
+		padding: 15px 20px 22px 20px;
 		margin-bottom: 30px;
+	}
+
+	.title-bar > span >i{
+		margin-left: 10px;
 	}
 
 	.title-bar > span >i:hover{
