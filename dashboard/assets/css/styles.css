@@ -23,7 +23,7 @@
 html, body {
 	padding: 0px;
 	margin: 0px;
-	font-family: Roboto, Tahoma, Geneva, Verdana, sans-serif;
+	font-family: 'Roboto', Tahoma, 'Geneva', Verdana, sans-serif;
 	color: var(--primary-color);
 }
 
@@ -661,4 +661,113 @@ a {
 
 }
 
+/*SETTINGS PAGE*/
+.settings-container{
+	background-color:var(--light-color);
+	width: 60%;
+	overflow-y: scroll;
+}
+
+.settings-title-bar{
+	display:flex;
+	flex-direction: row;
+	justify-content: space-between;
+	color: #fff;
+	padding: 20px 20px;
+}
+
+.settings-title-bar > span >i{
+	margin-left: 10px;
+}
+
+.settings-title-bar > span >i:hover{
+	font-size: 30px;
+}
+
+.profile-block{
+	background-color: #fffffe;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	padding: 20px;
+}
+
+.profile-block > button{
+	margin-top:10%;
+}
+
+.button{
+	border-radius: 10px;
+	outline-style: none;
+	height: 40px;
+	width: 120px;
+	padding: 10px 10px;
+	background-color: var(--primary-color);
+	color:#fffffe;
+	white-space: nowrap;
+	cursor: pointer;
+}
+
+.button:hover{
+	background-color: var(--secondary-color);
+	color:var(--primary-color);
+	box-shadow: 2px 2px 2px 2px var(--primary-color);
+}
+
+#editBio-btn{
+	/* margin-left:80%; */
+	align-self: flex-end;
+}
+
+#settings-profile-box{
+	display: flex;
+	flex-direction: row;
+}
+
+#settings-profile-box> img{
+	max-width: 30%;
+	height: auto;
+	border-radius: 50%;
+	margin-right: 20px;
+}
+
+.settings-item{
+	background-color: #fffffe;
+	padding:10px 20px 10px 20px;
+	margin-bottom:10px;
+	box-shadow:1px 1px 1px 1px var(--primary-color);
+	cursor: pointer;
+	display: flex;
+	flex-direction: column;
+}
+
+.settings-item:hover{
+	background-color: var(--light-color);
+	box-shadow:2px 2px 2px 2px var(--primary-color);
+	border-top:2px solid var(--primary-color);
+}
+
+#settings-main > h2{
+	padding:20px 0px 20px 20px;
+}
+
+#settings-main{
+	opacity:1;
+	/* overflow-y: scroll; */
+}
+
+#editBioForm{
+	display:none;
+	opacity:1;
+	margin-top:100px;
+	margin-left:70px;
+}
+
+#editBioInput{
+	background-color: #fffffe;
+	box-shadow:2px 2px 2px 2px var(--primary-color);
+	outline-style: none;
+	border-radius: 10px;
+	margin-right:10px;
+}
 

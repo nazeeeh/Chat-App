@@ -36,3 +36,48 @@ sideMenu = `<ul class="side-menu">
             <li><a href="./logout.html"><i class="fas fa-reply-all fa-1x"></i> Log Out</a></li>   			
           </ul>`
 document.getElementById("side-menu-container").innerHTML = sideMenu; 
+
+
+//GET USER RECORD FOR PROFILE DETAILS IN SETTINGS PAGE//
+settingsProfile=`<img src="../users/${loggedUserRecord.img}">
+<div>
+<p>${loggedUserRecord.fullName}</p>
+<p>@${loggedUserRecord.userName}</p>
+</div>`
+
+document.getElementById("settings-profile-box").innerHTML= settingsProfile
+
+document.getElementById("profile-phone-number").innerHTML= `${loggedUserRecord.phone}`
+
+document.getElementById("profile-location").innerHTML= `${loggedUserRecord.location}, Nigeria`
+
+
+ function changeBio(){
+  document.getElementById("settings-main").style.opacity="0.3"
+  document.getElementById("editBioForm").style.display="block"
+  document.getElementById("editBioForm").style.opacity="1"
+  bio= document.getElementById("profile-bio-details").innerHTML
+  document.getElementById("editBioInput").value= bio
+
+}
+
+function displayEditedBio(){
+  document.getElementById("settings-main").style.opacity="1"
+  document.getElementById("editBioForm").style.display="none"
+  newBio= document.getElementById("editBioInput").value
+  document.getElementById("profile-bio-details").innerHTML= newBio
+}
+
+function backBio(){
+  document.getElementById("settings-main").style.opacity="1"
+  document.getElementById("editBioForm").style.display="none"
+}
+
+
+
+
+
+
+
+
+
