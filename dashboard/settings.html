@@ -10,174 +10,196 @@
 		
 	<link rel="stylesheet" href="./assets/css/all.css">
 	<link rel="stylesheet" href="./assets/css/styles.css">
-	<link rel="stylesheet" href="./assets/css/set.css">
 	
 	<title>i2talk | Messages</title>
 </head>
 
 <body>
-<div class="chat-container">
-  <!-- Side Bar Menu-->
-  <div class="side-bar">
-  	<div id="profile"></div>
-  	<div id="profile-box"></div>
-  	<div id="side-menu-container"></div>
-  </div>
-  <!-- Chat Menu-->
-  <div class="chat-menu">
-  	<div class="chat-header">
-  		Chats <span class="chat-counter">7</span>
-  	</div>
-  	<div class="chat-box">
-  		<div class="chat-box-img">
-  			<img src="../users/mira.jfif">
-  		</div>
-  		<div class="chat-box-msg">
-  			<h4>Mum</h4>
-  			<p>Mum, I need more money...</p>
-  		</div>
-  		<div class="chat-box-stats">
-  			<p><span class="chat-counter">1</span></p>
-  			<h6>9:23pm</h6>
-  		</div>
-  	</div>
-  	  	<div class="chat-box">
-  		<div class="chat-box-img">
-  			<img src="../users/user3.png">
-  		</div>
-  		<div class="chat-box-msg">
-  			<h4>TIIDELab Cohorts 2</h4>
-  			<p>Biggie is calling all of you...</p>
-  		</div>
-  		<div class="chat-box-stats">
-  			<p><span class="chat-counter">2</span></p>
-  			<h6>8:30pm</h6>
-  		</div>
-  	</div>
-  	  	<div class="chat-box">
-  		<div class="chat-box-img">
-  			<img src="../users/user4.png">
-  		</div>
-  		<div class="chat-box-msg">
-  			<h4>Jane</h4>
-  			<p>When are you going there?</p>
-  		</div>
-  		<div class="chat-box-stats">
-  			<p><span class="chat-counter">1</span></p>
-  			<h6>6:01pm</h6>
-  		</div>
-  	</div>
-  	  	<div class="chat-box">
-  		<div class="chat-box-img">
-  			<img src="../users/deven.jpg">
-  		</div>
-  		<div class="chat-box-msg">
-  			<h4>Kate</h4>
-  			<p>I was able to get those stuffs.</p>
-  		</div>
-  		<div class="chat-box-stats">
-  			<p><span class="chat-counter">4</span></p>
-  			<h6>5:13pm</h6>
-  		</div>
-  	</div>
-  	  	<div class="chat-box">
-  		<div class="chat-box-img">
-  			<img src="../users/user7.jpg">
-  		</div>
-  		<div class="chat-box-msg">
-  			<h4>Mr. Samuel</h4>
-  			<p>I'm waiting till next week...</p>
-  		</div>
-  		<div class="chat-box-stats">
-  			<p><span class="chat-counter">2</span></p>
-  			<h6>4:20pm</h6>
-  		</div>
-  	</div>
-  	  	<div class="chat-box">
-  		<div class="chat-box-img">
-  			<img src="../users/Kristina.jpg">
-  		</div>
-  		<div class="chat-box-msg">
-  			<h4>Kristi</h4>
-  			<p>Mum, I need more money...</p>
-  		</div>
-  		<div class="chat-box-stats">
-  			<p><span class="chat-counter">6</span></p>
-  			<h6>3:30pm</h6>
-  		</div>
-  	</div>
+	<div class="chat-container">
+		<!-- Side Bar Menu-->
+		<div class="side-bar" id="user-side-bar">
+			<div class="chat-header">
+				<a class="profile-back-arrow" onclick="showSideBar('user-chat-menu', 'user-side-bar')"><i class="fas fa-long-arrow-alt-left"></i></a>
+				<h3>Profile</h3>
+			</div> 
+			<div id="profile" class="side-bar-profile"></div>
+			<div id="profile-box"></div>
+			<div id="side-menu-container" class="side-menu"></div>
+		</div>
+		<!-- Chat Menu-->
+		<div class="chat-menu" id="user-chat-menu">
+			<div class="chat-menu-profile">
+				<div id="menu-profile" onclick="showSideBar('user-side-bar', 'user-chat-menu')" class="chat-menu-open side-bar-profile"></div>
+				<div class="tooltip">
+					<a href="./isearch.html"><i class="fas fa-search fa-1x"></i></a>
+					<p class="tooltiptext">iSearch</p>
+				</div>
+				<div class="tooltip">
+					<a href=""><i class="far fa-comment-dots"></i></a>
+					<p class="tooltiptext">New Chat</p>
+				</div>
+				<div class="tooltip">
+					<a onclick=""><i class="fas fa-ellipsis-v"></i></a>
+					<p class="tooltiptext">Menu</p>
+				</div>
+			</div>  
+			<div class="chat-header">
+				<span>Chats</span>
+				<span class="chat-counter">7</span>
+			</div>
+			<div class="chat-box">
+				<div class="chat-box-img">
+					<img src="../users/mira.jfif">
+				</div>
+				<div class="chat-box-msg">
+					<h4>Mum</h4>
+					<p>Mum, I need more money...</p>
+				</div>
+				<div class="chat-box-stats">
+					<p><span class="chat-counter">1</span></p>
+					<h6>9:23pm</h6>
+				</div>
+			</div>
+			<div class="chat-box">
+				<div class="chat-box-img">
+					<img src="../users/user3.png">
+				</div>
+				<div class="chat-box-msg">
+					<h4>TIIDELab Cohorts 2</h4>
+					<p>Biggie is calling all of you...</p>
+				</div>
+				<div class="chat-box-stats">
+					<p><span class="chat-counter">2</span></p>
+					<h6>8:30pm</h6>
+				</div>
+			</div>
+			<div class="chat-box">
+				<div class="chat-box-img">
+					<img src="../users/user4.png">
+				</div>
+				<div class="chat-box-msg">
+					<h4>Jane</h4>
+					<p>When are you going there?</p>
+				</div>
+				<div class="chat-box-stats">
+					<p><span class="chat-counter">1</span></p>
+					<h6>6:01pm</h6>
+				</div>
+			</div>
+			<div class="chat-box">
+				<div class="chat-box-img">
+					<img src="../users/deven.jpg">
+				</div>
+				<div class="chat-box-msg">
+					<h4>Kate</h4>
+					<p>I was able to get those stuffs.</p>
+				</div>
+				<div class="chat-box-stats">
+					<p><span class="chat-counter">4</span></p>
+					<h6>5:13pm</h6>
+				</div>
+			</div>
+			<div class="chat-box">
+				<div class="chat-box-img">
+					<img src="../users/user7.jpg">
+				</div>
+				<div class="chat-box-msg">
+					<h4>Mr. Samuel</h4>
+					<p>I'm waiting till next week...</p>
+				</div>
+				<div class="chat-box-stats">
+					<p><span class="chat-counter">2</span></p>
+					<h6>4:20pm</h6>
+				</div>
+			</div>
+			<div class="chat-box">
+				<div class="chat-box-img">
+					<img src="../users/Kristina.jpg">
+				</div>
+				<div class="chat-box-msg">
+					<h4>Kristi</h4>
+					<p>Mum, I need more money...</p>
+				</div>
+				<div class="chat-box-stats">
+					<p><span class="chat-counter">6</span></p>
+					<h6>3:30pm</h6>
+				</div>
+			</div>
 
-  </div>
-  <!-- Message Menu-->
-  <div class="settings-container">
+		</div>
+		<!-- Message Menu-->
+		<div class="chat-message-container">
+			<div class="settings-container">
 
-    <nav class="settings-title-bar">
-
-        <h2 id="settingsTitle">Settings</h2>
-        
-        <span style="font-size:25px; color:#110E4C;">
-          <i class="fas fa-ellipsis-v"></i>
-            <i class="fas fa-cog"></i>
-        </span>
-      
-    </nav>
-
-     <div id="editBioForm">
-        <textarea type="text" placeholder="" name="bio" id="editBioInput" rows="3" cols="60"></textarea>
-        <button class="button"  onclick="displayEditedBio()">Add Changes</button>
-        <button  class="button" onclick="backBio()">Cancel</button>
-     </div>
-
-    <div id="settings-main">
-      <div class="profile-block">
-        <div id="settings-profile-box"></div>
-        <button class="button"><i class="far fa-edit"></i>Edit Profile</button>
-      </div>
-
-      <h2>Account</h2>
-
-      <div class="settings-item">
-        <h3>Bio</h3>
-        <p id="profile-bio-details">Hi, I'm new to the i2talk chatting platform</p>
-        <button id="editBio-btn" class="button" onclick="changeBio()"><i class="far fa-edit"></i>Edit Bio</button>
-      </div>
-
-      <div class="settings-item">
-        <h3>Phone Number</h3>
-        <p id="profile-phone-number"></p>
-      </div>
-
-      <div class="settings-item">
-        <h3>Location</h3>
-        <p id="profile-location"></p>
-      </div>
-
-      <h2>Settings</h2>
-
-      <div class="settings-item">
-         <h3><i class="fas fa-user-shield"></i> &nbsp Privacy and Security</h3>
-      </div>
-
-      <div class="settings-item">  
-        <h3> <i class="fas fa-bell"></i> &nbsp Notifications and Sound</h3>
-      </div>
-
-      <div class="settings-item">  
-        <h3><i class="fas fa-user-cog"></i> &nbsp Chat Settings</h3>
-      </div>
-
-      <div class="settings-item">  
-        <h3><i class="fas fa-server"></i> &nbsp Data and Storage</h3>
-      </div>
-
-      <div class="settings-item">
-        <h3><i class="fas fa-question-circle"></i> &nbsp Help</h3>
-      </div>
-
-    </div>
-
-  </div>
-</div>
+				<nav class="settings-title-bar">
+					<a class="message-back-arrow" onclick="showSideBar('user-chat-menu', 'user-direct-chat')"><i class="fas fa-long-arrow-alt-left"></i></a>
+					<h2 id="settingsTitle">Settings</h2>
+					
+					<span style="font-size:25px; color:#fff;">
+						<i class="fas fa-ellipsis-v"></i>
+						<i class="fas fa-cog"></i>
+					</span>
+				
+				</nav>
+	
+				<div id="editBioForm">
+					<textarea type="text" placeholder="" name="bio" id="editBioInput" rows="3" cols="60"></textarea>
+					<button class="button"  onclick="displayEditedBio()">Add Changes</button>
+					<button  class="button" onclick="backBio()">Cancel</button>
+				</div>
+	
+				<div id="settings-main">
+					<div class="profile-block">
+						<div id="settings-profile-box"></div>
+						<button class="button"><i class="far fa-edit">&nbsp;</i>&nbsp;Edit Profile</button>
+					</div>
+	
+					<h2>Account</h2>
+	
+					<div class="settings-item">
+						<h3>Bio</h3>
+						<p id="profile-bio-details">Hi, I'm new to the i2talk chatting platform</p>
+						<button id="editBio-btn" class="button" onclick="changeBio()"><i class="far fa-edit">&nbsp;</i>&nbsp;Edit Bio</button>
+					</div>
+	
+					<div class="settings-item">
+						<h3>Phone Number</h3>
+						<p id="profile-phone-number"></p>
+					</div>
+	
+					<div class="settings-item">
+						<h3>Location</h3>
+						<p id="profile-location"></p>
+					</div>
+	
+					<h2>Settings</h2>
+	
+					<div class="settings-item">
+						<h3><i class="fas fa-user-shield"></i> &nbsp Privacy and Security</h3>
+					</div>
+	
+					<div class="settings-item">  
+						<h3> <i class="fas fa-bell"></i> &nbsp Notifications and Sound</h3>
+					</div>
+	
+					<div class="settings-item">  
+						<h3><i class="fas fa-user-cog"></i> &nbsp Chat Settings</h3>
+					</div>
+	
+					<div class="settings-item">  
+						<h3><i class="fas fa-server"></i> &nbsp Data and Storage</h3>
+					</div>
+	
+					<div class="settings-item">
+						<h3><i class="fas fa-question-circle"></i> &nbsp Help</h3>
+					</div>
+	
+				</div>
+	
+			</div>
+		</div>
+		
+	</div>
 <script src="./assets/js/users/users-db.js"></script>
 <script src="./assets/js/chats/chat-msg-db.js"></script>
 <script src="./assets/js/common/users.js"></script>

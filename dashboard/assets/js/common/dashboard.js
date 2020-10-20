@@ -9,10 +9,14 @@ else {
 //GET USER RECORD
 loggedUserRecord = getUserByUsername(loggedUser);
 
-profile = `<img src="../users/${loggedUserRecord.img}">
+profile = `<div class="chat-box-img">
+<img src="../users/${loggedUserRecord.img}">
+</div>
 <p>@${loggedUserRecord.userName}</p>
 `;
 document.getElementById("profile").innerHTML = profile; 
+
+document.getElementById("menu-profile").innerHTML = profile; 
 
 profileBox = `<h3><a href="./profile.html">${loggedUserRecord.fullName}</a></h3>`;
 document.getElementById("profile-box").innerHTML = profileBox; 
@@ -69,6 +73,28 @@ function backBio(){
   document.getElementById("editBioForm").style.display="none"
 }
 
+// Declaration of variables
+const userChatMenu = document.getElementById("user-chat-menu");
+const userSideBar = document.getElementById("user-side-bar");
+const userMessageContainer = document.getElementById("user-message-container");
+
+// chat menu functions
+function showSideBar(show, hide) {
+    let a = document.getElementById(show);
+    let b = document.getElementById(hide);
+    if (a.style.display === "none" && b.style.display === "flex") {
+        a.style.display = "flex";
+        b.style.display = "none";
+    } else {
+        a.style.display = "none";
+        b.style.display = "flex";
+    }
+    
+}
+
+function displayMsgContainer(chat, feature){
+
+}
 
 
 

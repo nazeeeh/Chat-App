@@ -18,15 +18,35 @@
 <body>
 <div class="chat-container">
   <!-- Side Bar Menu-->
-  <div class="side-bar">
-  	<div id="profile"></div>
+  <div class="side-bar" id="user-side-bar">
+    <div class="chat-header">
+      <a class="profile-back-arrow" onclick="showSideBar('user-chat-menu', 'user-side-bar')"><i class="fas fa-long-arrow-alt-left"></i></a>
+      <h3>Profile</h3>
+    </div>
+    <div id="profile" class="side-bar-profile"></div>
   	<div id="profile-box"></div>
-  	<div id="side-menu-container"></div>
+  	<div id="side-menu-container" class="side-menu"></div>
   </div>
   <!-- Chat Menu-->
-  <div class="chat-menu">
-  	<div class="chat-header">
-  		Chats <span class="chat-counter">7</span>
+  <div class="chat-menu" id="user-chat-menu">
+    <div class="chat-menu-profile">
+      <div id="menu-profile" onclick="showSideBar('user-side-bar', 'user-chat-menu')" class="chat-menu-open side-bar-profile"></div>
+      <div class="tooltip">
+        <a href="./isearch.html"><i class="fas fa-search fa-1x"></i></a>
+        <p class="tooltiptext">iSearch</p>
+      </div>
+      <div class="tooltip">
+        <a href=""><i class="far fa-comment-dots"></i></a>
+        <p class="tooltiptext">New Chat</p>
+      </div>
+      <div class="tooltip">
+        <a onclick=""><i class="fas fa-ellipsis-v"></i></a>
+        <p class="tooltiptext">Menu</p>
+      </div>
+    </div>
+    <div class="chat-header">
+      <span>Chats</span>
+      <span class="chat-counter">7</span>
   	</div>
   	<div class="chat-box">
   		<div class="chat-box-img">
@@ -109,140 +129,144 @@
 
   </div>
   
-  <div id ="chatrooms-container">
+  <div class="chat-message-container">
+    <div id ="chatrooms-container">
 
-    <nav class="chatrooms-title-bar">
-      <h2 id="chatrooms-feature-title">Chat Rooms</h2>
-
-      <span style="font-size:25px; color:#110E4C;">
-          <i class="fas fa-cog"></i>
-      </span>
-    </nav>
-
-      <div class="chatrooms-heading">
-        <h3 id="chatrooms-btn" onclick="showChatroomsPage()">Chat Rooms</h3>
-        <h3 id="active-btn" onclick="showActivePage()">Active (3)</h3>
-      </div>
-
-      <div id="chatrooms-page">
-
-        <div class="chatrooms-items">
-          <span style="font-size:35px; color:#110E4C;">
-            <i class="fas fa-hashtag"></i>
-          </span>
-          <div>
-            <h3>Trending</h3>
-            <p>Discussions about the latest, new and trending topics e.g #EndSars</p>
-          </div>
+      <nav class="chatrooms-title-bar">
+        <a class="message-back-arrow" onclick="showSideBar('user-chat-menu', 'user-direct-chat')"><i class="fas fa-long-arrow-alt-left"></i></a>
+        <h2 id="chatrooms-feature-title">Chat Rooms</h2>
+  
+        <span style="font-size:25px; color:#fff;">
+            <i class="fas fa-cog"></i>
+        </span>
+      </nav>
+  
+        <div class="chatrooms-heading">
+          <h3 id="chatrooms-btn" onclick="showChatroomsPage()">Chat Rooms</h3>
+          <h3 id="active-btn" onclick="showActivePage()">Active (3)</h3>
         </div>
-
-        <div class="chatrooms-items">
-          <span style="font-size:35px; color:#110E4C;">
-            <i class="fas fa-praying-hands"></i>
-          </span>
-          <div>
-            <h3>Faith</h3>
-            <p>Discussions on issues pertaining to our faith e.g christianity, islam etc.</p>
+  
+        <div id="chatrooms-page">
+  
+          <div class="chatrooms-items">
+            <span style="font-size:35px; color:#110E4C;">
+              <i class="fas fa-hashtag"></i>
+            </span>
+            <div>
+              <h3>Trending</h3>
+              <p>Discussions about the latest, new and trending topics e.g #EndSars</p>
+            </div>
           </div>
-        </div>
-
-        <div class="chatrooms-items">
-          <span style="font-size:35px; color:#110E4C;">
-            <i class="fas fa-futbol"></i>
-          </span>
-          <div>
-            <h3>Sports</h3>
-            <p>Discussions on sports issues e.g football, basketball, olympics etc.</p>
+  
+          <div class="chatrooms-items">
+            <span style="font-size:35px; color:#110E4C;">
+              <i class="fas fa-praying-hands"></i>
+            </span>
+            <div>
+              <h3>Faith</h3>
+              <p>Discussions on issues pertaining to our faith e.g christianity, islam etc.</p>
+            </div>
           </div>
-        </div>
-
-        <div class="chatrooms-items">
-          <span style="font-size:35px; color:#110E4C;">
-            <i class="fas fa-icons"></i>
-          </span>
-          <div>
-            <h3>Entertainment</h3>
-            <p>Discussions on entertainment issues e.g movies, music etc.</p>
+  
+          <div class="chatrooms-items">
+            <span style="font-size:35px; color:#110E4C;">
+              <i class="fas fa-futbol"></i>
+            </span>
+            <div>
+              <h3>Sports</h3>
+              <p>Discussions on sports issues e.g football, basketball, olympics etc.</p>
+            </div>
           </div>
-        </div>
-
-        <div class="chatrooms-items">
-          <span style="font-size:35px; color:#110E4C;">
-            <i class="fas fa-tshirt"></i>
-          </span>
-          <div>
-            <h3>Fashion</h3>
-            <p>Discussions on the latest fashion trends e.g alte fashion</p>
+  
+          <div class="chatrooms-items">
+            <span style="font-size:35px; color:#110E4C;">
+              <i class="fas fa-icons"></i>
+            </span>
+            <div>
+              <h3>Entertainment</h3>
+              <p>Discussions on entertainment issues e.g movies, music etc.</p>
+            </div>
           </div>
-        </div>
-
-        <div class="chatrooms-items">
-          <span style="font-size:35px; color:#110E4C;">
-            <i class="fas fa-user-graduate"></i>
-          </span>
-          <div>
-            <h3>Education</h3>
-            <p>Discussions on the latest school gist and scholarship opportunities</p>
+  
+          <div class="chatrooms-items">
+            <span style="font-size:35px; color:#110E4C;">
+              <i class="fas fa-tshirt"></i>
+            </span>
+            <div>
+              <h3>Fashion</h3>
+              <p>Discussions on the latest fashion trends e.g alte fashion</p>
+            </div>
           </div>
-        </div>
-
-        <div class="chatrooms-items">
-          <span style="font-size:35px; color:#110E4C;">
-            <i class="fas fa-laptop-code"></i>
-          </span>
-          <div>
-            <h3>Technology</h3>
-            <p>Discussions on the latest technologies</p>
+  
+          <div class="chatrooms-items">
+            <span style="font-size:35px; color:#110E4C;">
+              <i class="fas fa-user-graduate"></i>
+            </span>
+            <div>
+              <h3>Education</h3>
+              <p>Discussions on the latest school gist and scholarship opportunities</p>
+            </div>
           </div>
-        </div>
-        
-        <div class="chatrooms-items">
-          <span style="font-size:35px; color:#110E4C;">
-            <i class="fas fa-hand-holding-heart"></i>
-          </span>
-          <div>
-            <h3>Advice</h3>
-            <p>Discussions on matters of the heart and heart-to-heart conversations</p>
+  
+          <div class="chatrooms-items">
+            <span style="font-size:35px; color:#110E4C;">
+              <i class="fas fa-laptop-code"></i>
+            </span>
+            <div>
+              <h3>Technology</h3>
+              <p>Discussions on the latest technologies</p>
+            </div>
           </div>
-        </div>
-
-      </div>
-
-      <div id="active-page">
-
-        <div class="chatrooms-items">
-          <span style="font-size:35px; color:#110E4C;">
-            <i class="fas fa-hashtag"></i>
-          </span>
-          <div>
-            <h3>Trending</h3>
-            <p>Discussions about the latest, new and trending topics e.g #EndSars</p>
-          </div>
-        </div>
-
-        <div class="chatrooms-items">
-          <span style="font-size:35px; color:#110E4C;">
-            <i class="fas fa-tshirt"></i>
-          </span>
-          <div>
-            <h3>Fashion</h3>
-            <p>Discussions on the latest fashion trends e.g alte fashion</p>
-          </div>
-        </div>
-
-        <div class="chatrooms-items">
-          <span style="font-size:35px; color:#110E4C;">
-            <i class="fas fa-hand-holding-heart"></i>
-          </span>
-          <div>
-            <h3>Advice</h3>
-            <p>Discussions on matters of the heart and heart-to-heart conversations</p>
-          </div>
-        </div>
           
-      </div>
-
+          <div class="chatrooms-items">
+            <span style="font-size:35px; color:#110E4C;">
+              <i class="fas fa-hand-holding-heart"></i>
+            </span>
+            <div>
+              <h3>Advice</h3>
+              <p>Discussions on matters of the heart and heart-to-heart conversations</p>
+            </div>
+          </div>
+  
+        </div>
+  
+        <div id="active-page">
+  
+          <div class="chatrooms-items">
+            <span style="font-size:35px; color:#110E4C;">
+              <i class="fas fa-hashtag"></i>
+            </span>
+            <div>
+              <h3>Trending</h3>
+              <p>Discussions about the latest, new and trending topics e.g #EndSars</p>
+            </div>
+          </div>
+  
+          <div class="chatrooms-items">
+            <span style="font-size:35px; color:#110E4C;">
+              <i class="fas fa-tshirt"></i>
+            </span>
+            <div>
+              <h3>Fashion</h3>
+              <p>Discussions on the latest fashion trends e.g alte fashion</p>
+            </div>
+          </div>
+  
+          <div class="chatrooms-items">
+            <span style="font-size:35px; color:#110E4C;">
+              <i class="fas fa-hand-holding-heart"></i>
+            </span>
+            <div>
+              <h3>Advice</h3>
+              <p>Discussions on matters of the heart and heart-to-heart conversations</p>
+            </div>
+          </div>
+            
+        </div>
+  
+    </div>
   </div>
+  
 
 </div>
 
