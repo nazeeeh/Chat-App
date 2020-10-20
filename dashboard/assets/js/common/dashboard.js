@@ -92,8 +92,14 @@ function showSideBar(show, hide) {
     
 }
 
-function displayMsgContainer(chat, feature){
-
+function backToMenu(show, hide){
+  let x = document.getElementById(show);
+  let y = document.getElementById(hide);
+  if(show === 'user-chat-menu') {
+    x.classList.add('chat-menu-back-arrow');
+    // x.style.width = "100%";
+    y.classList.add('mobile-direct-msg');
+  }
 }
 
 

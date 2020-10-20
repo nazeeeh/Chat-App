@@ -643,6 +643,7 @@ a {
 .settings-container{
 	background-color:var(--light-color);
 	/* width: 60%; */
+	height: 100vh;
 	overflow-y: scroll;
 }
 
@@ -758,6 +759,7 @@ a {
 @media screen and (max-width: 992px) {
 	.side-bar {
 		display: none;
+		width: 40%;
 	}
 	.profile-back-arrow{
 		display: block;
@@ -766,8 +768,9 @@ a {
 		display: flex;
 	}
 	.chat-menu .chat-header {
-		top: 185px;
+		/* top: 185px; */
 	}
+	
 }
 
 /* ====================================
@@ -812,13 +815,19 @@ a {
 	.chat-menu-open {
 		width: 60%;
 	}
-
 	.chat-message-container {
 		width: 100%;
 		/* display: none; */
 	}
 	.message-back-arrow {
 		display: block;
+	}
+	.chat-menu-back-arrow {
+		display:block;
+		width: 100%;
+	}
+	.mobile-direct-msg {
+		display: none;
 	}
 }
 
