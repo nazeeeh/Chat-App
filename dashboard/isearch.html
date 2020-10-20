@@ -29,7 +29,7 @@
 		<!-- Chat Menu-->
 		<div class="chat-menu" id="user-chat-menu">
 			<div class="chat-menu-profile">
-				<div id="menu-profile" onclick="displayMsgContainer('user-side-bar', 'user-chat-menu')" class="chat-menu-open side-bar-profile"></div>
+				<div id="menu-profile" onclick="showSideBar('user-side-bar', 'user-chat-menu')" class="chat-menu-open side-bar-profile"></div>
 				<div class="tooltip">
 					<a href="./isearch.html"><i class="fas fa-search fa-1x"></i></a>
 					<p class="tooltiptext">iSearch</p>
@@ -128,11 +128,11 @@
 	  
 		</div>
 		<!-- Message Menu-->
-		<div class="chat-message-container" id="user-message-container">
+		<div class="chat-message-container" id="user-msg-container">
 			<div class="iSearch-page" id="user-iSearch-page">
 				<!-- Enter your code here --> 
 				<div id="iSearch-top">
-					<a class="message-back-arrow" onclick="displayMsgContainer('user-chat-menu', 'user-iSearch-page')"><i class="fas fa-long-arrow-alt-left"></i></a>
+					<a class="message-back-arrow" onclick="showSideBar('user-chat-menu', 'user-msg-container')"><i class="fas fa-long-arrow-alt-left"></i></a>
 					<p>iSearch</p>
 				</div>
 				<p id="iSearch-header">Search for Users by Location</p>
