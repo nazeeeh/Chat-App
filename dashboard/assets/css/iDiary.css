@@ -1,7 +1,9 @@
 
 	.iDiary-container{
 		background-color:var(--light-color);
-		width: 60%;
+		/* width: 60%; */
+		height: 100vh;
+		overflow-y: scroll;
 	}
 
 	.title-bar{
@@ -31,7 +33,7 @@
 	}
 
 	#cancel, #addNew-btn{
-		margin-left:100px;
+		margin: 20px 20px;
 		background-color:var(--primary-color);
 		color:white;
 		padding:10px;

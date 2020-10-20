@@ -158,12 +158,27 @@
 					<li>Block</li>
 				</ul>
 			</div>
-			<div class="chat-body"></div>
+			<div class="chat-body">
+				<div class="chat-msg-self">
+					<p>Hey! How are you doing?</p>
+				</div>
+				<div class="chat-msg-other">
+					<p>Guy I just dey oo!</p>
+				</div>
+				<div class="chat-msg-other">
+					<p>It's been a while, hope you're good?</p>
+				</div>
+				<div class="chat-msg-self">
+					<p>Yea! It's been a while, I'm doing great. How's everyone? 
+						Your family and in-laws... Business... send me that account number,
+						I lost it when I lost my phone.
+					</p>
+				</div>
+			</div>
 			<div class="chat-form">
 				<form action="">
-					<input type="text" id="chat-text-area" placeholder="Type message here ...">
-					<textarea id="chat-text-area" placeholder="Type message here ..." cols="30" rows="10"></textarea>
-					<button onclick="">Send</button>
+					<textarea id="chat-text-area" autocapitalize= "sentences" autocomplete="on" placeholder="Type message here ..." rows="1"></textarea>
+					<button onclick=""><i class="far fa-paper-plane"></i></button>
 				</form>
 			</div>
 		</div>

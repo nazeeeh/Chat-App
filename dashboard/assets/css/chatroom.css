@@ -1,6 +1,6 @@
 #chatrooms-container{
 	background-color: var(--light-color);
-	width: 60%;
+	/* width: 60%; */
 	overflow-y: scroll;
 }
 

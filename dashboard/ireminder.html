@@ -127,33 +127,36 @@
   	</div>
 
   </div>
-<!--iReminder-->
 
-<div class="ireminder-container">
-	<div class="ireminder-header">
-		<a class="message-back-arrow" onclick="showSideBar('user-chat-menu', 'user-direct-chat')"><i class="fas fa-long-arrow-alt-left"></i></a>
-		<h2>iReminder</h2>
-		<div class="ireminder-dropdown">
-			<span style="font-size:25px; color:#fff;">
-			<i class="fas fa-ellipsis-v"></i>
-			<i class="fas fa-cog"></i>
-			</span>
+	<!--iReminder-->
+  <div class="chat-message-container">
+	<div class="ireminder-container">
+		<div class="ireminder-header">
+			<a class="message-back-arrow" onclick="showSideBar('user-chat-menu', 'user-direct-chat')"><i class="fas fa-long-arrow-alt-left"></i></a>
+			<h2>iReminder</h2>
+			<div class="ireminder-dropdown">
+				<span style="font-size:25px; color:#fff;">
+				<i class="fas fa-ellipsis-v"></i>
+				<i class="fas fa-cog"></i>
+				</span>
+			</div>
 		</div>
+
+	<div class="ireminder-formarea" id="ireminderForm">
+	<textarea class="ireminder-textarea" id="ireminderDesc" placeholder="Reminder Details"></textarea>
+	<form action="/action_page.php" id="ireminder-date">
+		<label for="birthday">Reminder:</label>
+		<input type="date" id="ireminder" name="birthday">
+		<button class="ireminder-button" id="reminderDesc"><i class="fas fa-plus-circle"></i>Set a New Reminder</button>
+	</form>
+
+	<div class="ireminder-result" id="ireminder-textspace"></div>
+
+	</div>    
+
 	</div>
-
-  <div class="ireminder-formarea" id="ireminderForm">
-  <textarea class="ireminder-textarea" id="ireminderDesc" placeholder="Reminder Details"></textarea>
-  <form action="/action_page.php" id="ireminder-date">
-    <label for="birthday">Reminder:</label>
-    <input type="date" id="ireminder" name="birthday">
-    <button class="ireminder-button" id="reminderDesc"><i class="fas fa-plus-circle"></i>Set a New Reminder</button>
-  </form>
-
-  <div class="ireminder-result" id="ireminder-textspace"></div>
-
- </div>    
-
-</div> 
+  </div>
+	 
 </div>
 <script src="./assets/js/users/users-db.js"></script>
 <script src="./assets/js/chats/chat-msg-db.js"></script>

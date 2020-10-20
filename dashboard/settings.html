@@ -10,7 +10,6 @@
 		
 	<link rel="stylesheet" href="./assets/css/all.css">
 	<link rel="stylesheet" href="./assets/css/styles.css">
-	<link rel="stylesheet" href="./assets/css/set.css">
 	
 	<title>i2talk | Messages</title>
 </head>
@@ -129,74 +128,77 @@
 
 		</div>
 		<!-- Message Menu-->
-		<div class="settings-container">
+		<div class="chat-message-container">
+			<div class="settings-container">
 
-			<nav class="settings-title-bar">
-
-				<h2 id="settingsTitle">Settings</h2>
+				<nav class="settings-title-bar">
+					<a class="message-back-arrow" onclick="showSideBar('user-chat-menu', 'user-direct-chat')"><i class="fas fa-long-arrow-alt-left"></i></a>
+					<h2 id="settingsTitle">Settings</h2>
+					
+					<span style="font-size:25px; color:#fff;">
+						<i class="fas fa-ellipsis-v"></i>
+						<i class="fas fa-cog"></i>
+					</span>
 				
-				<span style="font-size:25px; color:#fff;">
-					<i class="fas fa-ellipsis-v"></i>
-					<i class="fas fa-cog"></i>
-				</span>
-			
-			</nav>
-
-			<div id="editBioForm">
-				<textarea type="text" placeholder="" name="bio" id="editBioInput" rows="3" cols="60"></textarea>
-				<button class="button"  onclick="displayEditedBio()">Add Changes</button>
-				<button  class="button" onclick="backBio()">Cancel</button>
+				</nav>
+	
+				<div id="editBioForm">
+					<textarea type="text" placeholder="" name="bio" id="editBioInput" rows="3" cols="60"></textarea>
+					<button class="button"  onclick="displayEditedBio()">Add Changes</button>
+					<button  class="button" onclick="backBio()">Cancel</button>
+				</div>
+	
+				<div id="settings-main">
+					<div class="profile-block">
+						<div id="settings-profile-box"></div>
+						<button class="button"><i class="far fa-edit">&nbsp;</i>&nbsp;Edit Profile</button>
+					</div>
+	
+					<h2>Account</h2>
+	
+					<div class="settings-item">
+						<h3>Bio</h3>
+						<p id="profile-bio-details">Hi, I'm new to the i2talk chatting platform</p>
+						<button id="editBio-btn" class="button" onclick="changeBio()"><i class="far fa-edit">&nbsp;</i>&nbsp;Edit Bio</button>
+					</div>
+	
+					<div class="settings-item">
+						<h3>Phone Number</h3>
+						<p id="profile-phone-number"></p>
+					</div>
+	
+					<div class="settings-item">
+						<h3>Location</h3>
+						<p id="profile-location"></p>
+					</div>
+	
+					<h2>Settings</h2>
+	
+					<div class="settings-item">
+						<h3><i class="fas fa-user-shield"></i> &nbsp Privacy and Security</h3>
+					</div>
+	
+					<div class="settings-item">  
+						<h3> <i class="fas fa-bell"></i> &nbsp Notifications and Sound</h3>
+					</div>
+	
+					<div class="settings-item">  
+						<h3><i class="fas fa-user-cog"></i> &nbsp Chat Settings</h3>
+					</div>
+	
+					<div class="settings-item">  
+						<h3><i class="fas fa-server"></i> &nbsp Data and Storage</h3>
+					</div>
+	
+					<div class="settings-item">
+						<h3><i class="fas fa-question-circle"></i> &nbsp Help</h3>
+					</div>
+	
+				</div>
+	
 			</div>
-
-			<div id="settings-main">
-				<div class="profile-block">
-					<div id="settings-profile-box"></div>
-					<button class="button"><i class="far fa-edit">&nbsp;</i>&nbsp;Edit Profile</button>
-				</div>
-
-				<h2>Account</h2>
-
-				<div class="settings-item">
-					<h3>Bio</h3>
-					<p id="profile-bio-details">Hi, I'm new to the i2talk chatting platform</p>
-					<button id="editBio-btn" class="button" onclick="changeBio()"><i class="far fa-edit">&nbsp;</i>&nbsp;Edit Bio</button>
-				</div>
-
-				<div class="settings-item">
-					<h3>Phone Number</h3>
-					<p id="profile-phone-number"></p>
-				</div>
-
-				<div class="settings-item">
-					<h3>Location</h3>
-					<p id="profile-location"></p>
-				</div>
-
-				<h2>Settings</h2>
-
-				<div class="settings-item">
-					<h3><i class="fas fa-user-shield"></i> &nbsp Privacy and Security</h3>
-				</div>
-
-				<div class="settings-item">  
-					<h3> <i class="fas fa-bell"></i> &nbsp Notifications and Sound</h3>
-				</div>
-
-				<div class="settings-item">  
-					<h3><i class="fas fa-user-cog"></i> &nbsp Chat Settings</h3>
-				</div>
-
-				<div class="settings-item">  
-					<h3><i class="fas fa-server"></i> &nbsp Data and Storage</h3>
-				</div>
-
-				<div class="settings-item">
-					<h3><i class="fas fa-question-circle"></i> &nbsp Help</h3>
-				</div>
-
-			</div>
-
 		</div>
+		
 	</div>
 <script src="./assets/js/users/users-db.js"></script>
 <script src="./assets/js/chats/chat-msg-db.js"></script>

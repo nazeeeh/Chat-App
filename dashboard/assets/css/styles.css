@@ -87,7 +87,7 @@ a {
 }
 .side-menu > li {
 	border-bottom: 1px solid #555;
-	padding: 20px 10px 20px 24px;
+	padding: 14px 10px 14px 24px;
 	transition: all 0.6s ease-in;
 }
 .side-menu > li:hover {
@@ -245,7 +245,7 @@ a {
 	padding: 10px 0;
 	width: 190px;
 	margin-left: auto;
-	background-color: rgba(17,14,76,0.7);
+	background-color: rgba(17,14,76,0.9);
 	list-style: none;
 	border-radius: 0 0 0 10px;
 	/* text-align: ; */
@@ -318,38 +318,95 @@ a {
 	display: none;
 }
 .chat-body {
-	/* height: 80%; */
+	height: 80%;
 	overflow-y: scroll;
+	display: flex;
+	flex-direction: column;
+	font-size: 0.8rem;
+}
+.chat-msg-self{
+	position: relative;
+	max-width: 50%;
+	align-self: flex-end;
+	background-color: rgba(17,14,76,0.8);
+	color: white;
+	padding: 10px 20px;
+	border-radius: 0.7em;
+	margin: 10px;
+}
+.chat-msg-self::after {
+	content: " ";
+	position: absolute;
+	top: 50%; /* At the bottom of the tooltip */
+	left: 100%;
+	border: 8px solid transparent;
+	border-left-color: rgba(17,14,76,0.8);
+	border-right: 0;
+	border-top: 0;
+	margin-top: -10px;
+	margin-right: -20px;
+}
+.chat-msg-other {
+	position: relative;
+	max-width: 50%;
+	background-color: #fff;
+	font-weight: bold;
+	padding: 10px 20px;
+	border-radius: 0.7em;
+	margin: 10px;
+}
+.chat-msg-other:after {
+	content: " ";
+	position: absolute;
+	left: 5%;
+	top: 50%;
+	border: 10px solid transparent;
+	border-right-color: #fff;
+	border-left: 0;
+	border-top: 0;
+	margin-top: -10px;
+	margin-left: -20px;
 }
 .chat-form {
-	margin-top: auto;
-	height: 8%;
-	/* background: #fff; */
+	background: #fff;
 }
 .chat-form form {
-	height: 80%;
+	
 	width: 90%;
-	margin: 0 auto;
+	margin: 10px auto 20px;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 }
-.chat-form form input {
+.chat-form form textarea {
 	width: 100%;
+	resize: none;
 	padding: 10px;
-	font-size: 0.8rem;
+	font-size: 1rem;
 	background: #fff;
 	border: 2px solid var(--primary-color);
-	border-radius: 10px 0 0 10px;
+	border-radius: 20px;
+	transition: background 0.8s ease-in;
+}
+.chat-form form textarea:focus,
+.chat-form form textarea:hover {
+	outline: none;
+	background-color: var(--light-color);
+}
+.chat-form form button:hover,
+.chat-form form button:focus {
+	background-color: #fff;
+	color: var(--primary-color);
+	border: 2px solid var(--primary-color)
 }
 .chat-form form button {
-	width: 20%;
-	font-size: 0.8rem;
+	margin-left: 10px;
+	font-size: 1rem;
 	padding: 10px;
 	background: var(--primary-color);
 	color: var(--secondary-color);
 	border: 2px solid var(--primary-color);
-	border-radius: 0 10px 10px 0;
+	border-radius: 50%;
 }
 
 /* iSearch */
@@ -484,7 +541,7 @@ a {
 /** iReminder **/
 .ireminder-container{
 	height: 100vh;
-	width: 60%;
+	/* width: 60%; */
 	background: var(--light-color);
 }
 
@@ -565,7 +622,7 @@ a {
 
 .ireminder-result{
 	height: 100px;
-	width: 550px;
+	width: 80%;
 	background: #fff;
 	color: var(--primary-color);
 	border: 2px solid #110E4C;
@@ -581,99 +638,22 @@ a {
 	font-size: 16px;	
 }
 
-/*========================================
-	Large devices (desktops, 992px and below)
-==========================================*/
-@media screen and (max-width: 992px) {
-	.side-bar {
-		display: flex;
-	}
-	.chat-menu-profile {
-		display: flex;
-	}
-}
-
-/* ====================================
-			Tablet View
-======================================*/
-
-@media screen and (max-width: 768px) {
-	/* .chat-container {
-		background-color: var(--primary-color);
-		padding: 0;
-		height: 100vh;
-	} */
-	.chat-container {
-		display: flex;
-		/* flex-direction: column; */
-		background-color: var(--primary-color);
-		padding: 0;
-		height: 100vh;
-	}
-	.side-bar {
-		flex: 100%;
-		display: none;
-		overflow-y: scroll;
-	}
-	.side-bar-profile {
-		padding: 10px;
-		text-align: center;
-	}
-	.side-bar-edit {
-		padding: 20px 20px;
-	}
-	.side-menu > li {
-		border-bottom: 1px solid #555;
-		padding: 20px 10px 20px 24px;
-	}
-	.chat-menu {
-		flex: 100%;
-		background-color: white;
-		/* display: none; */
-	}
-	.chat-menu-open {
-		width: 60%;
-	}
-	.chat-message {
-		display: none;
-	}
-	.chat-message-container {
-		/* flex: 100%; */
-		display: none;
-	}
-	.message-back-arrow {
-		display: block;
-	}
-}
-
-/* ===========================================
-					Mobile View
-===============================================*/
-
-@media screen and (max-width: 576px) {
-	#iSearch-top {
-		width: 100%;	
-	}
-	#iSearch-header {
-		text-align: center;
-		margin-left: 0px;
-	}
-
-}
 
 /*SETTINGS PAGE*/
 .settings-container{
 	background-color:var(--light-color);
-	width: 60%;
+	/* width: 60%; */
 	overflow-y: scroll;
 }
 
 .settings-title-bar{
+	position: sticky;
+	top: 0;
 	display:flex;
 	flex-direction: row;
 	justify-content: space-between;
 	color: #fff;
-	padding: 20px 20px;
+	padding: 20px;
 }
 
 .settings-title-bar > span >i{
@@ -769,5 +749,91 @@ a {
 	outline-style: none;
 	border-radius: 10px;
 	margin-right:10px;
+}
+
+
+/*========================================
+	Large devices (desktops, 992px and below)
+==========================================*/
+@media screen and (max-width: 992px) {
+	.side-bar {
+		display: none;
+	}
+	.profile-back-arrow{
+		display: block;
+	}
+	.chat-menu-profile {
+		display: flex;
+	}
+	.chat-menu .chat-header {
+		top: 185px;
+	}
+}
+
+/* ====================================
+			Tablet View
+======================================*/
+
+@media screen and (max-width: 768px) {
+	/* .chat-container {
+		background-color: var(--primary-color);
+		padding: 0;
+		height: 100vh;
+	} */
+	.chat-container {
+		display: flex;
+		/* flex-direction: column; */
+		background-color: var(--primary-color);
+		padding: 0;
+		height: 100vh;
+	}
+	.side-bar {
+		flex: 100%;
+		display: none;
+		overflow-y: scroll;
+	}
+	.side-bar-profile {
+		padding: 10px;
+		text-align: center;
+	}
+	.side-bar-edit {
+		padding: 20px 20px;
+	}
+	.side-menu > li {
+		border-bottom: 1px solid #555;
+		padding: 20px 10px 20px 24px;
+	}
+	.chat-menu {
+		display: none;
+		flex: 100%;
+		background-color: white;
+		/* display: none; */
+	}
+	.chat-menu-open {
+		width: 60%;
+	}
+
+	.chat-message-container {
+		width: 100%;
+		/* display: none; */
+	}
+	.message-back-arrow {
+		display: block;
+	}
+}
+
+/* ===========================================
+					Mobile View
+===============================================*/
+
+@media screen and (max-width: 576px) {
+	#iSearch-top {
+		width: 100%;	
+	}
+	#iSearch-header {
+		text-align: center;
+		margin-left: 0px;
+	}
+
 }
 
