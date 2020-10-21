@@ -112,7 +112,7 @@ chatRef.doc(privateChatID).collection('imessages').onSnapshot(snapshot => {
                 } else {
                     var msg = `
             <div class="chat-msg-other">
-            <p>${isender}: ${text}</p>
+            <p>${text}</p>
 				</div>
                 `
                 }
@@ -139,7 +139,7 @@ function showChat() {
         } else {
             var msg = `
     <div class="chat-msg-other">
-    <p>${isender}: ${text}</p>
+    <p>$${text}</p>
         </div>
         `}
         messageScreen.innerHTML += msg;
