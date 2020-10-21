@@ -1,25 +1,19 @@
-
 /* TEAM INIFINITY - i2talk */
 var chatId = JSON.parse(localStorage.getItem("chatId"))
 var messageScreen = document.getElementById("messages");
 var messageForm = document.getElementById("messageForm");
-const msgInput = document.getElementById("msg-input");
-const msgBtn = document.getElementById("msg-btn");
+const imsgInput = document.getElementById("msg-input");
+// const imsgBtn = document.getElementById("msg-btn");
 const msgRef = db.collection("messages");
 var leaveRoom = document.getElementById("leaveRoomidd");
 var ChatroomName = JSON.parse(localStorage.getItem("chatroomName"))
 var Chatheader = document.getElementById("chat-header")
-
-function displayChat() {
-    
-}
-
-
+showChats();
 
 messageForm.addEventListener("submit", event => {
     // if (!text.trim()) return;
     event.preventDefault();
-    var text = msgInput.value;
+    var text = imsgInput.value;
     const msg = {
         sender : loggedUser,
         chat_room_id: chatId,
@@ -86,7 +80,7 @@ var unsubscribe = msgRef.where("chat_room_id", "==", chatId).onSnapshot(snapshot
         })
     });
 
-function showChat() {
+function showChats() {
     msgRef.where("chat_room_id", "==", chatId).orderBy("timestamp", "asc").get().then((querySnapshot) => {                                                                                                                                                                                                                                                                                                                                              
         querySnapshot.forEach((doc) => {
             const {sender, text} = doc.data();
@@ -108,7 +102,7 @@ function showChat() {
     });
     setTimeout(function(){ document.getElementById("messages").scrollIntoView({behavior: "smooth", block: "end", inline: "nearest"})}, 1000);
 }
-showChat();
+
 
 // Chat room
 

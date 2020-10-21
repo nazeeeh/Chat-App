@@ -47,62 +47,6 @@ settingsProfile=`<img src="../users/${loggedUserRecord.img}">
 <p>@${loggedUserRecord.userName}</p>
 </div>`
 
-document.getElementById("settings-profile-box").innerHTML= settingsProfile
-
-document.getElementById("profile-phone-number").innerHTML= `${loggedUserRecord.phone}`
-
-document.getElementById("profile-location").innerHTML= `${loggedUserRecord.location}, Nigeria`
-
-
- function changeBio(){
-  document.getElementById("settings-main").style.opacity="0.3"
-  document.getElementById("editBioForm").style.display="block"
-  document.getElementById("editBioForm").style.opacity="1"
-  bio= document.getElementById("profile-bio-details").innerHTML
-  document.getElementById("editBioInput").value= bio
-
-}
-
-function displayEditedBio(){
-  document.getElementById("settings-main").style.opacity="1"
-  document.getElementById("editBioForm").style.display="none"
-  newBio= document.getElementById("editBioInput").value
-  document.getElementById("profile-bio-details").innerHTML= newBio
-}
-
-function backBio(){
-  document.getElementById("settings-main").style.opacity="1"
-  document.getElementById("editBioForm").style.display="none"
-}
-
-// Declaration of variables
-const userChatMenu = document.getElementById("user-chat-menu");
-const userSideBar = document.getElementById("user-side-bar");
-const userMessageContainer = document.getElementById("user-message-container");
-
-// chat menu functions
-function showSideBar(show, hide) {
-    let a = document.getElementById(show);
-    let b = document.getElementById(hide);
-    if (a.style.display === "none" && b.style.display === "flex") {
-        a.style.display = "flex";
-        b.style.display = "none";
-    } else {
-        a.style.display = "none";
-        b.style.display = "flex";
-    }
-    
-}
-
-function backToMenu(show, hide){
-  let x = document.getElementById(show);
-  let y = document.getElementById(hide);
-  if(show === 'user-chat-menu') {
-    x.classList.add('chat-menu-back-arrow');
-    // x.style.width = "100%";
-    y.classList.add('mobile-direct-msg');
-  }
-}
 
 
 

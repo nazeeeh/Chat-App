@@ -1,13 +1,13 @@
 /* TEAM INIFINITY - i2talk */
 
-var receiver = titleCase(JSON.parse(localStorage.getItem("chat")));
-var isender = titleCase(JSON.parse(localStorage.getItem("nchat")));
+
+var isender = titleCase(JSON.parse(localStorage.getItem("logged")));
 var messageScreen = document.getElementById("pmessages");
 var messageForm = document.getElementById("pmessageForm");
-const msgInput = document.getElementById("pmsg-input");
+var msgInput = document.getElementById("pmsg-input");
 const msgBtn = document.getElementById("pmsg-btn");
 const chatRef = db.collection("private-chats");
-const privateChatID = getPrivateChatID(isender, receiver);
+
 const chatScreen = document.getElementById("chat-menu");
 var chatData = JSON.parse(localStorage.getItem("chatData"))
 var Chatheaders = document.getElementById("Chatsheader")
@@ -48,6 +48,7 @@ function newChats(userName) {
 }
 
 function getPrivateChatID(isender, receiver) {
+  var receiver = titleCase(JSON.parse(localStorage.getItem("chat")));
     const chatOwner = [isender, receiver];
     chatOwner.sort((a, b) => a.localeCompare(b));
     return  `${chatOwner[0]}_${chatOwner[1]}`
@@ -60,6 +61,8 @@ function ChatScreenName(chatroomiid) {
 }
 
 function createChat() {
+  var receiver = titleCase(JSON.parse(localStorage.getItem("chat")));
+  const privateChatID = getPrivateChatID(isender, receiver);
     const chatInfo = {
         chatID : privateChatID,
         users : [isender, receiver],
@@ -71,11 +74,14 @@ function createChat() {
     chatRef.doc(privateChatID).set(chatInfo);
 }
 
-var query = chatRef
-            .doc(privateChatID)
-            .collection('imessages')
-            .orderBy('timestamp', 'desc')
-            .limit(12);
+function ChatUpdate() {
+var receiver = titleCase(JSON.parse(localStorage.getItem("chat")));
+const privateChatID = getPrivateChatID(isender, receiver);
+// var query = chatRef
+//             .doc(privateChatID)
+//             .collection('imessages')
+//             .orderBy('timestamp', 'desc')
+//             .limit(12);
 chatRef.doc(privateChatID).collection('imessages').onSnapshot(snapshot => {
   if (snapshot.docChanges()[0] === undefined) {
       const msg = `
@@ -115,8 +121,12 @@ chatRef.doc(privateChatID).collection('imessages').onSnapshot(snapshot => {
             }}
         }
 });
-
+}
 function showChat() {
+  var receiver = titleCase(JSON.parse(localStorage.getItem("chat")));
+  const privateChatID = getPrivateChatID(isender, receiver);
+  var t = document.createTextNode(`${ChatScreenName(privateChatID)}`);     // Create a text node
+  Chatheaders.appendChild(t);
     chatRef.doc(privateChatID).collection('imessages').orderBy("timestamp", "asc").get().then((querySnapshot) => {                                                                                                                                                                                                                                                                                                                                              
     querySnapshot.forEach((doc) => {
         const {isender, text} = doc.data();
@@ -137,6 +147,7 @@ function showChat() {
         });
     setTimeout(function(){ document.getElementById("pmessages").scrollIntoView({behavior: "smooth", block: "end", inline: "nearest"})}, 1000);
     }
+ChatUpdate();
 showChat();
 
 
@@ -150,14 +161,10 @@ showChat();
 
 function displayChats() {
     var querychat = chatRef.where('users', 'array-contains', isender).orderBy('latestMessage.createdAt', 'desc')
-    
-  // var querychat = db.collectionGroup('imessages').where('isender', '==', isender).orderBy("timestamp", "desc").limit(1);
-//   Start listening to the query.
-  unsubscribe = querychat.onSnapshot(function(snapshot) {
+   unsubscribe = querychat.onSnapshot(function(snapshot) {
     var data = snapshot.docs.map(function (documentSnapshot) {
       return documentSnapshot.data();
     });
-    console.log(data)
     chatScreen.innerHTML=""
         for (i=0; i<data.length; i++) {
           latest=""
@@ -180,43 +187,11 @@ function displayChats() {
     chatScreen.innerHTML += latest;
 }});
 }
-
-function displayChatnow() {
-  var querychat = chatRef.where('users', 'array-contains', isender)
-.orderBy('latestMessage.createdAt', 'desc')
-  
-unsubscribe = querychat.onSnapshot(function(snapshot) {
-  var data = snapshot.docs.map(function (documentSnapshot) {
-    return documentSnapshot.data();
-  });
-  console.log(data)
-
-  chatScreen.innerHTML=""
-      for (i=0; i<data.length; i++) {
-        latest=""
-      // details
-      latest += `
-      <div class="chat-box">
-    <div class="chat-box-img">
-      <img src="../../users/mira.jfif">
-    </div>
-    <div class="chat-box-msg" >
-      <h4 onclick="newChat(this)" data-username="${ChatScreenName(data[i].chatID)}">${ChatScreenName(data[i].chatID)}</h4>
-      <p>${data[i].latestMessage.text}</p>
-    </div>
-    <div class="chat-box-stats">
-      <p><span class="chat-counter">1</span></p>
-      <h6>${data[i].latestMessage.createdAt}</h6>
-    </div>
-  </div>
-    `
-  chatScreen.innerHTML += latest;
-    }});
-}
-
   // unsubscribe();
  
 messageForm.addEventListener("submit", event => {
+  var receiver = titleCase(JSON.parse(localStorage.getItem("chat")));
+  const privateChatID = getPrivateChatID(isender, receiver);
   createChat();  
   event.preventDefault();
     text = msgInput.value;
@@ -226,7 +201,7 @@ messageForm.addEventListener("submit", event => {
         text : text,
         timestamp : firebase.firestore.FieldValue.serverTimestamp()
     }
-    document.getElementById("messageForm").reset();
+    document.getElementById("pmessageForm").reset();
       var batch = db.batch();
       var nycRef = chatRef.doc(privateChatID).collection("imessages").doc(uuidv4());
       batch.set(nycRef, msg);
@@ -247,5 +222,3 @@ function enterChatroom(chatroomName) {
     window.location.assign(`chat-room.html`)
 }
 
-var t = document.createTextNode(`${ChatScreenName(privateChatID)}`);     // Create a text node
-Chatheaders.appendChild(t);

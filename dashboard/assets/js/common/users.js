@@ -95,6 +95,7 @@ function userLogin(event) {
           setCookie(userName, true);
          } */  
         loggedUserIn(userName);
+        localStorage.setItem("logged", JSON.stringify(userName));
         window.location.assign("dashboard/index.html");
     }
     else {
@@ -131,6 +132,7 @@ function addUser(event) {
         }
         localStorage.setItem("tempUsers", JSON.stringify(newUser));
         loggedUserIn(username);
+        localStorage.setItem("logged", JSON.stringify(userName));
         localStorage.setItem("usersIdTracker", usersIdTracker);
         window.location.assign("./welcome.html");
     } else {
