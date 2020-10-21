@@ -139,7 +139,7 @@ function showChat() {
         } else {
             var msg = `
     <div class="chat-msg-other">
-    <p>$${text}</p>
+    <p>${text}</p>
         </div>
         `}
         messageScreen.innerHTML += msg;
