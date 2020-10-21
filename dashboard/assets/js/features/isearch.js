@@ -34,7 +34,7 @@ function LocationResults() { //Function to render Search Result
                             <p>${locationuser[i].location}</p>
                             <p>${(locationuser[i].distance/1000)} km Away</p>
                         </div>
-                        <button class="btn pos">View Profile</button> &nbsp; <button class="btn">Message</button>
+                        <button class="btn pos">View Profile</button> &nbsp; <button onclick="newChat(this)" data-username="${locationuser[i].userName}" class="btn">Message</button>
                     </div>
                     `;
                 }
@@ -62,19 +62,20 @@ searchGeo.addEventListener("click", function() {
     
 })
 
+var users = getUsers();
 function sortResults(position) {
     // Grab current position
     var latlon = new LatLon(position.coords.latitude, position.coords.longitude);
-    for (let i=0; i<iusers.length; i++) {
-        var ilocation = iusers[i].latlong;
+    for (let i=0; i<users.length; i++) {
+        var ilocation = users[i].latlong;
         var distance = latlon.distanceTo(new LatLon(Number(ilocation[0]),Number(ilocation[1])));
         var newDistance = parseInt(distance)
         if (distance < 200000) {
             locationuser[locationuser.length] = 
-    {   "img" : iusers[i].img,
-        "fullName" : iusers[i].fullName,
-       "location" : iusers[i].location, 
-       "latlong" : iusers[i].latlong,
+    {   "img" : users[i].img,
+        "fullName" : users[i].fullName,
+       "location" : users[i].location, 
+       "latlong" : users[i].latlong,
        "distance" : newDistance
      };
     }
@@ -124,7 +125,7 @@ function SearchResult() { //Function to render Search Result
                     <h2>${Fusers[i].fullName}</h2><br>
                     <p>${Fusers[i].location}</p>
                 </div>
-                <button class="btn pos">View Profile</button> &nbsp; <button class="btn">Message</button>
+                <button class="btn pos">View Profile</button> &nbsp; <button onclick="newChat(this)" data-username="${Fusers[i].userName}" class="btn">Message</button>
             </div>
             `;
         }
@@ -142,7 +143,7 @@ searchForm.addEventListener("submit", function () {
     iSearchResultNo ="";
     iSearchResult="";
     foundLocation = (document.getElementById("iSearchInput").value).toLowerCase();
-    Fusers = iusers.filter(x=>x.location.toLowerCase().includes(foundLocation));
+    Fusers = users.filter(x=>x.location.toLowerCase().includes(foundLocation));
         if (Fusers == null || Fusers == undefined || Fusers ==""){
             iSearchResult+= 
             `<h3>No User Found in ${foundLocation}`

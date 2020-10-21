@@ -47,9 +47,8 @@
   	<div class="chat-header">
 		<span>Chats</span>
 		<span class="chat-counter">7</span>
-	  </div>
-	  <div id="chat-menu">
-  	<!-- <div class="chat-box">
+  	</div>
+  	<div class="chat-box">
   		<div class="chat-box-img">
   			<img src="../users/mira.jfif">
   		</div>
@@ -126,8 +125,8 @@
   			<p><span class="chat-counter">6</span></p>
   			<h6>3:30pm</h6>
   		</div>
-  	</div> -->
-</div>
+  	</div>
+
   </div>
   	<!-- Message Menu-->
   	<!-- <div class="chat-message">
@@ -142,25 +141,22 @@
 			<!-- Enter your code here -->
 			<div class="chat-header">
 				<a class="message-back-arrow" onclick="showSideBar('user-chat-menu', 'user-direct-chat')"><i class="fas fa-long-arrow-alt-left"></i></a>
-				<div class="chat-head-img">
-					<img src="/users/deven.jpg">
-				</div>
 				<div class="chat-head-username">
-					<span>Mum</span>
+					<span id="chat-header"></span>
 				</div>
 				<div class="chat-head-menu">
 					<a onclick="reveal('chat-menu-list')"><i class="fas fa-ellipsis-v"></i></a>
 				</div>
 				<ul class="" id="chat-menu-list">
-					<li>View contact</li>
+					<li>View Members</li>
 					<li>Mute notifications</li>
 					<li>Search</li>
 					<li>Report</li>
-					<li>Block</li>
+					<li><button id="leaveRoomidd">Leave room</button></li>
 				</ul>
 			</div>
-			<div class="chat-body">
-				<div class="chat-msg-self">
+			<div class="chat-body" id="messages">
+				<!-- <div class="chat-msg-self">
 					<p>Hey! How are you doing?</p>
 				</div>
 				<div class="chat-msg-other">
@@ -174,12 +170,12 @@
 						Your family and in-laws... Business... send me that account number,
 						I lost it when I lost my phone.
 					</p>
-				</div>
+				</div> -->
 			</div>
 			<div class="chat-form">
-				<form action="">
-					<textarea id="chat-text-area" autocapitalize= "sentences" autocomplete="on" placeholder="Type message here ..." rows="1"></textarea>
-					<button onclick=""><i class="far fa-paper-plane"></i></button>
+				<form id="messageForm">
+					<textarea id="msg-input" autocapitalize= "sentences" autocomplete="on" placeholder="Type message here ..." rows="1"></textarea>
+					<button id="msg-btn"><i class="far fa-paper-plane"></i></button>
 				</form>
 			</div>
 		</div>
@@ -191,13 +187,11 @@
 <script src="../db.js"></script>
 <script src="/script.js"></script>
 <script src="./assets/js/users/users-db.js"></script>
-<script src="./assets/js/chats/chat-msg.js"></script>
+<script src="./assets/js/chats/chat-msg-db.js"></script>
 <script src="./assets/js/common/users.js"></script>
-<!-- <script src="./assets/js/common/chat.js"></script> -->
+<script src="./assets/js/chats/chat-room.js"></script>
 <script src="./assets/js/users/users-mgt.js"></script>
 <script src="./assets/js/common/dashboard.js"></script>
 <script src="./assets/js/users/users-settings.js"></script>
-
-
 </body>
 </html>

@@ -286,9 +286,11 @@ a {
 	height: 80px;
 }
 .chat-box-msg {
+	cursor: pointer;
 	padding: 5px 10px;
 }
 .chat-box-msg h4 {
+	cursor: pointer;
 	margin-bottom: 10px;
 }
 .chat-box-stats {

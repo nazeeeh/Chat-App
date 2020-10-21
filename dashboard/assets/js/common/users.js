@@ -1,16 +1,27 @@
 /* TEAM INIFINITY - i2talk */
+var iUsers =[];
+db.collection("users").get().then((querySnapshot) => {
+  querySnapshot.forEach((doc) => {
+    iUsers.push(doc.data());
+    // console.log(doc.data());
+  });
+  localStorage.setItem("iUsers", JSON.stringify(iUsers));
+  localStorage.setItem("usersIdTracker", iUsers.length - 1);
+});
+
 
 //GET ALL USERS DATA FROM THE LOCAL STORAGE
 function getUsers() {
-    let users = JSON.parse(localStorage.getItem("iusers"));
-    return users;
+    let inUsers = iUsers;
+    return inUsers;
 }
+
 
 function getUserIdTracker() {
-    let usersIdTracker = localStorage.getItem("usersIdTracker");
-    return usersIdTracker;
+  users = getUsers();
+  let usersIdTracker = localStorage.getItem("usersIdTracker");
+  return usersIdTracker;
 }
-
 
 //GET USER DETAILS BY THEIR USERNAME
 function getUserByUsername(uname) {
@@ -18,7 +29,7 @@ function getUserByUsername(uname) {
     userIndex = users.findIndex(x=>x.userName.toLowerCase() == uname.toLowerCase());
     usersRecord = users[userIndex];
     return usersRecord;
-    
+
 }
 
 //GET USER DETAILS BY THEIR MAIL
@@ -118,10 +129,9 @@ function addUser(event) {
               "ban" : "0" ,
               "latlong" : []
         }
-        users.push(newUser); 
-        localStorage.setItem("iusers", JSON.stringify(users)); 
-        localStorage.setItem("usersIdTracker", usersIdTracker);
+        localStorage.setItem("tempUsers", JSON.stringify(newUser));
         loggedUserIn(username);
+        localStorage.setItem("usersIdTracker", usersIdTracker);
         window.location.assign("./welcome.html");
     } else {
       document.getElementById("error-signup").style.display = "Block";
@@ -263,25 +273,20 @@ if (loggedIn == false) {
     } else {
        img = "default.png";
     }
-    newUser = {	
-        "userID" : users[userIndex].userID,
-        "img" : img,
-        "userName" : loggedIn,
-        "fullName" : users[userIndex].fullName,
-        "mail" : users[userIndex].mail,
-        "phone" : phone,
-        "password" : users[userIndex].password,
-        "location" : userLocation,
-        "sex" : sex,
-        "userType" : "user",
-        "level" : "0",
-        "ban" : "0",
-        "latlong" : latlong
-    }
-    users[userIndex] = newUser; 
-    localStorage.setItem("iusers", JSON.stringify(users));
-    window.location.assign("dashboard/index.html");
+    tempUsers = JSON.parse(localStorage.getItem("tempUsers"))
+    tempUsers.img = img;
+    tempUsers.phone = phone;
+    tempUsers.location = userLocation;
+    tempUsers.sex = sex;
+    tempUsers.latlong=latlong;
+    // alert(JSON.stringify(tempUsers))
+    db.collection("users").add(tempUsers).then((ref) => {
+      // console.log("Added User with ID:", ref.id)
+    })
   }
+ 
+  setTimeout(function(){ window.location.assign("dashboard/index.html") }, 1500);
+  localStorage.removeItem("tempUsers");
   event.preventDefault();
 }
 
@@ -338,6 +343,8 @@ function isUserLoggedIn(username) {
     return true;
   }
 }
+
+
 
 //
 
