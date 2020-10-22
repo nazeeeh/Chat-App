@@ -85,9 +85,11 @@ const privateChatID = getPrivateChatID(isender, receiver);
 chatRef.doc(privateChatID).collection('imessages').onSnapshot(snapshot => {
   if (snapshot.docChanges()[0] === undefined) {
       const msg = `
-          <div class="chat-msg-other">
-			<p>No Previous Messages found. Send message now to Start Chatting!</p>
-		  </div>
+      <li id="no-msg" class="mchat-msg-other">
+                    <span id="chat-new">
+                    <p>No Previous Messages found. Send message now to Start Chatting!</p>
+                    </span>
+                </li>
 `
         messageScreen.innerHTML += msg;
     setTimeout(function(){ 
@@ -104,16 +106,21 @@ chatRef.doc(privateChatID).collection('imessages').onSnapshot(snapshot => {
             else {
                 // now we have the final timestamp value
                 if (isender === loggedUser) {
+                  
                     var msg = `
-            <div class="chat-msg-self">
-					<p>${text}</p>
-			</div>
+                    <li class="mchat-msg-self">
+                    <span id="chat-new">
+                    <p>${text}<p>
+                    </span>
+                </li>
                 `
                 } else {
-                    var msg = `
-            <div class="chat-msg-other">
-            <p>${text}</p>
-				</div>
+                  var msg = `
+                    <li class="mchat-msg-other">
+                    <span id="chat-new">
+                    <p>${text}<p>
+                    </span>
+                </li>
                 `
                 }
                 messageScreen.innerHTML += msg;
@@ -131,17 +138,21 @@ function showChat() {
     querySnapshot.forEach((doc) => {
         const {isender, text} = doc.data();
         if (isender === loggedUser) {
-            var msg = `
-    <div class="chat-msg-self">
-            <p>${text}</p>
-    </div>
-        `
+          var msg = `
+                    <li class="mchat-msg-self">
+                    <span id="chat-new">
+                    <p>${text}<p>
+                    </span>
+                </li>
+                `
         } else {
-            var msg = `
-    <div class="chat-msg-other">
-    <p>${text}</p>
-        </div>
-        `}
+          var msg = `
+                    <li class="mchat-msg-other">
+                    <span id="chat-new">
+                        <p>${text}<p>
+                    </span>
+                </li>
+                `}
         messageScreen.innerHTML += msg;
         });
         });
@@ -165,27 +176,36 @@ function displayChats() {
     var data = snapshot.docs.map(function (documentSnapshot) {
       return documentSnapshot.data();
     });
-    chatScreen.innerHTML=""
-        for (i=0; i<data.length; i++) {
-          latest=""
-        // details
-        latest += `
-        <div class="chat-box">
-  		<div class="chat-box-img">
-  			<img src="../../users/mira.jfif">
-  		</div>
-  		<div class="chat-box-msg" >
-  			<h4 onclick="newChat(this)" data-username="${ChatScreenName(data[i].chatID)}">${ChatScreenName(data[i].chatID)}</h4>
-  			<p>${data[i].latestMessage.text}</p>
-  		</div>
-  		<div class="chat-box-stats">
-  			<p><span class="chat-counter">1</span></p>
-  			<h6>${data[i].latestMessage.createdAt}</h6>
-  		</div>
-  	</div>
+    if (data.length < 1) {
+      chatScreen.innerHTML=""
+      chatScreen.innerHTML+= `
+      <div id="chat-center">
+      <h2>No Conversations yet!</h2>
+      <h4>Click <a href ="http://127.0.0.1:5502/dashboard/isearch.html">here</a> to search for users and start chatting</h4>
+      </div>
       `
-    chatScreen.innerHTML += latest;
-}});
+    } else {
+      chatScreen.innerHTML=""
+          for (i=0; i<data.length; i++) {
+            latest=""
+          // details
+          latest += `
+          <div class="chat-box">
+        <div class="chat-box-img">
+          <img src="../../users/mira.jfif">
+        </div>
+        <div class="chat-box-msg" >
+          <h4 onclick="newChat(this)" data-username="${ChatScreenName(data[i].chatID)}">${ChatScreenName(data[i].chatID)}</h4>
+          <p>${data[i].latestMessage.text}</p>
+        </div>
+        <div class="chat-box-stats">
+          <p><span class="chat-counter">1</span></p>
+          <h6>${ToTime(data[i].latestMessage.createdAt)}</h6>
+        </div>
+      </div>
+        `
+      chatScreen.innerHTML += latest;
+}}});
 }
   // unsubscribe();
  
@@ -208,7 +228,7 @@ messageForm.addEventListener("submit", event => {
       var sfRef = chatRef.doc(privateChatID);
       batch.update(sfRef, {latestMessage: {
         text : text,
-        createdAt: new Date().getTime()
+        createdAt: firebase.firestore.FieldValue.serverTimestamp()
       }});
       batch.commit().then(function () {
 });
@@ -222,3 +242,9 @@ function enterChatroom(chatroomName) {
     window.location.assign(`chat-room.html`)
 }
 
+function ToTime(newtime) {
+  const milliseconds = newtime.seconds * 1000;
+  const date = new Date(milliseconds);
+  const time = date.toLocaleString();
+  return time;
+}
