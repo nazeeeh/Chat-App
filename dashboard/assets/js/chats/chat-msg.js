@@ -1,13 +1,12 @@
 /* TEAM INIFINITY - i2talk */
-
-
 var isender = titleCase(JSON.parse(localStorage.getItem("logged")));
 var messageScreen = document.getElementById("pmessages");
 var messageForm = document.getElementById("pmessageForm");
 var msgInput = document.getElementById("pmsg-input");
 const msgBtn = document.getElementById("pmsg-btn");
 const chatRef = db.collection("private-chats");
-
+const chatNo = document.getElementsByClassName("chat-counter")[0]
+const chatImg = document.getElementsByClassName("chat-head-img")[0]
 const chatScreen = document.getElementById("chat-menu");
 var chatData = JSON.parse(localStorage.getItem("chatData"))
 var Chatheaders = document.getElementById("Chatsheader")
@@ -106,7 +105,6 @@ chatRef.doc(privateChatID).collection('imessages').onSnapshot(snapshot => {
             else {
                 // now we have the final timestamp value
                 if (isender === loggedUser) {
-                  
                     var msg = `
                     <li class="mchat-msg-self">
                     <span id="chat-new">
@@ -131,6 +129,7 @@ chatRef.doc(privateChatID).collection('imessages').onSnapshot(snapshot => {
 }
 function showChat() {
   var receiver = titleCase(JSON.parse(localStorage.getItem("chat")));
+  getDp(receiver);
   const privateChatID = getPrivateChatID(isender, receiver);
   var t = document.createTextNode(`${ChatScreenName(privateChatID)}`);     // Create a text node
   Chatheaders.appendChild(t);
@@ -176,7 +175,11 @@ function displayChats() {
     var data = snapshot.docs.map(function (documentSnapshot) {
       return documentSnapshot.data();
     });
+    var s = document.createTextNode(`${data.length}`); 
+    chatNo.innerHTML=""    // Create a text node
+    chatNo.appendChild(s);
     if (data.length < 1) {
+      chatNo.style.display = "none";
       chatScreen.innerHTML=""
       chatScreen.innerHTML+= `
       <div id="chat-center">
@@ -187,12 +190,12 @@ function displayChats() {
     } else {
       chatScreen.innerHTML=""
           for (i=0; i<data.length; i++) {
+            const dP = getChatDp(ChatScreenName(data[i].chatID))
             latest=""
-          // details
           latest += `
           <div class="chat-box">
         <div class="chat-box-img">
-          <img src="../../users/mira.jfif">
+          <img src="/users/${dP}">
         </div>
         <div class="chat-box-msg" >
           <h4 onclick="newChat(this)" data-username="${ChatScreenName(data[i].chatID)}">${ChatScreenName(data[i].chatID)}</h4>
@@ -247,4 +250,25 @@ function ToTime(newtime) {
   const date = new Date(milliseconds);
   const time = date.toLocaleString();
   return time;
+}
+
+function getDp(receiver) {
+  // var receiver = titleCase(JSON.parse(localStorage.getItem("chat")));
+  lUsers = JSON.parse(localStorage.getItem("iUsers"));
+  var userIndex = lUsers.findIndex(x=>x.userName.toLowerCase() == receiver);
+  var UserDetail = lUsers[userIndex]
+  console.log(UserDetail.img)
+  var image = document.createElement("IMG");
+  image.setAttribute("src", `/users/${UserDetail.img}`);
+  // image.setAttribute("width", "304");
+  // image.setAttribute("height", "228");
+  // image.setAttribute("alt", "The Pulpit Rock");
+  chatImg.appendChild(image);
+}
+
+function getChatDp(receiver) {
+  lUsers = JSON.parse(localStorage.getItem("iUsers"));
+  var userIndex = lUsers.findIndex(x=>x.userName.toLowerCase() == receiver);
+  var UserDetail = lUsers[userIndex]
+  return UserDetail.img
 }

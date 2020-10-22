@@ -398,6 +398,7 @@ a {
 	align-items: center;
 	margin-top: 50%;
 	font-size: large;
+	text-align: center;
 }
 #chat-center a {
 	color: var(--primary-color);
