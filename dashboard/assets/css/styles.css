@@ -732,10 +732,6 @@ a {
 	box-shadow: 2px 2px 2px 2px var(--primary-color);
 }
 
-#editBio-btn{
-	/* margin-left:80%; */
-	align-self: flex-end;
-}
 
 #settings-profile-box{
 	display: flex;
@@ -769,26 +765,89 @@ a {
 	padding:20px 0px 20px 20px;
 }
 
-#settings-main{
-	opacity:1;
-	/* overflow-y: scroll; */
+/*PROFILE PAGE*/
+.profile-page{
+	background-color: var(--light-color);
+	height: 100vh;
+	overflow-y: scroll;
 }
 
-#editBioForm{
-	display:none;
-	opacity:1;
-	margin-top:100px;
-	margin-left:70px;
+.profile-title-bar{
+	position: sticky;
+	top: 0;
+	display:flex;
+	flex-direction: row;
+	justify-content: space-between;
+	color: #fff;
+	padding: 20px;
 }
 
-#editBioInput{
-	background-color: #fffffe;
-	box-shadow:2px 2px 2px 2px var(--primary-color);
+.profile-title-bar > span >i{
+	margin-left: 10px;
+}
+
+.profile-title-bar > span >i:hover{
+	font-size: 30px;
+}
+
+
+#profile-image-box > img{
+	border-radius: 50%;
+	border:5px solid var(--primary-color);
+	display:block;
+	margin:10px auto 10px auto;
+	max-width: 30%;
+	height:auto;
+}
+
+.user-profile-details > p{
+	text-align: center;
+}
+
+.user-profile-details > input,.user-profile-details > select{
+	width:60%;
+	margin:auto;
+	display:block;
 	outline-style: none;
-	border-radius: 10px;
-	margin-right:10px;
+	background-color: var(--light-color);
+	color:var(--primary-color);
+	padding:10px;
+	border-radius:10px;
+	border-top-left-radius: 0px;
+	border-top-right-radius: 0px;
+	border-top:none;
+	border-bottom:5px solid var(--primary-color);
+	border-left: none;
+	border-right: none;
 }
 
+.user-profile-details > input:focus,.user-profile-details > select:focus{
+	background-color: var(--primary-color);
+	color:#fffffe;
+	border-bottom:5px solid var(--secondary-color);
+}
+
+#submit-profile-btn{
+	border-radius: 10px;
+	outline-style: none;
+	padding: 10px;
+	background-color: var(--primary-color);
+	color:#fffffe;
+	cursor: pointer;
+	margin:20px auto 20px auto;
+	display:block;	
+}
+
+#submit-profile-btn:hover{
+	background-color: var(--secondary-color);
+	color:var(--primary-color);
+	box-shadow: 2px 2px 2px 2px var(--primary-color);
+}
+
+#profile-loader{
+	display:none;
+	margin-right: 10px;
+}
 
 /*========================================
 	Large devices (desktops, 992px and below)

@@ -2,6 +2,7 @@
 	background-color: var(--light-color);
 	/* width: 60%; */
 	overflow-y: scroll;
+	height:100vh;
 }
 
 .chatrooms-title-bar{
