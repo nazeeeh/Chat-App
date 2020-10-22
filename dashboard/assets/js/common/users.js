@@ -128,7 +128,8 @@ function addUser(event) {
               "userType" : "user",
               "level" : "0",
               "ban" : "0" ,
-              "latlong" : []
+              "latlong" : [],
+              "bio": "Hi, I am new to the i2talk chatting platform"
         }
         localStorage.setItem("tempUsers", JSON.stringify(newUser));
         loggedUserIn(username);

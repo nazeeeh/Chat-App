@@ -26,14 +26,27 @@
 		font-size: 30px;
 	}
 
-	#addNew{
+	#addNew, #editNew{
 		display:none;
-		margin-left:90px;
-		margin-top: 30px;
+		width:40%;
+		height:30%;
+		padding-left: 20px;
+		background-color: #fffffe;
+		position:absolute;
+		top: 50%;
+	  	left: 50%;
+	  	transform: translate(-50%,-50%);
+	  	-ms-transform: translate(-50%,-50%);
+		box-shadow: 4px 4px 4px 4px var(--primary-color)
+	}
+
+	#addNew > div, #editNew > div{
+		padding:0px 50px 0px 250px;
 	}
 
 	#cancel, #addNew-btn{
-		margin: 20px 20px;
+		display:inline-block;
+		margin-right:20px;
 		background-color:var(--primary-color);
 		color:white;
 		padding:10px;
@@ -143,29 +156,26 @@
 		margin: 20px auto 20px auto;
 	}
 
-
-	#editNew{
-		display:none;
-		margin-left:90px;
-		margin-top: 30px;
-	}
-
-	input{
+	#searchInput{
 		border-radius: 10px;
 		padding:10px;
 		outline-style: none;
-		width:40%;
+		width:200px;
 		background-color: #fffffe;
-		border:2px solid #fffffe;
+		border:2px solid var(--primary-color);
 	}
 
 	#messageInput, #editMessageInput{
-		border-radius: 10px;
-		outline-style: none;
+		width:70%;
+		height:40%;
 		background-color: #fffffe;
-		border:2px solid #fffffe;
+		box-shadow:2px 2px 2px 2px var(--primary-color);
+		outline-style: none;
+		border-radius: 10px;
+		margin:30px auto 20px auto;
+		display:block;
+		padding: 10px;
 	}
-
 
 	.swal-button.swal-button--confirm{
 		background-color: var(--primary-color);
@@ -179,6 +189,18 @@
 	#idiary-loader, #idiary-back-loader{
 		display:none;
 		margin-right: 10px;
+	}
+
+	#overlay{
+	height: 100vh;
+	position:fixed;
+	display:none;
+	background-color:var(--light-color);
+	opacity:0.7;
+	top: 0;
+ 	left: 0;
+  	right: 0;
+  	bottom: 0;
 	}
 
 	@media screen and (max-width:500px){
