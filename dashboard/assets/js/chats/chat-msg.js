@@ -184,7 +184,7 @@ function displayChats() {
       chatScreen.innerHTML+= `
       <div id="chat-center">
       <h2>No Conversations yet!</h2>
-      <h4>Click <a href ="http://127.0.0.1:5502/dashboard/isearch.html">here</a> to search for users and start chatting</h4>
+      <h4>Click <a href ="/dashboard/isearch.html">here</a> to search for users and start chatting</h4>
       </div>
       `
     } else {
