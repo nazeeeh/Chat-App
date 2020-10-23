@@ -25,7 +25,8 @@
             loggedUser = isLoggedIn();
         }
         //DELETE USER RECORD
-        localStorage.removeItem("loggedUserIn")
+        localStorage.clear();
+        // localStorage.removeItem("loggedUserIn")
         //REDIRECT USER BACK TO HOME
         window.location.assign("../login.html");
 

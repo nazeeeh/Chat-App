@@ -39,7 +39,7 @@ function newChat(userName) {
 }
 
 function newChats(userName) {
-  userName = userName.getAttribute("data-username");
+  userName = userName.getAttribute("data-localname");
   // alert(userName);
   localStorage.setItem("nchat", JSON.stringify(loggedUser));
   localStorage.setItem("chat", JSON.stringify(userName));
@@ -90,7 +90,7 @@ chatRef.doc(privateChatID).collection('imessages').onSnapshot(snapshot => {
                     </span>
                 </li>
 `
-        messageScreen.innerHTML += msg;
+    messageScreen.innerHTML += msg;
     setTimeout(function(){ 
         var elem = document.querySelector('#no-msg');
         elem.parentNode.removeChild(elem);
@@ -170,7 +170,7 @@ showChat();
 //             .limit(12);
 
 function displayChats() {
-    var querychat = chatRef.where('users', 'array-contains', isender).orderBy('latestMessage.createdAt', 'desc')
+  var querychat = chatRef.where('users', 'array-contains', isender).orderBy('latestMessage.createdAt', 'desc')
    unsubscribe = querychat.onSnapshot(function(snapshot) {
     var data = snapshot.docs.map(function (documentSnapshot) {
       return documentSnapshot.data();
@@ -253,7 +253,7 @@ function ToTime(newtime) {
 }
 
 function getDp(receiver) {
-  // var receiver = titleCase(JSON.parse(localStorage.getItem("chat")));
+  var receiver = titleCase(JSON.parse(localStorage.getItem("chat")));
   lUsers = JSON.parse(localStorage.getItem("iUsers"));
   var userIndex = lUsers.findIndex(x=>x.userName.toLowerCase() == receiver);
   var UserDetail = lUsers[userIndex]

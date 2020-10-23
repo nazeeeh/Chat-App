@@ -4,6 +4,7 @@ if(isLoggedIn() == false) {
 }
 else {
   var loggedUser = isLoggedIn();
+  // var loggedUser = JSON.parse(localStorage.getItem("logged"));
 }
 // window.location.reload();
 //GET USER RECORD

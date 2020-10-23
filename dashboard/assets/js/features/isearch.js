@@ -15,10 +15,10 @@ function LocationResults() { //Function to render Search Result
         else {
             if (locationuser.length === 1) {
                 iSearchResultNo= 
-            `<h3>${locationuser.length} User Found`
+            `<h3>${locationuser.length} User Found</h3>`
             } else {
                 iSearchResultNo= 
-                `<h3>${locationuser.length} Users Found`
+                `<h3>${locationuser.length} Users Found</h3>`
             }
             document.getElementById("iSearch-result").innerHTML = `${iSearchResultNo}`;
             for( let i=0; i<locationuser.length; i++) {
@@ -34,7 +34,7 @@ function LocationResults() { //Function to render Search Result
                             <p>${locationuser[i].location}</p>
                             <p>${(locationuser[i].distance/1000)} km Away</p>
                         </div>
-                        <button class="btn pos">View Profile</button> &nbsp; <button onclick="newChat(this)" data-username="${locationuser[i].userName}" class="btn">Message</button>
+                        <button class="btn pos">View Profile</button> &nbsp; <button onclick="newChats(this)" data-localname="${locationuser[i].userName}" class="btn">Message</button>
                     </div>
                     `;
                 }
@@ -76,6 +76,7 @@ function sortResults(position) {
         "fullName" : users[i].fullName,
        "location" : users[i].location, 
        "latlong" : users[i].latlong,
+       "userName": users[i].userName,
        "distance" : newDistance
      };
     }

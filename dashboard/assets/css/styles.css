@@ -540,6 +540,7 @@ a {
 }
 #iSearch-result {
 	padding: 10px 0;
+	overflow-y: auto;
 }
 .iSearchResults{
 	display: flex;

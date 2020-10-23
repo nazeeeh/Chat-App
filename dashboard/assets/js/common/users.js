@@ -133,7 +133,7 @@ function addUser(event) {
         }
         localStorage.setItem("tempUsers", JSON.stringify(newUser));
         loggedUserIn(username);
-        localStorage.setItem("logged", JSON.stringify(userName));
+        localStorage.setItem("logged", JSON.stringify(newUser.userName));
         localStorage.setItem("usersIdTracker", usersIdTracker);
         window.location.assign("./welcome.html");
     } else {
@@ -285,11 +285,27 @@ if (loggedIn == false) {
     // alert(JSON.stringify(tempUsers))
     db.collection("users").add(tempUsers).then((ref) => {
       // console.log("Added User with ID:", ref.id)
+      swal({
+        icon: "success",
+        title: "Registration Successful",
+        button: {
+          text: "Proceed to Login",
+          value: true,
+          visible: true,
+          className: "",
+          closeModal: true,
+        },
+        // .swal-modal {
+        //   background-color: rgba(63,255,106,0.69);
+        //   border: 3px solid white;
+        // }
+      }).then(() => {
+        localStorage.removeItem("tempUsers");
+        setTimeout(function(){window.location.assign("login.html")}, 1000);
+      });
+      // setTimeout(function(){ window.location.assign("dashboard/index.html") }, 2000);
     })
   }
- 
-  setTimeout(function(){ window.location.assign("dashboard/index.html") }, 1500);
-  localStorage.removeItem("tempUsers");
   event.preventDefault();
 }
 
