@@ -32,7 +32,6 @@ String.prototype.replaceAt = function(index, character) {
   
 function newChat(userName) {
     userName = userName.getAttribute("data-username");
-    // alert(userName);
     localStorage.setItem("nchat", JSON.stringify(loggedUser));
     localStorage.setItem("chat", JSON.stringify(userName));
     setTimeout(function(){ window.location.assign(`PrivateChat.html`) }, 500);
@@ -40,7 +39,6 @@ function newChat(userName) {
 
 function newChats(userName) {
   userName = userName.getAttribute("data-localname");
-  // alert(userName);
   localStorage.setItem("nchat", JSON.stringify(loggedUser));
   localStorage.setItem("chat", JSON.stringify(userName));
   setTimeout(function(){ window.location.assign(`PrivateChat.html`) }, 500);
@@ -73,16 +71,15 @@ function createChat() {
     chatRef.doc(privateChatID).set(chatInfo);
 }
 
-function ChatUpdate() {
-var receiver = titleCase(JSON.parse(localStorage.getItem("chat")));
-const privateChatID = getPrivateChatID(isender, receiver);
-// var query = chatRef
-//             .doc(privateChatID)
-//             .collection('imessages')
-//             .orderBy('timestamp', 'desc')
-//             .limit(12);
-chatRef.doc(privateChatID).collection('imessages').onSnapshot(snapshot => {
-  if (snapshot.docChanges()[0] === undefined) {
+ShowPrivateChats();
+function ShowPrivateChats() {
+  var receiver = titleCase(JSON.parse(localStorage.getItem("chat")));
+  getDp(receiver);
+  const privateChatID = getPrivateChatID(isender, receiver);
+  var t = document.createTextNode(`${ChatScreenName(privateChatID)}`);     // Create a text node
+  Chatheaders.appendChild(t);
+  chatRef.doc(privateChatID).collection('imessages').orderBy("timestamp", "asc").onSnapshot(function(snapshot) {
+    if (!snapshot.size)  {
       const msg = `
       <li id="no-msg" class="mchat-msg-other">
                     <span id="chat-new">
@@ -95,47 +92,20 @@ chatRef.doc(privateChatID).collection('imessages').onSnapshot(snapshot => {
         var elem = document.querySelector('#no-msg');
         elem.parentNode.removeChild(elem);
         }, 3000);
-        } else {
-        shown = snapshot.docChanges()[0].doc.data()
-        const {isender, text} = shown;
-        if (shown) {
-            if (!shown.createdAt && snapshot.metadata.hasPendingWrites) {
-                // 
-            }
-            else {
-                // now we have the final timestamp value
-                if (isender === loggedUser) {
-                    var msg = `
-                    <li class="mchat-msg-self">
-                    <span id="chat-new">
-                    <p>${text}<p>
-                    </span>
-                </li>
-                `
-                } else {
-                  var msg = `
-                    <li class="mchat-msg-other">
-                    <span id="chat-new">
-                    <p>${text}<p>
-                    </span>
-                </li>
-                `
-                }
-                messageScreen.innerHTML += msg;
-                document.getElementById("pmessages").scrollIntoView({behavior: "smooth", block: "end", inline: "nearest"})
-            }}
-        }
-});
-}
-function showChat() {
-  var receiver = titleCase(JSON.parse(localStorage.getItem("chat")));
-  getDp(receiver);
-  const privateChatID = getPrivateChatID(isender, receiver);
-  var t = document.createTextNode(`${ChatScreenName(privateChatID)}`);     // Create a text node
-  Chatheaders.appendChild(t);
-    chatRef.doc(privateChatID).collection('imessages').orderBy("timestamp", "asc").get().then((querySnapshot) => {                                                                                                                                                                                                                                                                                                                                              
-    querySnapshot.forEach((doc) => {
-        const {isender, text} = doc.data();
+
+      }
+    snapshot.docChanges().forEach(function(change) {
+      if (change.type === 'removed') {
+        // renderer.remove(change.doc);
+      } else {
+        shownn = change.doc.data();
+        const {isender, text} = shownn
+        if (shownn) {
+          if (!shownn.createdAt && snapshot.metadata.hasPendingWrites) {
+              // 
+          }
+          else{
+        console.log(`get = ${change.doc.data()}`)
         if (isender === loggedUser) {
           var msg = `
                     <li class="mchat-msg-self">
@@ -153,21 +123,11 @@ function showChat() {
                 </li>
                 `}
         messageScreen.innerHTML += msg;
-        });
-        });
-    setTimeout(function(){ document.getElementById("pmessages").scrollIntoView({behavior: "smooth", block: "end", inline: "nearest"})}, 1000);
-    }
-ChatUpdate();
-showChat();
-
-
-
-
-// var query = chatRef
-//             .doc(privateChatID)
-//             .collection('imessages')
-//             .orderBy('timestamp', 'desc')
-//             .limit(12);
+        setTimeout(function(){ document.getElementById("pmessages").scrollIntoView({behavior: "smooth", block: "end", inline: "nearest"})}, 1000);
+        }}}
+    });
+  });
+}
 
 function displayChats() {
   var querychat = chatRef.where('users', 'array-contains', isender).orderBy('latestMessage.createdAt', 'desc')
