@@ -1,5 +1,5 @@
 // Declaration of variables
-const userChatMenu = document.getElementById("user-chat-menu");
+/*const userChatMenu = document.getElementById("user-chat-menu");
 const userSideBar = document.getElementById("user-side-bar");
 const userMessageContainer = document.getElementById("user-message-container");
 
@@ -25,4 +25,4 @@ function backToMenu(show, hide){
     // x.style.width = "100%";
     y.classList.add('mobile-direct-msg');
   }
-}
+}*/
