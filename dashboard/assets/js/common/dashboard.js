@@ -4,6 +4,7 @@ if(isLoggedIn() == false) {
 }
 else {
   var loggedUser = isLoggedIn();
+  // var loggedUser = JSON.parse(localStorage.getItem("logged"));
 }
 // window.location.reload();
 //GET USER RECORD
@@ -16,7 +17,7 @@ function getUserByUser(uname) {
 var loggedUserRecord = getUserByUser(loggedUser)
 
 profile = `<div class="chat-box-img">
-<img src="../users/${loggedUserRecord.img}">
+<img src="${loggedUserRecord.img}">
 </div>
 <p>@${loggedUserRecord.userName}</p>
 `;
@@ -24,7 +25,7 @@ document.getElementById("profile").innerHTML = profile;
 
 document.getElementById("menu-profile").innerHTML = profile; 
 
-profileBox = `<h3><a href="./settings.html">${loggedUserRecord.fullName}</a></h3>`;
+profileBox = `<h3><a href="./profile.html">${loggedUserRecord.fullName}</a></h3>`;
 document.getElementById("profile-box").innerHTML = profileBox; 
 
 userType = loggedUserRecord.userType;
@@ -43,42 +44,6 @@ sideMenu = `<ul class="side-menu">
         </ul>`
 document.getElementById("side-menu-container").innerHTML = sideMenu; 
 
-
-//GET USER RECORD FOR PROFILE DETAILS IN SETTINGS PAGE//
-settingsProfile=`<img src="../users/${loggedUserRecord.img}">
-<div>
-<p>${loggedUserRecord.fullName}</p>
-<p>@${loggedUserRecord.userName}</p>
-</div>`
-
-
-document.getElementById("settings-profile-box").innerHTML= settingsProfile
-
-document.getElementById("profile-phone-number").innerHTML= `${loggedUserRecord.phone}`
-
-document.getElementById("profile-location").innerHTML= `${loggedUserRecord.location}, Nigeria`
-
-
- function changeBio(){
-  document.getElementById("settings-main").style.opacity="0.3"
-  document.getElementById("editBioForm").style.display="block"
-  document.getElementById("editBioForm").style.opacity="1"
-  bio= document.getElementById("profile-bio-details").innerHTML
-  document.getElementById("editBioInput").value= bio
-
-}
-
-function displayEditedBio(){
-  document.getElementById("settings-main").style.opacity="1"
-  document.getElementById("editBioForm").style.display="none"
-  newBio= document.getElementById("editBioInput").value
-  document.getElementById("profile-bio-details").innerHTML= newBio
-}
-
-function backBio(){
-  document.getElementById("settings-main").style.opacity="1"
-  document.getElementById("editBioForm").style.display="none"
-}
 
 // Declaration of variables
 const userChatMenu = document.getElementById("user-chat-menu");

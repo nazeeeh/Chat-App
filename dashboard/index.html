@@ -46,148 +46,26 @@
 	</div>
   	<div class="chat-header">
 		<span>Chats</span>
-		<span class="chat-counter">7</span>
+		<span class="chat-counter"></span>
 	  </div>
 	  <div id="chat-menu">
-  	<!-- <div class="chat-box">
-  		<div class="chat-box-img">
-  			<img src="../users/mira.jfif">
-  		</div>
-  		<div class="chat-box-msg" onclick="showSideBar('user-direct-chat', 'user-chat-menu')">
-  			<h4>Mum</h4>
-  			<p>Mum, I need more money...</p>
-  		</div>
-  		<div class="chat-box-stats">
-  			<p><span class="chat-counter">1</span></p>
-  			<h6>9:23pm</h6>
-  		</div>
-  	</div>
-  	<div class="chat-box">
-  		<div class="chat-box-img">
-  			<img src="../users/user3.png">
-  		</div>
-  		<div class="chat-box-msg" onclick="showSideBar('user-direct-chat', 'user-chat-menu')">
-  			<h4>TIIDELab Cohorts 2</h4>
-  			<p>Biggie is calling all of you...</p>
-  		</div>
-  		<div class="chat-box-stats">
-  			<p><span class="chat-counter">2</span></p>
-  			<h6>8:30pm</h6>
-  		</div>
-  	</div>
-  	<div class="chat-box">
-  		<div class="chat-box-img">
-  			<img src="../users/user4.png">
-  		</div>
-  		<div class="chat-box-msg" onclick="showSideBar('user-direct-chat', 'user-chat-menu')">
-  			<h4>Jane</h4>
-  			<p>When are you going there?</p>
-  		</div>
-  		<div class="chat-box-stats">
-  			<p><span class="chat-counter">1</span></p>
-  			<h6>6:01pm</h6>
-  		</div>
-  	</div>
-  	<div class="chat-box">
-  		<div class="chat-box-img">
-  			<img src="../users/deven.jpg">
-  		</div>
-  		<div class="chat-box-msg" onclick="showSideBar('user-direct-chat', 'user-chat-menu')">
-  			<h4>Kate</h4>
-  			<p>I was able to get those stuffs.</p>
-  		</div>
-  		<div class="chat-box-stats">
-  			<p><span class="chat-counter">4</span></p>
-  			<h6>5:13pm</h6>
-  		</div>
-  	</div>
-  	<div class="chat-box">
-  		<div class="chat-box-img">
-  			<img src="../users/user7.jpg">
-  		</div>
-  		<div class="chat-box-msg" onclick="showSideBar('user-direct-chat', 'user-chat-menu')">
-  			<h4>Mr. Samuel</h4>
-  			<p>I'm waiting till next week...</p>
-  		</div>
-  		<div class="chat-box-stats">
-  			<p><span class="chat-counter">2</span></p>
-  			<h6>4:20pm</h6>
-  		</div>
-  	</div>
-  	<div class="chat-box">
-  		<div class="chat-box-img">
-  			<img src="../users/Kristina.jpg">
-  		</div>
-  		<div class="chat-box-msg" onclick="showSideBar('user-direct-chat', 'user-chat-menu')">
-  			<h4>Kristi</h4>
-  			<p>Mum, I need more money...</p>
-  		</div>
-  		<div class="chat-box-stats">
-  			<p><span class="chat-counter">6</span></p>
-  			<h6>3:30pm</h6>
-  		</div>
-  	</div> -->
 </div>
   </div>
   	<!-- Message Menu-->
-  	<!-- <div class="chat-message">
-		<div id="main-container">
-			<img src="../assets/connect.jpg">
-			<h1>Welcome to i2talk</h1>
-			<p>No conversation in sync. Please, search for users and start chat.</p>
-		</div> 	  
-	</div> -->
 	<div class="chat-message-container" id="user-msg-container">
-		<div class="chat-message" id="user-direct-chat">
-			<!-- Enter your code here -->
-			<div class="chat-header">
-				<a class="message-back-arrow" onclick="backToMenu('user-chat-menu', 'user-msg-container')"><i class="fas fa-long-arrow-alt-left"></i></a>
-				<div class="chat-head-img">
-					<img src="/users/deven.jpg">
-				</div>
-				<div class="chat-head-username">
-					<span>Mum</span>
-				</div>
-				<div class="chat-head-menu">
-					<a onclick="reveal('chat-menu-list')"><i class="fas fa-ellipsis-v"></i></a>
-				</div>
-				<ul class="" id="chat-menu-list">
-					<li>View contact</li>
-					<li>Mute notifications</li>
-					<li>Search</li>
-					<li>Report</li>
-					<li>Block</li>
-				</ul>
-			</div>
-			<div class="chat-body">
-				<div class="chat-msg-self">
-					<p>Hey! How are you doing?</p>
-				</div>
-				<div class="chat-msg-other">
-					<p>Guy I just dey oo!</p>
-				</div>
-				<div class="chat-msg-other">
-					<p>It's been a while, hope you're good?</p>
-				</div>
-				<div class="chat-msg-self">
-					<p>Yea! It's been a while, I'm doing great. How's everyone? 
-						Your family and in-laws... Business... send me that account number,
-						I lost it when I lost my phone.
-					</p>
-				</div>
-			</div>
-			<div class="chat-form">
-				<form action="">
-					<textarea id="chat-text-area" autocapitalize= "sentences" autocomplete="on" placeholder="Type message here ..." rows="1"></textarea>
-					<button onclick=""><i class="far fa-paper-plane"></i></button>
-				</form>
-			</div>
+		<div class="chat-messager">
+			<div id="main-container">
+				<!-- <img src="../assets/connect.jpg"> -->
+				<h1>Welcome to i2talk</h1>
+				<p>No conversation in sync. Please, search for users and start chat.</p>
+			</div> 	  
 		</div>
 	</div>
 	
 </div>
 <script src="https://www.gstatic.com/firebasejs/7.23.0/firebase-app.js"></script>
 <script src="https://www.gstatic.com/firebasejs/7.23.0/firebase-firestore.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.23.0/firebase-storage.js"></script>
 <script src="../db.js"></script>
 <script src="/script.js"></script>
 <script src="./assets/js/common/users.js"></script>

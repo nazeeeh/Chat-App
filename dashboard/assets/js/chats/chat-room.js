@@ -31,11 +31,11 @@ messageForm.addEventListener("submit", event => {
 var unsubscribe = msgRef.where("chat_room_id", "==", chatId).onSnapshot(snapshot => {
         if (snapshot.docChanges()[0] === undefined) {
             const msg = `
-                <li id="no-msg">
+                <li id="no-msg" class="mchat-msg-other">
                 <span id="chat-new">
-                    No Previous Messages..Send one now!
+                <p>No Previous Messages found. Send message now to Start Chatting!</p>
                 </span>
-                </li>
+            </li>
     `
     messageScreen.innerHTML += msg;
     setTimeout(function(){ 
@@ -57,16 +57,20 @@ var unsubscribe = msgRef.where("chat_room_id", "==", chatId).onSnapshot(snapshot
                 // now we have the final timestamp value
                 if (sender === loggedUser) {
                     var msg = `
-            <div class="chat-msg-self">
-					<p>${text}</p>
-			</div>
+                    <li class="mchat-msg-self">
+                    <span id="chat-new">
+                    <p>${text}<p>
+                    </span>
+                </li>
                 `
                 } else {
-                    var msg = `
-            <div class="chat-msg-other">
-            <p>${sender}: ${text}</p>
-				</div>
-                `
+                var msg = `
+                <li class="mchat-msg-other">
+                <span id="chat-new">
+                <p><i class="namee">${sender}: </i> ${text}</p>
+                </span>
+            </li>
+            `
                 }
         messageScreen.innerHTML += msg;
     document.getElementById("messages").scrollIntoView({behavior: "smooth", block: "end", inline: "nearest"})
@@ -86,15 +90,19 @@ function showChats() {
             const {sender, text} = doc.data();
             if (sender === loggedUser) {
                 var msg = `
-        <div class="chat-msg-self">
-                <p>${text}</p>
-        </div>
-            `
+                    <li class="mchat-msg-self">
+                    <span id="chat-new">
+                    <p>${text}<p>
+                    </span>
+                </li>
+                `
             } else {
                 var msg = `
-        <div class="chat-msg-other">
-        <p>${sender}: ${text}</p>
-            </div>
+                <li class="mchat-msg-other">
+                <span id="chat-new">
+                <p><i class="namee">${sender}: </i> ${text}</p>
+                </span>
+            </li>
             `
             }
     messageScreen.innerHTML += msg;

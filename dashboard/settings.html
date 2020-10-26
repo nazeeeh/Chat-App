@@ -45,11 +45,13 @@
 			</div>  
 			<div class="chat-header">
 				<span>Chats</span>
-				<span class="chat-counter">7</span>
+				<span class="chat-counter"></span>
 			</div>
 			<div id="chat-menu">
 			</div>
 		</div>
+
+
 		<!-- Message Menu-->
 		<div class="chat-message-container" id="user-msg-container">
 			<div class="settings-container">
@@ -65,24 +67,19 @@
 				
 				</nav>
 	
-				<div id="editBioForm">
-					<textarea type="text" placeholder="" name="bio" id="editBioInput" rows="3" cols="60"></textarea>
-					<button class="button"  onclick="displayEditedBio()">Add Changes</button>
-					<button  class="button" onclick="backBio()">Cancel</button>
-				</div>
 	
 				<div id="settings-main">
 					<div class="profile-block">
 						<div id="settings-profile-box"></div>
-						<button class="button"><i class="far fa-edit">&nbsp;</i>&nbsp;Edit Profile</button>
+						<button class="button" onclick="showProfilePage()"><i class="far fa-edit">&nbsp;</i>&nbsp;Edit Profile</button>
 					</div>
 	
 					<h2>Account</h2>
 	
 					<div class="settings-item">
 						<h3>Bio</h3>
-						<p id="profile-bio-details">Hi, I'm new to the i2talk chatting platform</p>
-						<button id="editBio-btn" class="button" onclick="changeBio()"><i class="far fa-edit">&nbsp;</i>&nbsp;Edit Bio</button>
+						<p id="profile-bio-details"></p>
+						
 					</div>
 	
 					<div class="settings-item">
@@ -98,23 +95,23 @@
 					<h2>Settings</h2>
 	
 					<div class="settings-item">
-						<h3><i class="fas fa-user-shield"></i> &nbsp Privacy and Security</h3>
+						<h3><i class="fas fa-user-shield"></i> &nbsp; Privacy and Security</h3>
 					</div>
 	
 					<div class="settings-item">  
-						<h3> <i class="fas fa-bell"></i> &nbsp Notifications and Sound</h3>
+						<h3> <i class="fas fa-bell"></i> &nbsp; Notifications and Sound</h3>
 					</div>
 	
 					<div class="settings-item">  
-						<h3><i class="fas fa-user-cog"></i> &nbsp Chat Settings</h3>
+						<h3><i class="fas fa-user-cog"></i> &nbsp; Chat Settings</h3>
 					</div>
 	
 					<div class="settings-item">  
-						<h3><i class="fas fa-server"></i> &nbsp Data and Storage</h3>
+						<h3><i class="fas fa-server"></i> &nbsp; Data and Storage</h3>
 					</div>
 	
 					<div class="settings-item">
-						<h3><i class="fas fa-question-circle"></i> &nbsp Help</h3>
+						<h3><i class="fas fa-question-circle"></i> &nbsp; Help</h3>
 					</div>
 	
 				</div>
@@ -123,74 +120,330 @@
 		</div>
 		
 	</div>
-	<script src="https://www.gstatic.com/firebasejs/7.23.0/firebase-app.js"></script>
-	<script src="https://www.gstatic.com/firebasejs/7.23.0/firebase-firestore.js"></script>
-	<script src="../db.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.23.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.23.0/firebase-firestore.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.23.0/firebase-storage.js"></script>
+<script src="../db.js"></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <script src="./assets/js/users/users-db.js"></script>
-<script src="./assets/js/chats/chat-msg.js"></script>
 <script src="./assets/js/common/users.js"></script>
 <script src="./assets/js/common/chat.js"></script>
 <script src="./assets/js/users/users-mgt.js"></script>
 <script src="./assets/js/common/dashboard.js"></script>
-<script>
-	document.getElementById("settings-profile-box").innerHTML= settingsProfile
+<script src="./assets/js/common/settings.js"></script>
+<script src="./assets/js/chats/chat-msg.js"></script>
+
+<script type="text/javascript">
+	//GET USER RECORD FOR PROFILE DETAILS IN SETTINGS PAGE//
+logged=JSON.parse(localStorage.getItem("logged"))
+settingsProfile=`<img src="${loggedUserRecord.img}">
+<div>
+<p>${loggedUserRecord.fullName}</p>
+<p>@${loggedUserRecord.userName}</p>
+</div>`
+
+document.getElementById("settings-profile-box").innerHTML= settingsProfile
 
 document.getElementById("profile-phone-number").innerHTML= `${loggedUserRecord.phone}`
 
 document.getElementById("profile-location").innerHTML= `${loggedUserRecord.location}, Nigeria`
 
+document.getElementById("profile-bio-details").innerHTML= `${loggedUserRecord.bio}`
 
- function changeBio(){
-  document.getElementById("settings-main").style.opacity="0.3"
-  document.getElementById("editBioForm").style.display="block"
-  document.getElementById("editBioForm").style.opacity="1"
-  bio= document.getElementById("profile-bio-details").innerHTML
-  document.getElementById("editBioInput").value= bio
-
+if(loggedUserRecord.bio==undefined||loggedUserRecord.bio==null){
+	document.getElementById("profile-bio-details").innerHTML="Hi, I'm new to the i2talk chatting platform"
 }
 
-function displayEditedBio(){
-  document.getElementById("settings-main").style.opacity="1"
-  document.getElementById("editBioForm").style.display="none"
-  newBio= document.getElementById("editBioInput").value
-  document.getElementById("profile-bio-details").innerHTML= newBio
-}
-
-function backBio(){
-  document.getElementById("settings-main").style.opacity="1"
-  document.getElementById("editBioForm").style.display="none"
-}
-
-// Declaration of variables
-const userChatMenu = document.getElementById("user-chat-menu");
-const userSideBar = document.getElementById("user-side-bar");
-const userMessageContainer = document.getElementById("user-message-container");
-
-// chat menu functions
-function showSideBar(show, hide) {
-    let a = document.getElementById(show);
-    let b = document.getElementById(hide);
-    if (a.style.display === "none" && b.style.display === "flex") {
-        a.style.display = "flex";
-        b.style.display = "none";
-    } else {
-        a.style.display = "none";
-        b.style.display = "flex";
+function readURL(){
+    file = document.getElementById("getval").files[0];
+    reader = new FileReader();
+    reader.onloadend = function(){
+		document.getElementById('profile-image-box').style.backgroundImage = "url(" + reader.result + ")";
+		document.getElementById('imga').style.display ="none"   
+		document.getElementById("getval").style.display ="none"
+		document.getElementById("fa-upload").style.display ="none"
     }
-    
+    if(file){
+        reader.readAsDataURL(file);
+    }else{
+	}
+}
+function showProfilePage(){
+	document.getElementById("settings-main").innerHTML=
+
+	`<span style="font-size:30px; color:var(--primary-color);" onclick="backToSettings()">
+		<i class="fas fa-reply-all fa-1x" "></i>
+	</span>
+	<div id="profile-image-box">
+		
+	</div>
+
+	<hr>
+	<div class="user-profile-details">
+		<br>
+		<p>Full Name</p>
+		<input type="text" placeholder="Enter your Full Name" id="fullName-input" required>
+		<br>
+		<hr>
+
+		<br>
+		<p>Email</p>
+		<input type="text" placeholder="Enter your username" id="email-input" required>
+		<br>
+		<hr>
+
+		<br>
+		<p>Bio</p>
+		<input type="text" placeholder="Enter your bio" id="bio-input" required>
+		<br>
+		<hr>
+
+		<br>
+		<p>Phone number</p>
+		<input type="text" placeholder="Enter your number" id="number-input" required>
+		<br>
+		<hr>
+
+		<br>
+		<p>Sex</p>
+			<select id="sex-input" required>
+				<option value="none" disabled selected>-- Select Sex --</option>
+				<option value="Male">Male</option>
+				<option value="Female">Female</option>
+			</select>
+		<br>
+		<hr>
+
+		<br>
+		<p>Location</p>
+			<select id="location-input" required>
+				<option value="none" disabled selected>--Select State--</option>
+				<option value="Abia">Abia</option>
+				<option value="Adamawa">Adamawa</option>
+				<option value="Akwa Ibom">Akwa Ibom</option>
+				<option value="Anambra">Anambra</option>
+				<option value="Bauchi">Bauchi</option>
+				<option value="Bayelsa">Bayelsa</option>
+				<option value="Benue">Benue</option>
+				<option value="Borno">Borno</option>
+				<option value="Cross River">Cross River</option>
+				<option value="Delta">Delta</option>
+				<option value="Ebonyi">Ebonyi</option>
+				<option value="Edo">Edo</option>
+				<option value="Ekiti">Ekiti</option>
+				<option value="Enugu">Enugu</option>
+				<option value="Abuja">Abuja (FCT)</option>
+				<option value="Gombe">Gombe</option>
+				<option value="Imo">Imo</option>
+				<option value="Jigawa">Jigawa</option>
+				<option value="Kaduna">Kaduna</option>
+				<option value="Kano">Kano</option>
+				<option value="Katsina">Katsina</option>
+				<option value="Kebbi">Kebbi</option>
+				<option value="Kogi">Kogi</option>
+				<option value="Kwara">Kwara</option>
+				<option value="Lagos">Lagos</option>
+				<option value="Nasarawa">Nasarawa</option>
+				<option value="Niger">Niger</option>
+				<option value="Ogun">Ogun</option>
+				<option value="Ondo">Ondo</option>
+				<option value="Osun">Osun</option>
+				<option value="Oyo">Oyo</option>
+				<option value="Plateau">Plateau</option>
+				<option value="Rivers">Rivers</option>
+				<option value="Sokoto">Sokoto</option>
+				<option value="Taraba">Taraba</option>
+				<option value="Yobe">Yobe</option>
+				<option value="Zamfara">Zamfara</option>
+			</select>
+		<br>
+		<hr>
+		
+		<button id="submit-profile-btn" onclick="displayLoader()"><img src="../assets/img/ajax-loader.gif" width="15px" id="profile-loader">Submit Changes</button>
+	</div>`
+
+	document.getElementById("profile-image-box").innerHTML=`
+<img id="imga" src="${loggedUserRecord.img}">
+<input type="file" name="logo" id='getval' class="upload w180" title="Dimensions 180 X 180" id="imag">
+<i id="fa-upload" class="fa fa-upload fa-5x"></i>
+  `
+
+	document.getElementById("email-input").value=`${loggedUserRecord.mail}`
+	document.getElementById("bio-input").value=`${loggedUserRecord.bio}`
+	document.getElementById("sex-input").value=`${loggedUserRecord.sex}`
+	document.getElementById("number-input").value=`${loggedUserRecord.phone}`
+	document.getElementById("location-input").value=`${loggedUserRecord.location}`
+	document.getElementById("fullName-input").value=`${loggedUserRecord.fullName}`
+	
+	document.getElementById('getval').addEventListener('change', readURL, true);
+	if(loggedUserRecord.bio==undefined||loggedUserRecord.bio==null){
+		document.getElementById("bio-input").value="Hi, I'm new to the i2talk chatting platform"
+	}
 }
 
-function backToMenu(show, hide){
-  let x = document.getElementById(show);
-  let y = document.getElementById(hide);
-  if(show === 'user-chat-menu') {
-    x.classList.add('chat-menu-back-arrow');
-    // x.style.width = "100%";
-    y.classList.add('mobile-direct-msg');
-  }
+function backToSettings(){
+	window.location.reload()
 }
+		
+
+function displayLoader(){
+	document.getElementById("profile-loader").style.display="inline-block"
+	setTimeout(submitProfile,1000)
+}
+
+function submitProfile(){
+	document.getElementById('getval').addEventListener('change', readURL, true);
+		userLocation = document.getElementById("location-input").value;
+		    switch (userLocation) {
+		      case "Abia":
+		        latlong = [5.532003041,7.486002487];
+		        break;
+		      case "Adamawa":
+		        latlong = [10.2703408,13.2700321];
+		        break;
+		      case "Akwa Ibom":
+		        latlong = [5.007996056,7.849998524];
+		        break;
+		      case "Anambra":
+		        latlong = [6.210433572,7.06999711];
+		        break;
+		      case "Bauchi":
+		        latlong = [11.68040977,10.19001339];
+		        break;
+		      case "Bayelsa":
+		        latlong = [4.664030,6.036987];
+		        break;
+		      case "Benue":
+		        latlong = [7.190399596,8.129984089];
+		        break;
+		      case "Borno":
+		        latlong = [10.62042279,12.18999467];
+		        break;
+		      case "Cross River":
+		        latlong = [4.960406513,8.330023558];
+		        break;
+		      case "Delta":
+		        latlong = [5.890427265,5.680004434];
+		        break;
+		      case "Edo":
+		        latlong = [6.340477314,5.620008096];
+		        break;
+		      case "Ekiti":
+		        latlong = [7.630372741,5.219980834];
+		        break;
+		      case "Enugu":
+		        latlong = [6.867034321,7.383362995];
+		        break;
+		      case "Abuja":
+		        latlong = [9.083333149,7.533328002];
+		        break;
+		      case "Gombe":
+		        latlong = [10.29044293,11.16995357];
+		        break;
+		      case "Imo":
+		        latlong = [5.492997053,7.026003588];
+		        break;
+		      case "Jigawa":
+		        latlong = [11.7991891,9.350334607];
+		        break;
+		      case "Kaduna":
+		        latlong = [11.0799813,7.710009724];
+		        break;
+		      case "Kano":
+		        latlong = [11.99997683,8.5200378];
+		        break;
+		      case "Katsina":
+		        latlong = [11.5203937,7.320007689];
+		        break;
+		      case "Kebbi":
+		        latlong = [12.45041445,4.199939737];
+		        break;
+		      case "Kogi":
+		        latlong = [7.800388203,6.739939737];
+		        break;
+		      case "Kwara":
+		        latlong = [8.490010192,4.549995889];
+		        break;
+		      case "Lagos":
+		        latlong = [6.443261653,3.391531071];
+		        break;
+		      case "Nasarawa":
+		        latlong = [8.490423603,8.5200378];
+		        break;
+		      case "Niger":
+		        latlong = [10.4003587,5.469939737];
+		        break;
+		      case "Ogun":
+		        latlong = [7.160427265,3.350017455];
+		        break;
+		      case "Ondo":
+		        latlong = [7.250395934,5.199982054];
+		        break;
+		      case "Osun":
+		        latlong = [7.629959329,4.179992634];
+		        break;
+		      case "Oyo":
+		        latlong = [7.970016092,3.590002806];
+		        break;
+		      case "Plateau":
+		        latlong = [9.929973978,8.890041055];
+		        break;
+		      case "Rivers":
+		        latlong = [4.810002257,7.010000772];
+		        break;
+		      case "Sokoto":
+		        latlong = [13.06001548,5.240031289];
+		        break;
+		      case "Taraba":
+		        latlong = [7.870409769,9.780012572];
+		        break;
+		      case "Yobe":
+		        latlong = [11.74899608,11.96600457];
+		        break;
+		      case "Zamfara":
+		        latlong = [12.1704057,6.659996296];
+		        break;
+		      default:
+		        latlong = [];
+			} 
+var metadata = {
+  contentType: 'image/jpeg'
+};
+db_storage.ref().child('images/' + file.name).put(file, metadata).then(function() {
+	db_storage.ref().child('images/' + file.name).getDownloadURL().then(function(url) {
+		db.collection("users").where("userName", "==", logged).get().then((querySnapshot) => {
+			querySnapshot.forEach((doc) => {
+				docId = doc.id
+				console.log(doc.data())
+				const {userName, location} = doc.data();
+		});
+		db.collection("users").doc(docId).update({
+			fullName : document.getElementById("fullName-input").value,
+			mail : document.getElementById("email-input").value,
+			bio : document.getElementById("bio-input").value ,
+            phone : document.getElementById("number-input").value,
+			location : document.getElementById("location-input").value ,
+            sex : document.getElementById("sex-input").value,
+			latlong : latlong,
+			img : url
+		})
+		  .then(() => {
+			console.log("Profile updated");
+			swal({
+				icon: "success",
+				title: "Profile Updated!",
+			}).then(() => {
+			setTimeout(function(){window.location.assign("index.html")}, 1000);
+		});
+			
+		});
+		});
+})
+})
+		}
+
+
 </script>
-
 
 </body>
 </html>

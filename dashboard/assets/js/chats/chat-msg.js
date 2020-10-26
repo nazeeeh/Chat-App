@@ -1,13 +1,12 @@
 /* TEAM INIFINITY - i2talk */
-
-
 var isender = titleCase(JSON.parse(localStorage.getItem("logged")));
 var messageScreen = document.getElementById("pmessages");
 var messageForm = document.getElementById("pmessageForm");
 var msgInput = document.getElementById("pmsg-input");
 const msgBtn = document.getElementById("pmsg-btn");
 const chatRef = db.collection("private-chats");
-
+const chatNo = document.getElementsByClassName("chat-counter")[0]
+const chatImg = document.getElementsByClassName("chat-head-img")[0]
 const chatScreen = document.getElementById("chat-menu");
 var chatData = JSON.parse(localStorage.getItem("chatData"))
 var Chatheaders = document.getElementById("Chatsheader")
@@ -33,15 +32,13 @@ String.prototype.replaceAt = function(index, character) {
   
 function newChat(userName) {
     userName = userName.getAttribute("data-username");
-    // alert(userName);
     localStorage.setItem("nchat", JSON.stringify(loggedUser));
     localStorage.setItem("chat", JSON.stringify(userName));
     setTimeout(function(){ window.location.assign(`PrivateChat.html`) }, 500);
 }
 
 function newChats(userName) {
-  userName = userName.getAttribute("data-username");
-  // alert(userName);
+  userName = userName.getAttribute("data-localname");
   localStorage.setItem("nchat", JSON.stringify(loggedUser));
   localStorage.setItem("chat", JSON.stringify(userName));
   setTimeout(function(){ window.location.assign(`PrivateChat.html`) }, 500);
@@ -74,118 +71,104 @@ function createChat() {
     chatRef.doc(privateChatID).set(chatInfo);
 }
 
-function ChatUpdate() {
-var receiver = titleCase(JSON.parse(localStorage.getItem("chat")));
-const privateChatID = getPrivateChatID(isender, receiver);
-// var query = chatRef
-//             .doc(privateChatID)
-//             .collection('imessages')
-//             .orderBy('timestamp', 'desc')
-//             .limit(12);
-chatRef.doc(privateChatID).collection('imessages').onSnapshot(snapshot => {
-  if (snapshot.docChanges()[0] === undefined) {
+ShowPrivateChats();
+function ShowPrivateChats() {
+  var receiver = titleCase(JSON.parse(localStorage.getItem("chat")));
+  getDp(receiver);
+  const privateChatID = getPrivateChatID(isender, receiver);
+  var t = document.createTextNode(`${ChatScreenName(privateChatID)}`);     // Create a text node
+  Chatheaders.appendChild(t);
+  chatRef.doc(privateChatID).collection('imessages').orderBy("timestamp", "asc").onSnapshot(function(snapshot) {
+    if (!snapshot.size)  {
       const msg = `
-          <div class="chat-msg-other">
-			<p>No Previous Messages found. Send message now to Start Chatting!</p>
-		  </div>
+      <li id="no-msg" class="mchat-msg-other">
+                    <span id="chat-new">
+                    <p>No Previous Messages found. Send message now to Start Chatting!</p>
+                    </span>
+                </li>
 `
-        messageScreen.innerHTML += msg;
+    messageScreen.innerHTML += msg;
     setTimeout(function(){ 
         var elem = document.querySelector('#no-msg');
         elem.parentNode.removeChild(elem);
         }, 3000);
-        } else {
-        shown = snapshot.docChanges()[0].doc.data()
-        const {isender, text} = shown;
-        if (shown) {
-            if (!shown.createdAt && snapshot.metadata.hasPendingWrites) {
-                // 
-            }
-            else {
-                // now we have the final timestamp value
-                if (isender === loggedUser) {
-                    var msg = `
-            <div class="chat-msg-self">
-					<p>${text}</p>
-			</div>
-                `
-                } else {
-                    var msg = `
-            <div class="chat-msg-other">
-            <p>${text}</p>
-				</div>
-                `
-                }
-                messageScreen.innerHTML += msg;
-                document.getElementById("pmessages").scrollIntoView({behavior: "smooth", block: "end", inline: "nearest"})
-            }}
-        }
-});
-}
-function showChat() {
-  var receiver = titleCase(JSON.parse(localStorage.getItem("chat")));
-  const privateChatID = getPrivateChatID(isender, receiver);
-  var t = document.createTextNode(`${ChatScreenName(privateChatID)}`);     // Create a text node
-  Chatheaders.appendChild(t);
-    chatRef.doc(privateChatID).collection('imessages').orderBy("timestamp", "asc").get().then((querySnapshot) => {                                                                                                                                                                                                                                                                                                                                              
-    querySnapshot.forEach((doc) => {
-        const {isender, text} = doc.data();
+
+      }
+    snapshot.docChanges().forEach(function(change) {
+      if (change.type === 'removed') {
+        // renderer.remove(change.doc);
+      } else {
+        shownn = change.doc.data();
+        const {isender, text} = shownn
+        if (shownn) {
+          if (!shownn.createdAt && snapshot.metadata.hasPendingWrites) {
+              // 
+          }
+          else{
+        console.log(`get = ${change.doc.data()}`)
         if (isender === loggedUser) {
-            var msg = `
-    <div class="chat-msg-self">
-            <p>${text}</p>
-    </div>
-        `
+          var msg = `
+                    <li class="mchat-msg-self">
+                    <span id="chat-new">
+                    <p>${text}<p>
+                    </span>
+                </li>
+                `
         } else {
-            var msg = `
-    <div class="chat-msg-other">
-    <p>${text}</p>
-        </div>
-        `}
+          var msg = `
+                    <li class="mchat-msg-other">
+                    <span id="chat-new">
+                        <p>${text}<p>
+                    </span>
+                </li>
+                `}
         messageScreen.innerHTML += msg;
-        });
-        });
-    setTimeout(function(){ document.getElementById("pmessages").scrollIntoView({behavior: "smooth", block: "end", inline: "nearest"})}, 1000);
-    }
-ChatUpdate();
-showChat();
-
-
-
-
-// var query = chatRef
-//             .doc(privateChatID)
-//             .collection('imessages')
-//             .orderBy('timestamp', 'desc')
-//             .limit(12);
+        setTimeout(function(){ document.getElementById("pmessages").scrollIntoView({behavior: "smooth", block: "end", inline: "nearest"})}, 1000);
+        }}}
+    });
+  });
+}
 
 function displayChats() {
-    var querychat = chatRef.where('users', 'array-contains', isender).orderBy('latestMessage.createdAt', 'desc')
+  var querychat = chatRef.where('users', 'array-contains', isender).orderBy('latestMessage.createdAt', 'desc')
    unsubscribe = querychat.onSnapshot(function(snapshot) {
     var data = snapshot.docs.map(function (documentSnapshot) {
       return documentSnapshot.data();
     });
-    chatScreen.innerHTML=""
-        for (i=0; i<data.length; i++) {
-          latest=""
-        // details
-        latest += `
-        <div class="chat-box">
-  		<div class="chat-box-img">
-  			<img src="../../users/mira.jfif">
-  		</div>
-  		<div class="chat-box-msg" >
-  			<h4 onclick="newChat(this)" data-username="${ChatScreenName(data[i].chatID)}">${ChatScreenName(data[i].chatID)}</h4>
-  			<p>${data[i].latestMessage.text}</p>
-  		</div>
-  		<div class="chat-box-stats">
-  			<p><span class="chat-counter">1</span></p>
-  			<h6>${data[i].latestMessage.createdAt}</h6>
-  		</div>
-  	</div>
+    var s = document.createTextNode(`${data.length}`); 
+    chatNo.innerHTML=""    // Create a text node
+    chatNo.appendChild(s);
+    if (data.length < 1) {
+      chatNo.style.display = "none";
+      chatScreen.innerHTML=""
+      chatScreen.innerHTML+= `
+      <div id="chat-center">
+      <h2>No Conversations yet!</h2>
+      <h4>Click <a href ="/dashboard/isearch.html">here</a> to search for users and start chatting</h4>
+      </div>
       `
-    chatScreen.innerHTML += latest;
-}});
+    } else {
+      chatScreen.innerHTML=""
+          for (i=0; i<data.length; i++) {
+            const dP = getChatDp(ChatScreenName(data[i].chatID))
+            latest=""
+          latest += `
+          <div class="chat-box">
+        <div class="chat-box-img">
+          <img src="${dP}">
+        </div>
+        <div class="chat-box-msg" >
+          <h4 onclick="newChat(this)" data-username="${ChatScreenName(data[i].chatID)}">${ChatScreenName(data[i].chatID)}</h4>
+          <p>${data[i].latestMessage.text}</p>
+        </div>
+        <div class="chat-box-stats">
+          <p><span class="chat-counter">1</span></p>
+          <h6>${ToTime(data[i].latestMessage.createdAt)}</h6>
+        </div>
+      </div>
+        `
+      chatScreen.innerHTML += latest;
+}}});
 }
   // unsubscribe();
  
@@ -208,7 +191,7 @@ messageForm.addEventListener("submit", event => {
       var sfRef = chatRef.doc(privateChatID);
       batch.update(sfRef, {latestMessage: {
         text : text,
-        createdAt: new Date().getTime()
+        createdAt: firebase.firestore.FieldValue.serverTimestamp()
       }});
       batch.commit().then(function () {
 });
@@ -222,3 +205,30 @@ function enterChatroom(chatroomName) {
     window.location.assign(`chat-room.html`)
 }
 
+function ToTime(newtime) {
+  const milliseconds = newtime.seconds * 1000;
+  const date = new Date(milliseconds);
+  const time = date.toLocaleString();
+  return time;
+}
+
+function getDp(receiver) {
+  var receiver = titleCase(JSON.parse(localStorage.getItem("chat")));
+  lUsers = JSON.parse(localStorage.getItem("iUsers"));
+  var userIndex = lUsers.findIndex(x=>x.userName.toLowerCase() == receiver);
+  var UserDetail = lUsers[userIndex]
+  console.log(UserDetail.img)
+  var image = document.createElement("IMG");
+  image.setAttribute("src", `${UserDetail.img}`);
+  // image.setAttribute("width", "304");
+  // image.setAttribute("height", "228");
+  // image.setAttribute("alt", "The Pulpit Rock");
+  chatImg.appendChild(image);
+}
+
+function getChatDp(receiver) {
+  lUsers = JSON.parse(localStorage.getItem("iUsers"));
+  var userIndex = lUsers.findIndex(x=>x.userName.toLowerCase() == receiver);
+  var UserDetail = lUsers[userIndex]
+  return UserDetail.img
+}

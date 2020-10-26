@@ -19,171 +19,120 @@
 		<!-- Side Bar Menu-->
 		<div class="side-bar" id="user-side-bar">
 			<div class="chat-header">
-				<a onclick="showSideBar('user-chat-menu', 'user-side-bar')"><i class="fas fa-long-arrow-alt-left"></i></a>
+				<a class="profile-back-arrow" onclick="showSideBar('user-chat-menu', 'user-side-bar')"><i class="fas fa-long-arrow-alt-left"></i></a>
 				<h3>Profile</h3>
-			</div>
-			<div class="side-bar-profile">
-				<div class="chat-box-img">
-					<img src="/users/user3.png">
-				</div>
-				<p>@Kanye_west</p>
-			</div>
-			<div class="side-bar-edit">
-				<h3 class="active"><a href="./profile.html">Kanye West</a></h3>
-				<a href=""><i class="fas fa-pen"></i></a>
-			</div>
-			<ul class="side-menu">
-				<li><a href="./notifications.html"><i class="fas fa-bell fa-1x"></i> &nbsp; Notifications</a></li>
-				<li><a href="./chatroom.html"><i class="fas fa-comments fa-1x"></i> &nbsp; Chat Rooms</a></li>
-				<li><a href="./idiary.html"><i class="fas fa-book fa-1x"></i> &nbsp; iDiary</a></li>
-				<li><a href="./ireminder.html"><i class="fas fa-business-time fa-1x"></i> &nbsp; iReminder</a></li>
-				<li><a href="./isearch.html"><i class="fas fa-search fa-1x"></i> &nbsp; iSearch</a></li>
-				<li><a href="./ischedule.html"><i class="fas fa-comment-alt fa-1x"></i> &nbsp; iSchedule</a></li>
-				<li><a href="./settings.html"><i class="fas fa-cog fa-1x"></i> &nbsp; Settings</a></li> 
-				<li><a href="./logout.html"><i class="fas fa-reply-all fa-1x"></i> &nbsp; Log Out</a></li>   			
-			</ul>
+			</div> 
+			<div id="profile" class="side-bar-profile"></div>
+			<div id="profile-box"></div>
+			<div id="side-menu-container" class="side-menu"></div>
 		</div>
 		<!-- Chat Menu-->
-		<div class="chat-menu" id="user-chat-menu">
-			<div class="chat-menu-profile">
-				<div onclick="showSideBar('user-side-bar', 'user-chat-menu')" class="chat-menu-open">
-					<div class="menu-profile-img">
-						<img src="/users/user3.png">
+		<!-- Chat Menu-->
+			<div class="chat-menu" id="user-chat-menu">
+				<div class="chat-menu-profile">
+					<div id="menu-profile" onclick="showSideBar('user-side-bar', 'user-chat-menu')" class="chat-menu-open side-bar-profile"></div>
+					<div class="tooltip">
+						<a href="./isearch.html"><i class="fas fa-search fa-1x"></i></a>
+						<p class="tooltiptext">iSearch</p>
 					</div>
-					<p>@Kanye_west</p>
+					<div class="tooltip">
+						<a href=""><i class="far fa-comment-dots"></i></a>
+						<p class="tooltiptext">New Chat</p>
+					</div>
+					<div class="tooltip">
+						<a onclick=""><i class="fas fa-ellipsis-v"></i></a>
+						<p class="tooltiptext">Menu</p>
+					</div>
 				</div>
-				<div class="tooltip">
-					<a href="./isearch.html"><i class="fas fa-search fa-1x"></i></a>
-					<p class="tooltiptext">iSearch</p>
+				<div class="chat-header">
+					<span>Chats</span>
+					<span class="chat-counter"></span>
 				</div>
-				<div class="tooltip">
-					<a href=""><i class="far fa-comment-dots"></i></a>
-					<p class="tooltiptext">New Chat</p>
-				</div>
-				<div class="tooltip">
-					<a onclick="reveal('')"><i class="fas fa-ellipsis-v"></i></a>
-					<p class="tooltiptext">Menu</p>
-				</div>
-			</div>
-			<div class="chat-header">
-				<span>Chats</span>
-				<span class="chat-counter">7</span>
-			</div>
-			<div class="chat-box">
-				<div class="chat-box-img">
-					<img src="/users/deven.jpg">
-				</div>
-				<div class="chat-box-msg" onclick="showSideBar('user-direct-chat', 'user-chat-menu')">
-					<h4>Mum</h4>
-					<p>Mum, I need more money...</p>
-				</div>
-				<div class="chat-box-stats">
-					<p><span class="chat-counter">1</span></p>
-					<h6>9:23pm</h6>
+				<div id="chat-menu">
 				</div>
 			</div>
-			<div class="chat-box">
-				<div class="chat-box-img">
-					<img src="/users/user3.png">
-				</div>
-				<div class="chat-box-msg" onclick="showSideBar('user-direct-chat', 'user-chat-menu')">
-					<h4>TIIDELab Cohorts 2</h4>
-					<p>Biggie is calling all of you...</p>
-				</div>
-				<div class="chat-box-stats">
-					<p><span class="chat-counter">2</span></p>
-					<h6>8:30pm</h6>
-				</div>
-			</div>
-			<div class="chat-box">
-				<div class="chat-box-img">
-					<img src="/users/user4.png">
-				</div>
-				<div class="chat-box-msg" onclick="showSideBar('user-direct-chat', 'user-chat-menu')">
-					<h4>Jane</h4>
-					<p>When are you going there?</p>
-				</div>
-				<div class="chat-box-stats">
-					<p><span class="chat-counter">1</span></p>
-					<h6>6:01pm</h6>
-				</div>
-			</div>
-			<div class="chat-box">
-				<div class="chat-box-img">
-					<img src="/users/deven.jpg">
-				</div>
-				<div class="chat-box-msg" onclick="showSideBar('user-direct-chat', 'user-chat-menu')">
-					<h4>Kate</h4>
-					<p>I was able to get those stuffs.</p>
-				</div>
-				<div class="chat-box-stats">
-					<p><span class="chat-counter">4</span></p>
-					<h6>5:13pm</h6>
-				</div>
-			</div>
-			<div class="chat-box">
-				<div class="chat-box-img">
-					<img src="/users/user7.jpg">
-				</div>
-				<div class="chat-box-msg" onclick="showSideBar('user-direct-chat', 'user-chat-menu')">
-					<h4>Mr. Samuel</h4>
-					<p>I'm waiting till next week...</p>
-				</div>
-				<div class="chat-box-stats">
-					<p><span class="chat-counter">2</span></p>
-					<h6>4:20pm</h6>
-				</div>
-			</div>
-			<div class="chat-box">
-				<div class="chat-box-img">
-					<img src="/users/Kristina.jpg">
-				</div>
-				<div class="chat-box-msg" onclick="showSideBar('user-direct-chat', 'user-chat-menu')">
-					<h4>Kristi</h4>
-					<p>Mum, I need more money...</p>
-				</div>
-				<div class="chat-box-stats">
-					<p><span class="chat-counter">6</span></p>
-					<h6>3:30pm</h6>
-				</div>
-			</div>
-
-		</div>
 		<!-- Message Menu-->
-		<div class="chat-message" id="user-direct-chat">
-			<!-- Enter your code here -->
-			<div class="chat-header">
-				<a class="message-back-arrow" onclick="showSideBar('user-chat-menu', 'user-direct-chat')"><i class="fas fa-long-arrow-alt-left"></i></a>
-				<div class="chat-head-img">
-					<img src="/users/deven.jpg">
+		<div class="chat-message-container" id="user-msg-container">
+			<div class= "profile-page">
+
+				<nav class="profile-title-bar">
+					<a class="message-back-arrow" onclick="backToMenu('user-chat-menu', 'user-msg-container')"><i class="fas fa-long-arrow-alt-left"></i></a>
+					<h2 id="profileTitle">My Profile</h2>
+					
+					<span style="font-size:25px; color:#fff;">
+						<i class="fas fa-ellipsis-v"></i>
+						<i class="fas fa-cog"></i>
+					</span>
+				
+				</nav>
+
+				<div id="profile-image-box"></div>
+
+				<hr>
+				<div class="user-profile-details">
+					<br>
+					<p>Username</p>
+					<input type="text" id="profile-username-input" disabled="disabled">
+					<br>
+					<hr>
+
+					<br>
+					<p>Bio</p>
+					<input type="text" id="profile-bio-input" disabled="disabled">
+					<br>
+					<hr>
+
+					<br>
+					<p>Phone number</p>
+					<input type="text" id="profile-number-input" disabled="disabled" >
+					<br>
+					<hr>
+
+					<br>
+					<p>Sex</p>
+					<input type="text" id="profile-sex-input" disabled="disabled" >	
+	                <br>
+					<hr>
+
+					<br>
+					<p>Location</p>
+					<input type="text" id="profile-location-input" disabled="disabled" >   
+	                <br>
+					<hr>
+					
 				</div>
-				<div class="chat-head-username">
-					<span>Mum</span>
-				</div>
-				<div class="chat-head-menu">
-					<a onclick="reveal('chat-menu-list')"><i class="fas fa-ellipsis-v"></i></a>
-				</div>
-				<ul class="" id="chat-menu-list">
-					<li>View contact</li>
-					<li>Mute notifications</li>
-					<li>Search</li>
-					<li>Report</li>
-					<li>Block</li>
-				</ul>
 			</div>
-			<div class="chat-body"></div>
-			<div class="chat-form">
-				<form action="">
-					<input type="text" id="chat-text-area" placeholder="Type message here ...">
-					<button onclick="">Send</button>
-				</form>
-			</div>
+			
+			
 		</div>
+		
 	</div>
 
 	<!-- Add Your JS scripts here -->
-	<script src="/script.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/7.23.0/firebase-app.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/7.23.0/firebase-firestore.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/7.23.0/firebase-storage.js"></script>
+	<script src="../db.js"></script>
+	<script src="./assets/js/users/users-db.js"></script>
 	<script src="./assets/js/chats/chat-msg.js"></script>
-	<script src="./assets/js/users/users-settings.js"></script>
+	<script src="./assets/js/common/users.js"></script>
+	<script src="./assets/js/common/chat.js"></script>
+	<script src="./assets/js/users/users-mgt.js"></script>
+	<script src="./assets/js/common/dashboard.js"></script>
+
+	<script>
+
+		document.getElementById("profile-image-box").innerHTML=`<img src="../users/${loggedUserRecord.img}">`
+		document.getElementById("profile-username-input").value=`${loggedUserRecord.userName}`
+		document.getElementById("profile-bio-input").value=`${loggedUserRecord.bio}`
+		document.getElementById("profile-sex-input").value=`${loggedUserRecord.sex}`
+		document.getElementById("profile-number-input").value=`${loggedUserRecord.phone}`
+		document.getElementById("profile-location-input").value=`${loggedUserRecord.location}`
+
+		if(loggedUserRecord.bio==undefined||loggedUserRecord.bio==null){
+			document.getElementById("profile-bio-input").value="Hi, I'm new to the i2talk chatting platform"
+		}
+
+	</script>
 </body>
 </html>
