@@ -84,7 +84,7 @@ function validateLogin(userName, upassword) {
 
 //USER LOGIN
 function userLogin(event) {
-    userName = document.getElementById("_username").value;
+    (userName = document.getElementById("_username").value).toString;
     upassword = document.getElementById("_password").value;
     rememberMe = document.getElementById("rememberMe").value;
     validateUser = validateLogin(userName, upassword);
@@ -95,7 +95,7 @@ function userLogin(event) {
           setCookie(userName, true);
          } */  
         loggedUserIn(userName);
-        localStorage.setItem("logged", JSON.stringify(userName));
+        localStorage.setItem("logged", JSON.stringify(userName.toLowerCase()));
         window.location.assign("dashboard/index.html");
     }
     else {
@@ -114,11 +114,11 @@ function addUser(event) {
   
   if(validateUserSignup == true) { 
         password = hashPassword(document.getElementById("password").value);
-        username = document.getElementById("userName").value
+        username = (document.getElementById("userName").value).toString()
         newUser = {	
               "userID" : usersIdTracker,
               "img" : "",
-              "userName" : username,
+              "userName" : username.toLowerCase(),
               "fullName" : document.getElementById("fullName").value,
               "mail" : document.getElementById("mail").value,
               "phone" : "",
@@ -270,11 +270,11 @@ if (loggedIn == false) {
     } 
 
     if(sex == "male") {
-         img = "male.png";
+         img = "https://firebasestorage.googleapis.com/v0/b/i2talk.appspot.com/o/images%2Fmale.png?alt=media&token=48011726-146d-4581-b91f-9c58fb4fda4b";
     } else if(sex == "female") {
-         img = "female.png";
+         img = "https://firebasestorage.googleapis.com/v0/b/i2talk.appspot.com/o/images%2Ffemale.png?alt=media&token=74527855-9a7e-4950-9819-f2faa87f82fa";
     } else {
-       img = "default.png";
+       img = "https://firebasestorage.googleapis.com/v0/b/i2talk.appspot.com/o/images%2Fdefault.png?alt=media&token=3f7238ec-d4c9-43f3-bdb7-9a3f323b12ea";
     }
     tempUsers = JSON.parse(localStorage.getItem("tempUsers"))
     tempUsers.img = img;

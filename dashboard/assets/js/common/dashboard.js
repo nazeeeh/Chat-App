@@ -17,7 +17,7 @@ function getUserByUser(uname) {
 var loggedUserRecord = getUserByUser(loggedUser)
 
 profile = `<div class="chat-box-img">
-<img src="../users/${loggedUserRecord.img}">
+<img src="${loggedUserRecord.img}">
 </div>
 <p>@${loggedUserRecord.userName}</p>
 `;

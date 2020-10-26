@@ -155,7 +155,7 @@ function displayChats() {
           latest += `
           <div class="chat-box">
         <div class="chat-box-img">
-          <img src="/users/${dP}">
+          <img src="${dP}">
         </div>
         <div class="chat-box-msg" >
           <h4 onclick="newChat(this)" data-username="${ChatScreenName(data[i].chatID)}">${ChatScreenName(data[i].chatID)}</h4>
@@ -219,7 +219,7 @@ function getDp(receiver) {
   var UserDetail = lUsers[userIndex]
   console.log(UserDetail.img)
   var image = document.createElement("IMG");
-  image.setAttribute("src", `/users/${UserDetail.img}`);
+  image.setAttribute("src", `${UserDetail.img}`);
   // image.setAttribute("width", "304");
   // image.setAttribute("height", "228");
   // image.setAttribute("alt", "The Pulpit Rock");

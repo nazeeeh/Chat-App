@@ -122,18 +122,21 @@
 	</div>
 <script src="https://www.gstatic.com/firebasejs/7.23.0/firebase-app.js"></script>
 <script src="https://www.gstatic.com/firebasejs/7.23.0/firebase-firestore.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.23.0/firebase-storage.js"></script>
 <script src="../db.js"></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <script src="./assets/js/users/users-db.js"></script>
-<script src="./assets/js/chats/chat-msg.js"></script>
 <script src="./assets/js/common/users.js"></script>
 <script src="./assets/js/common/chat.js"></script>
 <script src="./assets/js/users/users-mgt.js"></script>
 <script src="./assets/js/common/dashboard.js"></script>
 <script src="./assets/js/common/settings.js"></script>
+<script src="./assets/js/chats/chat-msg.js"></script>
 
 <script type="text/javascript">
 	//GET USER RECORD FOR PROFILE DETAILS IN SETTINGS PAGE//
-settingsProfile=`<img src="../users/${loggedUserRecord.img}">
+logged=JSON.parse(localStorage.getItem("logged"))
+settingsProfile=`<img src="${loggedUserRecord.img}">
 <div>
 <p>${loggedUserRecord.fullName}</p>
 <p>@${loggedUserRecord.userName}</p>
@@ -151,19 +154,41 @@ if(loggedUserRecord.bio==undefined||loggedUserRecord.bio==null){
 	document.getElementById("profile-bio-details").innerHTML="Hi, I'm new to the i2talk chatting platform"
 }
 
+function readURL(){
+    file = document.getElementById("getval").files[0];
+    reader = new FileReader();
+    reader.onloadend = function(){
+		document.getElementById('profile-image-box').style.backgroundImage = "url(" + reader.result + ")";
+		document.getElementById('imga').style.display ="none"   
+		document.getElementById("getval").style.display ="none"
+		document.getElementById("fa-upload").style.display ="none"
+    }
+    if(file){
+        reader.readAsDataURL(file);
+    }else{
+	}
+}
 function showProfilePage(){
 	document.getElementById("settings-main").innerHTML=
 
 	`<span style="font-size:30px; color:var(--primary-color);" onclick="backToSettings()">
 		<i class="fas fa-reply-all fa-1x" "></i>
 	</span>
-	<div id="profile-image-box"></div>
+	<div id="profile-image-box">
+		
+	</div>
 
 	<hr>
 	<div class="user-profile-details">
 		<br>
-		<p>Username</p>
-		<input type="text" placeholder="Enter your username" id="username-input" required>
+		<p>Full Name</p>
+		<input type="text" placeholder="Enter your Full Name" id="fullName-input" required>
+		<br>
+		<hr>
+
+		<br>
+		<p>Email</p>
+		<input type="text" placeholder="Enter your username" id="email-input" required>
 		<br>
 		<hr>
 
@@ -237,13 +262,20 @@ function showProfilePage(){
 		<button id="submit-profile-btn" onclick="displayLoader()"><img src="../assets/img/ajax-loader.gif" width="15px" id="profile-loader">Submit Changes</button>
 	</div>`
 
-	document.getElementById("profile-image-box").innerHTML=`<img src="../users/${loggedUserRecord.img}">`
-	document.getElementById("username-input").value=`${loggedUserRecord.userName}`
+	document.getElementById("profile-image-box").innerHTML=`
+<img id="imga" src="${loggedUserRecord.img}">
+<input type="file" name="logo" id='getval' class="upload w180" title="Dimensions 180 X 180" id="imag">
+<i id="fa-upload" class="fa fa-upload fa-5x"></i>
+  `
+
+	document.getElementById("email-input").value=`${loggedUserRecord.mail}`
 	document.getElementById("bio-input").value=`${loggedUserRecord.bio}`
 	document.getElementById("sex-input").value=`${loggedUserRecord.sex}`
 	document.getElementById("number-input").value=`${loggedUserRecord.phone}`
 	document.getElementById("location-input").value=`${loggedUserRecord.location}`
-
+	document.getElementById("fullName-input").value=`${loggedUserRecord.fullName}`
+	
+	document.getElementById('getval').addEventListener('change', readURL, true);
 	if(loggedUserRecord.bio==undefined||loggedUserRecord.bio==null){
 		document.getElementById("bio-input").value="Hi, I'm new to the i2talk chatting platform"
 	}
@@ -255,15 +287,12 @@ function backToSettings(){
 		
 
 function displayLoader(){
-			
 	document.getElementById("profile-loader").style.display="inline-block"
 	setTimeout(submitProfile,1000)
 }
 
 function submitProfile(){
-
-	index=Number(loggedUserRecord.userID)//gets the id of the logged user
-
+	document.getElementById('getval').addEventListener('change', readURL, true);
 		userLocation = document.getElementById("location-input").value;
 		    switch (userLocation) {
 		      case "Abia":
@@ -377,29 +406,40 @@ function submitProfile(){
 		      default:
 		        latlong = [];
 			} 
+var metadata = {
+  contentType: 'image/jpeg'
+};
+db_storage.ref().child('images/' + file.name).put(file, metadata).then(function() {
+	db_storage.ref().child('images/' + file.name).getDownloadURL().then(function(url) {
+		db.collection("users").where("userName", "==", logged).get().then((querySnapshot) => {
+			querySnapshot.forEach((doc) => {
+				docId = doc.id
+				console.log(doc.data())
+				const {userName, location} = doc.data();
+		});
+		db.collection("users").doc(docId).update({
+			fullName : document.getElementById("fullName-input").value,
+			mail : document.getElementById("email-input").value,
+			bio : document.getElementById("bio-input").value ,
+            phone : document.getElementById("number-input").value,
+			location : document.getElementById("location-input").value ,
+            sex : document.getElementById("sex-input").value,
+			latlong : latlong,
+			img : url
+		})
+		  .then(() => {
+			console.log("Profile updated");
+			swal({
+				icon: "success",
+				title: "Profile Updated!",
+			}).then(() => {
+			setTimeout(function(){window.location.assign("index.html")}, 1000);
+		});
 			
-			editedProfileDetails={
-			"userID" : `${loggedUserRecord.userID}`,
-            "img" : `${loggedUserRecord.img}`,
-            "userName" : document.getElementById("username-input").value ,
-            "fullName" :`${loggedUserRecord.fullName}` ,
-            "mail" : `${loggedUserRecord.mail}` ,
-            "bio" : document.getElementById("bio-input").value ,
-            "phone" : document.getElementById("number-input").value,
-            "password" : `${loggedUserRecord.password}`,
-            "location" : document.getElementById("location-input").value ,
-            "sex" : document.getElementById("sex-input").value,
-            "userType" : `${loggedUserRecord.userType}`,
-            "level" : "0",
-            "ban" : "0" ,
-            "latlong" : latlong
-			}
-
-			nnUsers[index-1]= editedProfileDetails
-			loggedUserRecord=nnUsers[index-1]
-			//alert(JSON.stringify(loggedUserRecord))
-			 
-			 localStorage.setItem("iUsers",JSON.stringify(nnUsers))
+		});
+		});
+})
+})
 		}
 
 
