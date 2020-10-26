@@ -864,6 +864,15 @@ a {
 	font-size: 30px;
 }
 
+#profile-image-boxer > img{
+	border-radius: 50%;
+	border:5px solid var(--primary-color);
+	display:block;
+	margin:10px auto 10px auto;
+	max-width: 30%;
+	height:auto;
+}
+
 #profile-image-box > img{
 	border-radius: 50%;
 	border:5px solid var(--primary-color);
