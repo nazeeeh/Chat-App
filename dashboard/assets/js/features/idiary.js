@@ -1,4 +1,5 @@
 allMessages=JSON.parse(localStorage.getItem("iDiary"))
+logged=JSON.parse(localStorage.getItem("logged"))
 		
 		
 		if(allMessages==null||allMessages==undefined){
@@ -74,37 +75,51 @@ allMessages=JSON.parse(localStorage.getItem("iDiary"))
 		document.getElementById("overlay").style.display="none"
 		document.getElementById("top").style.display="block"
 		document.getElementById("addNew").style.display="none"
-		todaysDate= new Date().toLocaleString()//TO GET THE TIME STAMP FOR ALL MESSAGES
+		todaysDate= new Date()//TO GET THE TIME STAMP FOR ALL MESSAGES
 	
 		newMessage={
 			time : todaysDate,
 			message: document.getElementById("messageInput").value
 		}
-	
-		allMessages.unshift(newMessage)
-	
-		allMessages[0]= newMessage
-		localStorage.setItem("iDiary",JSON.stringify(allMessages))
-		//alert(JSON.stringify(allMessages))
-		displayMessages()
-		//document.getElementById("messageContainer").style.backgroundColor="lightblue"
-	
+
+		db.collection("users").where("userName", "==", logged).get().then((querySnapshot) => {
+			querySnapshot.forEach((doc) => {
+				docId = doc.id
+		});
+		
+		db.collection("users").doc(docId).set({
+			iDairy: firebase.firestore.FieldValue.arrayUnion(newMessage)
+		}, { merge: true })
+		  .then(() => {
+			console.log("Document added");
+			displayMessages()
+		});
+		});
 		}
 	
 		//FUNCTION TO DISPLAY EDIT MESSAGE FORM
 		function showEditMessageForm(x){
+		// var iDairyList = JSON.parse(localStorage.getItem("iDairy"))
 		document.getElementById("overlay").style.display="block"	
 		document.getElementById("editNew").style.display="block"
 		document.getElementById("top").style.display="none"
 	
 		//SHOWS USER DETAILS AS VALUES TO BE EDITED
-		document.getElementById("messageId").value= x
-		document.getElementById("editMessageInput").value= allMessages[x].message 
-		}
+		db.collection("users").where("userName", "==", logged).get().then((querySnapshot) => {
+			querySnapshot.forEach((doc) => {
+				docId = doc.id
+				console.log(doc.data())
+				if (doc.exists) {
+					db.collection("users").doc(docId).get()
+					  .then(() => {
+						document.getElementById("messageId").value= x
+						document.getElementById("editMessageInput").value= doc.data().iDairy[x].message 
+				});}
+		});})}
 	
 	
 		//FUNCTION FOR EDITING USERS
-		function displayEditedMessage(){
+		function displayEditedMessage(x){
 		document.getElementById("overlay").style.display="none"
 		document.getElementById("top").style.display="block"
 		document.getElementById("editNew").style.display="none"
@@ -112,17 +127,41 @@ allMessages=JSON.parse(localStorage.getItem("iDiary"))
 		todaysDate= new Date().toLocaleString()//TO GET THE TIME STAMP FOR ALL MESSAGES
 		messageId= document.getElementById("messageId").value
 	
-		editedMessage= {
-		time: "Last edited on " + todaysDate, 
-		message: document.getElementById("editMessageInput").value
-		}
-					
-		allMessages[messageId]= editedMessage
-		localStorage.setItem("iDiary", JSON.stringify(allMessages))
+		// editedMessage= {
+		// time: "Last edited on " + todaysDate, 
+		// message: document.getElementById("editMessageInput").value
+		// }
+		
+		db.collection("users").where("userName", "==", logged).get().then((querySnapshot) => {
+			querySnapshot.forEach((doc) => {
+				docId = doc.id
+				console.log(doc.data())
+				const {message} = doc.data();
+				if (doc.exists) {
+					db.collection("users").doc(docId).update({
 
-		swal("GREAT!", "You have succesfully edited this note!", "success");
+						// [`iDairy.${0}`]: { 
+						// 	time: "Last edited on " + todaysDate, 
+						// 	message: document.getElementById("editMessageInput").value
+						// }
 					
-		displayMessages()
+					"iDairy" : [
+							{
+								time: "Last edited on " + todaysDate, 
+								message: document.getElementById("editMessageInput").value
+							}
+						]
+					})
+					  .then(() => {
+						swal("GREAT!", "You have succesfully edited this note!", "success");
+						displayMessages()
+						// console.log("Document deleted");
+						displayMessages()
+					});
+				  }
+
+				
+		})});
 		}
 	
 	
@@ -138,15 +177,43 @@ allMessages=JSON.parse(localStorage.getItem("iDiary"))
 
 				.then((willDelete) => {
 				if (willDelete) {
-
-					swal(" This note has been deleted!", {
-					icon: "success",
-					});
-					allMessages.splice(x,1)
+					// iDairyList.splice(x,1)
 	
-					localStorage.setItem("iDiary", JSON.stringify(allMessages))
+					// localStorage.setItem("iDairy", JSON.stringify(iDairyList))
+					// var neWiDairy = JSON.parse(localStorage.getItem("iDairy"))
+					db.collection("users").where("userName", "==", logged).get().then((querySnapshot) => {
+						querySnapshot.forEach((doc) => {
+							docId = doc.id
+							console.log(doc.data())
+							const {userName, location} = doc.data();
+							if (doc.exists) {
+								db.collection("users").doc(docId).update({
+									"iDairy" : firebase.firestore.FieldValue.arrayRemove(doc.data().iDairy[x])
+								})
+								  .then(() => {
+									
+									swal(" This note has been deleted!", {
+										icon: "success",
+										});
+									console.log("Document deleted");
+									displayMessages()
+								});
+							  }
+		
+							displayMessages()
+					});
+					
+						  
+					
+					// db.collection("users").doc(docId).update({
+					// 	"iDairy.x" : firebase.firestore.FieldValue.arrayRemove()
+					// })
+					//   .then(() => {
+					// 	console.log("Document merged");
+					// 	displayMessages()
+					// });
+					});
 
-					displayMessages()
 				} 
 
 				else {
@@ -188,17 +255,21 @@ allMessages=JSON.parse(localStorage.getItem("iDiary"))
 		}
 	
 	
-	
+		
 		function displayMessages(){
 		
-		y=allMessages.length
-		content=""
-		
-		for(x=0; x<y; x++){
+			db.collection("users").where("userName", "==", logged).get().then((querySnapshot) => {
+				querySnapshot.forEach((doc) => {
+					docId = doc.id
+					// console.log(doc.data())
+					const {iDairy} = doc.data();
+					y= iDairy.length
+					content=""
+		for(var x=y-1; x>=0; x--){
 			content+=`
 				<div id="messageContainer">
-				<sup>${allMessages[x].time}</sup><br>
-				<p> ${allMessages[x].message}</p><br>
+				<sup>${x} - ${ToTime(iDairy[x].time)}</sup><br>
+				<p> ${iDairy[x].message}</p><br>
 				<div id="buttons">
 					<span style="font-size:20px; color:#110E4C;" id="edit-icon" onclick="showEditMessageForm(${x})" align="right">
 					<i class="far fa-edit"></i>
@@ -210,8 +281,9 @@ allMessages=JSON.parse(localStorage.getItem("iDiary"))
 				</div>
 				
 			</div>`
-		}
+		}})
 		document.getElementById("messages").innerHTML= content
+			});
 		}
 	
 		displayMessages()
