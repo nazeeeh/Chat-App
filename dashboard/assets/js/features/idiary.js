@@ -1,17 +1,6 @@
-allMessages=JSON.parse(localStorage.getItem("iDiary"))
 logged=JSON.parse(localStorage.getItem("logged"))
 		
 		
-		if(allMessages==null||allMessages==undefined){
-				allMessages=[]
-			}
-	
-			/* allMessages=[
-				"Please find the link to the job posted earlier and apply https://bit.ly/3mHNiFD Its very important. Thanks !",
-	
-				"The date for the job interview is 28th of December 2020. Do not be late and endeavour to dress appropraitely"
-			
-			]*/
 		//DISPLAY LOADER BESIDE THE SEARCH BUTTON BEFORE RESULTS SHOW UP
 		function displayLoader(){
 			document.getElementById("idiary-loader").style.display="inline-block"
@@ -30,29 +19,36 @@ logged=JSON.parse(localStorage.getItem("logged"))
 		input= document.getElementById("searchInput").value
 	
 		input=input.toLowerCase()//CONVERTS THE SEARCH INPUT TO LOWER CASE
+		db.collection("users").where("userName", "==", logged).get().then((querySnapshot) => {
+			querySnapshot.forEach((doc) => {
+				docId = doc.id
+				const {iDairy} = doc.data();
+			allMessagez = iDairy.filter(x=>x.message.toLowerCase().includes(input))
+			document.getElementById("records").style.display="block"
+			document.getElementById("back-btn").style.display="block"
+			document.getElementById("top").style.display="none"
+			document.getElementById("top-heading").style.display="none"
+		
+			if(allMessagez==null||allMessagez==undefined){
+				document.getElementById("records").innerHTML=`<b> No notes found</b>`
+			}
+			
+			else{
+				displaySearchedMessages()
+				
+				if(allMessagez.length==1){
+				document.getElementById("records").innerHTML=`<b> 1 note found</b>`
+				}
+				else{
+				document.getElementById("records").innerHTML=`<b>${allMessagez.length} notes found</b>`
+				}
+			}
+				
+			})
+			});
 	
 		//FILTERS FOR MESSAGES THAT INCLUDE THE SEARCH PARAMETER
-		allMessages= allMessages.filter(x=>x.message.toLowerCase().includes(input))
-	
-		document.getElementById("records").style.display="block"
-		document.getElementById("back-btn").style.display="block"
-		document.getElementById("top").style.display="none"
-		document.getElementById("top-heading").style.display="none"
-	
-		if(allMessages==null||allMessages==undefined){
-			document.getElementById("records").innerHTML=`<b> No notes found</b>`
-		}
 		
-		else{
-			displaySearchedMessages()
-			
-			if(allMessages.length==1){
-			document.getElementById("records").innerHTML=`<b> 1 note found</b>`
-			}
-			else{
-			document.getElementById("records").innerHTML=`<b>${allMessages.length} notes found</b>`
-			}
-		}
 		
 		}
 	
@@ -99,7 +95,6 @@ logged=JSON.parse(localStorage.getItem("logged"))
 	
 		//FUNCTION TO DISPLAY EDIT MESSAGE FORM
 		function showEditMessageForm(x){
-		// var iDairyList = JSON.parse(localStorage.getItem("iDairy"))
 		document.getElementById("overlay").style.display="block"	
 		document.getElementById("editNew").style.display="block"
 		document.getElementById("top").style.display="none"
@@ -124,7 +119,7 @@ logged=JSON.parse(localStorage.getItem("logged"))
 		document.getElementById("top").style.display="block"
 		document.getElementById("editNew").style.display="none"
 	
-		todaysDate= new Date().toLocaleString()//TO GET THE TIME STAMP FOR ALL MESSAGES
+		todaysDate= new Date()//TO GET THE TIME STAMP FOR ALL MESSAGES
 		messageId= document.getElementById("messageId").value
 	
 		// editedMessage= {
@@ -145,17 +140,15 @@ logged=JSON.parse(localStorage.getItem("logged"))
 						// 	message: document.getElementById("editMessageInput").value
 						// }
 					
-					"iDairy" : [
+					"iDairy" : [ 
 							{
-								time: "Last edited on " + todaysDate, 
+								time: todaysDate, 
 								message: document.getElementById("editMessageInput").value
 							}
 						]
 					})
 					  .then(() => {
-						swal("GREAT!", "You have succesfully edited this note!", "success");
-						displayMessages()
-						// console.log("Document deleted");
+						swal("GREAT!", "You have successfully edited this note!", "success");
 						displayMessages()
 					});
 				  }
@@ -177,10 +170,6 @@ logged=JSON.parse(localStorage.getItem("logged"))
 
 				.then((willDelete) => {
 				if (willDelete) {
-					// iDairyList.splice(x,1)
-	
-					// localStorage.setItem("iDairy", JSON.stringify(iDairyList))
-					// var neWiDairy = JSON.parse(localStorage.getItem("iDairy"))
 					db.collection("users").where("userName", "==", logged).get().then((querySnapshot) => {
 						querySnapshot.forEach((doc) => {
 							docId = doc.id
@@ -202,16 +191,6 @@ logged=JSON.parse(localStorage.getItem("logged"))
 		
 							displayMessages()
 					});
-					
-						  
-					
-					// db.collection("users").doc(docId).update({
-					// 	"iDairy.x" : firebase.firestore.FieldValue.arrayRemove()
-					// })
-					//   .then(() => {
-					// 	console.log("Document merged");
-					// 	displayMessages()
-					// });
 					});
 
 				} 
@@ -222,36 +201,29 @@ logged=JSON.parse(localStorage.getItem("logged"))
 				}
 				});
 
-			/* validate=confirm("Do you want to delete this message?")
-	
-			if(validate==true){
-			allMessages.splice(x,1)
-	
-			localStorage.setItem("iDiary", JSON.stringify(allMessages))
-	
-			displayMessages()
-			}
-	
-			else{
-			displayMessages()
-			}*/
-		
 		}
 	
 	
 		function displaySearchedMessages(){
-		
-		y=allMessages.length
 		content=""
+		db.collection("users").where("userName", "==", logged).get().then((querySnapshot) => {
+			querySnapshot.forEach((doc) => {
+				docId = doc.id
+				const {iDairy} = doc.data();
+				var allMessagez = iDairy.filter(x=>x.message.toLowerCase().includes(input))
+				console.log(allMessagez)
+				y= allMessagez.length
+				content=""
+			})
+				for(var x=y-1; x>=0; x--){
+					content+=`<div id="messageContainer">
+						<sup>${ToTime(allMessagez[x].time)}</sup><br>
+						<p> ${allMessagez[x].message}</p><br>
+						</div>`
+				}
+				document.getElementById("messages").innerHTML= content
+		});
 		
-		for(x=0; x<y; x++){
-			content+=`<div id="messageContainer">
-				<sup>${allMessages[x].time}</sup><br>
-				<p> ${allMessages[x].message}</p><br>
-				</div>`
-		}
-	
-		document.getElementById("messages").innerHTML= content
 		}
 	
 	
@@ -268,7 +240,7 @@ logged=JSON.parse(localStorage.getItem("logged"))
 		for(var x=y-1; x>=0; x--){
 			content+=`
 				<div id="messageContainer">
-				<sup>${x} - ${ToTime(iDairy[x].time)}</sup><br>
+				<sup>${ToTime(iDairy[x].time)}</sup><br>
 				<p> ${iDairy[x].message}</p><br>
 				<div id="buttons">
 					<span style="font-size:20px; color:#110E4C;" id="edit-icon" onclick="showEditMessageForm(${x})" align="right">
