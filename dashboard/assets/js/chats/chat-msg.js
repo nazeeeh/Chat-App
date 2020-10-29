@@ -250,7 +250,7 @@ function TypingChat() {
           var msgs = `
           <li class="mchat-msg-self">
           <span id="chat-new">
-          <p>${isender} is typing<p>
+          <p>Someone is typing<p>
           </span>
       </li>
       `
@@ -260,7 +260,7 @@ function TypingChat() {
       var msgm = `
       <li class="mchat-msg-other">
       <span id="chat-new">
-      <p><i class="namee">${receiver} is typing</p>
+      <p><i class="namee">Someone is typing</p>
       </span>
   </li>
   `
