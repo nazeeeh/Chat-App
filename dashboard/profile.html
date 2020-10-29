@@ -66,7 +66,7 @@
 				
 				</nav>
 
-				<div id="profile-image-box"></div>
+				<div id="profile-image-boxer"></div>
 
 				<hr>
 				<div class="user-profile-details">
@@ -122,7 +122,7 @@
 
 	<script>
 
-		document.getElementById("profile-image-box").innerHTML=`<img src="../users/${loggedUserRecord.img}">`
+		document.getElementById("profile-image-boxer").innerHTML=`<img src="${loggedUserRecord.img}">`
 		document.getElementById("profile-username-input").value=`${loggedUserRecord.userName}`
 		document.getElementById("profile-bio-input").value=`${loggedUserRecord.bio}`
 		document.getElementById("profile-sex-input").value=`${loggedUserRecord.sex}`
