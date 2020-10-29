@@ -12,7 +12,7 @@
 }
 
 h3 span{
-    color: #FAEE1C;
+    color:var(--secondary-color);
 }
 
 .text h4 {

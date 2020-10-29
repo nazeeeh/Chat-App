@@ -131,7 +131,7 @@ a {
 }
 .box h3 span {
 	font-size: 1.17rem;
-    color: #FAEE1C;
+    color: var(--secondary-color);
 }
 
 /* Hero Section Styling */
@@ -161,7 +161,7 @@ a {
 	border-radius: 20px;
 	padding: 1.2rem;
 	margin: 0 auto;
-	box-shadow: 4px 5px 6px 2px var(--primary-color);
+	/* box-shadow: 4px 5px 6px 2px var(--primary-color); */
 	-webkit-animation: fadeIn 3s linear forwards;
 	animation: fadeIn 3s linear forwards;
 }
@@ -265,7 +265,7 @@ a {
 	font-size: 20px;
 	border-radius: 10px;
 	background: var(--primary-color);
-	box-shadow: 4px 5px 6px 2px var(--primary-color);
+	/* box-shadow: 4px 5px 6px 2px var(--primary-color); */
 	margin: 1rem;
 }
 
@@ -283,7 +283,8 @@ a {
 	font-size: 20px;
 	border-radius: 10px;
 	background: #fff;
-	box-shadow: 4px 5px 6px 2px var(--primary-color);
+	border: 1px solid;
+	/* box-shadow: 4px 5px 6px 2px var(--primary-color); */
 	margin: 1rem;
 }
 
@@ -299,20 +300,22 @@ a {
 	background: #110E4C;
 	padding: 0.4rem;
 	outline: none;
+	border-style: none;
 	font-size: 13px;
 	font-weight: bold;
 	letter-spacing: 2px;
 	text-align: center;
 	cursor: pointer;
 	margin-bottom: 4%;
-	border: 2px solid #E2D70C;
 	color: #fff;
 }
 
-.submit:hover{
+.submit:hover,
+.submit:focus {
 	background: #E2D70C;
 	border: 2px solid #110E4C;
 	color: #110E4C;
+	outline: none;
 }
 
 /* FORGOT PASSWORD PAGE */
@@ -593,7 +596,7 @@ textarea::placeholder{
 }
 
 /* 	--------------------------------------------------
-				 Sign Up And Sign Up Page
+				 Sign Up And Login Page
 ----------------------------------------------------- */
 .desktop-img{
 	display: none;
@@ -618,7 +621,7 @@ textarea::placeholder{
 
 .form-tab .nav li a {
 	color: var(--primary-color);
-	padding: 0.5rem 2rem;
+	/* padding: 0.5rem 2rem; */
 }
 
 .nav-pills .nav-link.active {
@@ -636,17 +639,16 @@ label {
 	margin: 0.5rem 0 0.2rem;
 }
 
-.sign-form input:focus {
-    border: 2px solid var(--secondary-color);
+.sign-form input:focus,
+.sign-form input:hover {
+	border: 2px solid var(--secondary-color);
+	background-color: var(--light-color);
 }
 
 .sign-form input {
 	padding: 10px;
 	border-radius: 8px;
-	border-top: none;
-	border-right: 2px solid var(--primary-color);
-	border-left: 2px solid var(--primary-color);
-	border-bottom: 2px solid var(--secondary-color);
+	border: 2px solid var(--primary-color);
     width: 100%;
     outline: none;
 }
@@ -656,15 +658,20 @@ label {
     padding: 5px 10px;
     border-radius: 10px;
 	background: var(--primary-color);
-	border-bottom: 3px solid #E2D70C;
-
+	/* border-bottom: 3px solid #E2D70C; */
     text-align: center;
     font-size: 20px;
-    color: var(--light-color);
+	color: var(--light-color);
+	outline: none;
+	border-style: none;
 }
-.signbtn:hover {
+
+.signbtn:hover,
+.signbtn:focus {
     color: var(--primary-color);
-	background: var(--light-color);
+	background: #fff;
+	border: 2px solid var(--primary-color);
+	outline: none;
 }
 
 .sign-form p {

@@ -17,7 +17,7 @@
 <body>
 <div class="chat-container">
   <!-- Side Bar Menu-->
-  <div class="side-bar" id="user-side-bar">
+  <div class="side-bar scrollbar" id="user-side-bar">
 	<div class="chat-header">
 		<a class="profile-back-arrow" onclick="showSideBar('user-chat-menu', 'user-side-bar')"><i class="fas fa-long-arrow-alt-left"></i></a>
 		<h3>Profile</h3>
@@ -28,7 +28,7 @@
   </div>
   
   <!-- Chat Menu-->
-  <div class="chat-menu" id="user-chat-menu">
+  <div class="chat-menu scrollbar" id="user-chat-menu">
 	<div class="chat-menu-profile">
 		<div id="menu-profile" onclick="showSideBar('user-side-bar', 'user-chat-menu')" class="chat-menu-open side-bar-profile"></div>
 		<div class="tooltip">
@@ -53,7 +53,7 @@
   </div>
   	<!-- Message Menu-->
 	<div class="chat-message-container" id="user-msg-container">
-		<div class="chat-messager">
+		<div class="chat-message">
 			<div id="main-container">
 				<!-- <img src="../assets/connect.jpg"> -->
 				<h1>Welcome to i2talk</h1>
