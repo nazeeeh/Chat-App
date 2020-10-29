@@ -89,6 +89,9 @@ a {
 }
 .section {
 	display: flex;
+	position: sticky;
+	top: 0;
+	z-index: 2;
 }
 
 /** Footer Defaults **/
@@ -150,6 +153,7 @@ a {
 
 .hero-text {
 	width: 85%;
+	max-width: 550px;
 	padding: 8px 20px 20px;
 	margin: 0.8rem auto 2.5rem;
 }
@@ -218,6 +222,7 @@ a {
 /* hero Image */
 .hero-img {
 	width: 50%;
+	max-height: 600px;
 	margin-left: auto;
 }
 
@@ -598,6 +603,8 @@ textarea::placeholder{
 /* 	--------------------------------------------------
 				 Sign Up And Login Page
 ----------------------------------------------------- */
+
+
 .desktop-img{
 	display: none;
 }
@@ -637,6 +644,8 @@ textarea::placeholder{
 label {
     display: block;
 	margin: 0.5rem 0 0.2rem;
+	text-align: left;
+	font-size: 12px;
 }
 
 .sign-form input:focus,
@@ -650,7 +659,8 @@ label {
 	border-radius: 8px;
 	border: 2px solid var(--primary-color);
     width: 100%;
-    outline: none;
+	outline: none;
+	font-size: 12px;
 }
 
 .signbtn {
@@ -678,7 +688,8 @@ label {
 	padding: 14px 0;
 	margin-bottom: 10px;
 	line-height: 1rem;
-    text-align: center;
+	text-align: center;
+	font-size: 12px;
 }
 
 /* ----------------------------------------------------
@@ -861,6 +872,10 @@ label {
     .toggle {
         display: none;
 	}
+	/* Hero Section */
+	.hero-img {
+		height: 600px;
+	}
 	
 	/* Sign-up Form */
 	.desktop-img{
@@ -870,7 +885,14 @@ label {
 	.mobile-img{
 		display: none;
 	}
-
+	.form-img {
+		max-width: 600px;
+		margin-right: 2.5rem;
+	}
+	.sign-container {
+		height: 100vh;
+		display: flex;
+	}
 }
 
 /* Extra large devices (large desktops, 1200px and up)*/
