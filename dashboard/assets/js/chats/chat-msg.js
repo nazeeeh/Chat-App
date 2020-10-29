@@ -232,3 +232,86 @@ function getChatDp(receiver) {
   var UserDetail = lUsers[userIndex]
   return UserDetail.img
 }
+TypingChat()
+function TypingChat() {
+  let timer,
+		timeoutVal = 1000; // time it takes to wait for user to stop typing in ms
+    var receiver = titleCase(JSON.parse(localStorage.getItem("chat")));
+    var isender = titleCase(JSON.parse(localStorage.getItem("logged")));
+    const privateChatID = getPrivateChatID(isender, receiver);
+    messageForm.addEventListener('keypress', handleKeyPress);
+    messageForm.addEventListener('keyup', handleKeyUp);
+    chatRef.doc(privateChatID)
+    .onSnapshot(function(doc) {
+      console.log("Current data: ", doc.data());
+      const {typing} = doc.data();
+      if(typing === true) {
+        if (!isender) {
+          var msgs = `
+          <li class="mchat-msg-self">
+          <span id="chat-new">
+          <p>${isender} is typing<p>
+          </span>
+      </li>
+      `
+      document.getElementById("messs").innerHTML = msgs;
+      } 
+      if (receiver) {
+      var msgm = `
+      <li class="mchat-msg-other">
+      <span id="chat-new">
+      <p><i class="namee">${receiver} is typing</p>
+      </span>
+  </li>
+  `
+  document.getElementById("messs").innerHTML = msgm;
+      }
+      
+//         if (isReceiver() === true) {
+//           var msg = `
+//           <li class="mchat-msg-other">
+//           <span id="chat-new">
+//           <p>${isender} is typing...<p>
+//           </span>
+//         </li>
+//         `
+//         document.getElementById("messs").innerHTML = msg;
+// setTimeout(function(){ document.getElementById("pmessages").scrollIntoView({behavior: "smooth", block: "end", inline: "nearest"})}, 1000);
+//         } else {
+//           // document.getElementById("messs").innerHTML = `<p>AGGG</p>`
+//         }
+} else {
+document.getElementById("messs").innerHTML = "";
+}
+      
+    });
+ 
+// when user is pressing down on keys, clear the timeout
+function handleKeyPress(e) {
+  window.clearTimeout(timer);
+  chatRef.doc(privateChatID).update({
+    typing: true,
+  })
+  
+}
+// when the user has stopped pressing on keys, set the timeout
+// if the user presses on keys before the timeout is reached, then this timeout is canceled
+function handleKeyUp(e) {
+	window.clearTimeout(timer); // prevent errant multiple timeouts from being generated
+	timer = window.setTimeout(() => {
+    chatRef.doc(privateChatID).update({
+      typing: false,
+    })  
+  }, timeoutVal);
+}
+}
+
+// function isReceiver() {
+//   var receiver = titleCase(JSON.parse(localStorage.getItem("chat")));
+//   var isender = titleCase(JSON.parse(localStorage.getItem("logged")));
+//   if (receiver === isender) {
+//     return false;
+//   } else {
+//     return true;
+//   }
+// }
