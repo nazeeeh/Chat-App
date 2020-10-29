@@ -154,18 +154,18 @@ function displayChats() {
             latest=""
           latest += `
           <div class="chat-box">
-        <div class="chat-box-img">
-          <img src="${dP}">
-        </div>
-        <div class="chat-box-msg" >
-          <h4 onclick="newChat(this)" data-username="${ChatScreenName(data[i].chatID)}">${ChatScreenName(data[i].chatID)}</h4>
-          <p>${data[i].latestMessage.text}</p>
-        </div>
-        <div class="chat-box-stats">
-          <p><span class="chat-counter">1</span></p>
-          <h6>${ToTime(data[i].latestMessage.createdAt)}</h6>
-        </div>
-      </div>
+            <div class="chat-box-col1">
+              <div class="chat-box-img">
+                <img src="${dP}">
+              </div>
+            </div>
+            <div class="chat-box-col2">
+              <h4 onclick="newChat(this)" data-username="${ChatScreenName(data[i].chatID)}">${ChatScreenName(data[i].chatID)}</h4> 
+              <span class="chat-counter">1</span>
+              <p>${data[i].latestMessage.text}</p>
+              <h6>${ToTime(data[i].latestMessage.createdAt)}</h6>
+            </div>
+          </div>
         `
       chatScreen.innerHTML += latest;
 }}});
