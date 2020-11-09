@@ -8,12 +8,12 @@
 
 /*** Default Colors - Pick it here ***/
 /*** darkblue -- primary color - #000 ***/
-/*** yellow -- secondary color - #FAEE1C ***/
+/*** yellow -- secondary color - #fe5f55 ***/
 /*** skyblue -- light color - #87CEEB  ***/
 
 :root {
     --primary-color: #000;
-    --secondary-color: #FAEE1C;
+    --secondary-color: #fe5f55;
     --light-color: #E7ECFF;
 }
 
