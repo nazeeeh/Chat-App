@@ -9,10 +9,18 @@
 	background-color: var(--primary-color);
 	color: #fff;
 	display:flex;
-	flex-direction: row;
+	align-items: center;
 	justify-content: space-between;
-	padding: 20px 20px;
+	/* padding: 20px 20px; */
 	border-bottom: 1px solid var(--light-color);
+}
+
+.chatrooms-title-bar h2 {
+	padding-left: 20px;
+}
+
+.chatrooms-title-bar span {
+	padding-right: 20px;
 }
 
 .chatrooms-title-bar span i:hover{
@@ -37,6 +45,9 @@
 	display:block;
 }
 
+.chatroom-page-body{
+	overflow-y: scroll;
+}
 .chatrooms-items{
 	background-color: #fff;
 	height: 90px;
@@ -60,7 +71,7 @@
 
 #chatrooms-btn{
 	background: var(--secondary-color);
-    color: var(--primary-color);
+    color: #fff;
 }
 
 #active-page{
