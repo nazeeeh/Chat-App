@@ -106,6 +106,56 @@
     border:2px solid #bdd5ea;
 }
 
+
+/*--------------------------------------
+              FAQ PAGE  
+----------------------------------------*/
+
+.faq-heading  img{
+    display:block;
+    margin: auto;
+}
+
+.faq-heading h3{
+    font-size:30px;
+    text-align:center;
+    color:var(--primary-color);
+}
+
+.faq-questions{
+    display:block;
+    width:50%;
+    margin:auto;
+    cursor: pointer;
+    color:#f7f7ff;
+}
+
+
+.answer{
+    display:none;
+    padding:20px;
+    color:var(--primary-color);
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    box-shadow:2px 2px 2px 2px var(--primary-color);
+}
+
+
+.question-heading{
+    background-color: var(--primary-color);
+    padding:10px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.fa-minus-circle{
+    margin-left: 98%;
+    display:none;
+}
+
 /*--------------------------------------
               PRIVACY AND SECURITY 
 ----------------------------------------*/
