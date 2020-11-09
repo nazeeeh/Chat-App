@@ -1,8 +1,0 @@
-{
-    "liveServer.settings.port": 5502,
-    "git.alwaysShowStagedChangesResourceGroup": true,
-    "git.enableSmartCommit": true,
-    "scm.alwaysShowActions": true,
-    "scm.providerCountBadge": "visible",
-    "scm.defaultViewMode": "tree"
-}

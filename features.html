@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<meta name="Description" content="i2talk">
+	<meta name="Keywords" content="Chat App, Chat rooms, Message Scheduling, Location-based User search, chats, iDiary, iSchedule, iReminder, iSearch">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/all.css">
+    <!-- <link rel="stylesheet" href="./css/styles.css"> -->
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/desktop.css">
+
+    <title>i2talk | Features</title>
+
+</head>
+
+<body>
+    <!-- Header -->
+	<header>
+        <nav>
+            <ul class="menu">
+                <li class="logo"><a href="./index.html">i2Talk</a></li>
+                <li class="item"><a href="./index.html">Home</a></li>
+                <li class="item"><a href="./features.html">Features</a></li>
+                <li class="item nav-button"><a href="./contact.html">Contact</a></li>
+                <li class="toggle"><a href="#"><i class="fas fa-bars"></i></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="main-content">
+
+            <h3>With i2Talk, enjoy these amazing features ...</h3>
+    
+            <div  class="feature-items-container">
+    
+                <div class="feature-items" id="idiary">
+                    <br><i class="fas fa-book fa-1x"></i><br>
+                     <h4>iDiary</h4>
+                     <br>
+                    <p>Save important notes. Store important messages. Be up-to-date</p>
+                    
+                   
+                </div>
+    
+                <div class="feature-items" id="isearch">
+                    <br><i class="fas fa-search fa-1x"></i><br>
+                    <h4>iSearch</h4>
+                    <br>
+                    <p>Looking for new friends? Hoping to meet new people? Find other users in your location</p>
+                    
+                </div>
+    
+                <div class="feature-items" id="ireminder">
+                    <br><i class="fas fa-business-time fa-1x"></i><br>
+                    <h4>iReminder</h4>
+                    <br>
+                    <p>Trying to remember a lot of things at once? Do you need a reminder which notifies you of upcoming events? Get notified</p>
+                    
+                </div>
+    
+                <div class="feature-items" id="ischedule">
+                    <br><i class="fas fa-comment-alt fa-1x"></i><br>
+                     <h4>iSchedule</h4>
+                     <br>
+                    <p>Do you want to schedule messages to be sent later? Communicate scheduled messages at later dates with no internet connection</p>
+                   
+                </div>
+    
+            </div>
+    
+            <div class="all-feature-btns">
+                <button class="feature-btn" onclick="modal();">Sign up</button>
+                <button class="feature-btn" onclick="location.assign('index.html')">Log in</button>
+            </div>
+    
+        </div>
+    </main>
+    <section class="signup-modal">
+        <div class="hero-modal-form">
+            
+            <div class="wrapper">
+                <div class="title">Sign Up</div>
+                <form id="signupForm" onsubmit="addUser()">
+                    <div id="error-signup"></div>
+                    <div class="field">
+                        <input type="text" id="fullName" required>
+                        <label>Full Name</label>
+                    </div>
+                    <div class="field">
+                        <input type="text" id="userName" required>
+                        <label>Username</label>
+                    </div>
+                    <div class="field">
+                        <input type="text" id="mail" required>
+                        <label>Email Address</label>
+                    </div>
+                    <div class="field">
+                        <input type="password" id="password" required>
+                        <label>Password</label>
+                    </div>
+                    <div class="field">
+                        <input type="password" id="c-password" required>
+                        <label>Confirm Password</label>
+                    </div>
+                    <!-- <div class="content">
+                        <div class="checkbox">
+                            <input type="checkbox" id="remember-me">
+                            <label for="remember-me">Remember me</label>
+                        </div>
+                    </div> -->
+                    <p><small>By clicking Sign Up, you agree to our <a href="./terms.html">Terms</a>, 
+                        <a href="./security&privacy.html">Privacy Policy</a>. 
+                        You may receive SMS notifications from us and can opt out at any time.</small>
+                    </p>
+                    <button class="login-btn">Sign Up</button>
+                    <p style="margin-top: 12px;">Already have an account? <a href="./index.html">Log In</a></p>						</p>
+                </form>
+            </div>
+            <div onclick="modal();" class="close-icon">
+                <i class="fas fa-times"></i>
+            </div>
+            
+        </div>
+    </section> 
+
+	<!-- Footer -->		
+	<footer id="footer">
+		<div class="footer-row">
+			<div class="footer-box">
+				<h4><span>QUICKLINKS</span></h4>
+					<ul>
+						<li><a href="./features.html">Features</a></li>
+						<li><a href="./faq.html">FAQs</a></li>
+						<li><a href="./contact.html">Help</a></li>
+					</ul>
+			</div>
+			<div class="footer-box">
+				<h4><span>PRODUCTS</span></h4>
+					<ul>
+						<li><a href="./features.html">Explore</a></li>
+						<li><a href="./terms.html">Terms of Service</a></li>
+						<li><a href="./contact.html">Help Center</a></li>
+					</ul>
+			</div>
+			<div class="footer-box">
+				<h4><span>OUR COMPANY</span></h4>
+					<ul>
+						<li><a href="./features.html">About Us</a></li>
+						<li><a href="./contact.html">Contact Us</a></li>
+						<li><a href="./security&privacy.html">Security &amp; Privacy</a></li>
+					</ul>
+			</div>
+		</div>		
+		<div class="footer-bar"><p>i2talk &copy; 2020, All Rights Reserved.</p></div>
+	</footer>
+
+    <!-- Javascript -->
+	<script src="https://www.gstatic.com/firebasejs/7.23.0/firebase-app.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/7.23.0/firebase-firestore.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/7.23.0/firebase-storage.js"></script>
+	<!-- <script src="https://www.gstatic.com/firebasejs/7.23.0/firebase-messaging.js"></script> -->
+	<!-- <script type= "module" src="/firebase-messaging-sw.js"></script> -->
+	<script src="/db.js"></script>
+	<script type="text/javascript" src="./js/script.js"></script>
+	<!-- <script src="./script.js"></script>       -->
+	<script src="./dashboard/assets/js/common/users.js"></script>
+	<script src="./dashboard/assets/js/users/users-db.js"></script>
+	<script src="./dashboard/assets/js/chats/chat-msg-db.js"></script>
+	<script src="./dashboard/assets/js/common/chat.js"></script>
+	<script src="./dashboard/assets/js/users/users-mgt.js"></script>
+    <script>
+        window.onload= function(){
+            setTimeout(changeColor1,2000);
+            setTimeout(changeColor2,3000);
+            setTimeout(changeColor3,4000);
+            setTimeout(changeColor4,5000);
+            setTimeout(normal,6000);
+        }
+
+        function changeColor1(){
+            document.getElementById("idiary").style.backgroundColor="#333"
+            document.getElementById("idiary").style.color="#fff" 
+
+        }
+
+        function changeColor2(){
+            document.getElementById("idiary").style.backgroundColor="#e5e5e5"
+            document.getElementById("idiary").style.color="#000"
+            document.getElementById("isearch").style.backgroundColor="#333"
+            document.getElementById("isearch").style.color="#fff"
+        }
+
+        function changeColor3(){
+            document.getElementById("isearch").style.backgroundColor="#e5e5e5"
+            document.getElementById("isearch").style.color="#000"
+            document.getElementById("ireminder").style.backgroundColor="#333"
+            document.getElementById("ireminder").style.color="#fff"
+        }
+
+        function changeColor4(){
+            document.getElementById("ireminder").style.backgroundColor="#e5e5e5"
+            document.getElementById("ireminder").style.color="#000"
+            document.getElementById("ischedule").style.backgroundColor="#333"
+                document.getElementById("ischedule").style.color="#fff"
+        }
+
+        function normal(){
+            document.getElementById("ischedule").style.backgroundColor="#e5e5e5"
+            document.getElementById("ischedule").style.color="#000"
+        }
+    </script>
+	
+</body>
+
+</html>
