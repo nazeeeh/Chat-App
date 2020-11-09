@@ -243,11 +243,11 @@ logged=JSON.parse(localStorage.getItem("logged"))
 				<sup>${ToTime(iDairy[x].time)}</sup><br>
 				<p> ${iDairy[x].message}</p><br>
 				<div id="buttons">
-					<span style="font-size:20px; color:#110E4C;" id="edit-icon" onclick="showEditMessageForm(${x})" align="right">
+					<span style="font-size:20px; color:#000;" id="edit-icon" onclick="showEditMessageForm(${x})" align="right">
 					<i class="far fa-edit"></i>
 					</span>
 	
-					<span style="font-size:20px; color:#110E4C;" id="delete-icon" onclick="deleteMessages(${x})">
+					<span style="font-size:20px; color:#000;" id="delete-icon" onclick="deleteMessages(${x})">
 					<i class="far fa-trash-alt"></i>
 					</span>
 				</div>

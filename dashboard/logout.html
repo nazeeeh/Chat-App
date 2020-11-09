@@ -9,7 +9,25 @@
 		
 		
 	<link rel="stylesheet" href="./assets/css/all.css">
-	<link rel="stylesheet" href="./assets/css/styles.css">
+    <link rel="stylesheet" href="./assets/css/styles.css">
+    
+    <script src="./assets/js/common/users.js"></script>
+    <script>
+
+        //CHECKS IF A USER IS LOGGED IN. IF NOT REDIRECT BACK TO LOGIN
+        if(isLoggedIn() == false) {
+            window.location.assign("../index.html");
+        }
+        else {
+            loggedUser = isLoggedIn();
+        }
+        //DELETE USER RECORD
+        localStorage.clear();
+        // localStorage.removeItem("loggedUserIn")
+        //REDIRECT USER BACK TO HOME
+        window.location.assign("../index.html");
+
+    </script>
 	
 	<title>i2talk |Log Out</title>
 </head>
@@ -18,7 +36,7 @@
     <script src="https://www.gstatic.com/firebasejs/7.23.0/firebase-firestore.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.23.0/firebase-storage.js"></script>
     <script src="../db.js"></script>
-<script src="./assets/js/common/users.js"></script>
+<!-- <script src="./assets/js/common/users.js"></script>
     <script>
 
         //CHECKS IF A USER IS LOGGED IN. IF NOT REDIRECT BACK TO LOGIN
@@ -34,7 +52,7 @@
         //REDIRECT USER BACK TO HOME
         window.location.assign("../login.html");
 
-    </script>
+    </script> -->
 
 </body>
 </html>

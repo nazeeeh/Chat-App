@@ -42,7 +42,7 @@ var firebaseConfig = {
 // var notification = {
 //   'title': 'Rashotech',
 //   'body': 'Working',
-//   'icon': './assets/logo.svg',
+//   'icon': './assets/logo.png',
 //   'click_action': 'http://localhost:5502'
 // };
 
