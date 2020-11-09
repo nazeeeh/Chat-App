@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title>i2talk | Contact Us</title>
+    <link rel="stylesheet" href="./css/all.css">
     <link rel="stylesheet" href="./css/contact.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
   </head>
@@ -54,10 +55,40 @@
             <label for="">Write your message</label>
           </div>
         </div>
-        <button type="submit" class="sub-btn">Submit</button>
+        <div class="but"><button type="submit" class="sub-btn">Submit</button></div>
+        <p class="contact-plist"><a href="tel:+2348012345678" target="_blank"><i class="fas fa-phone"> </i> <span>+2348012345678</span></a>&nbsp;&nbsp;&nbsp;
+          <a href="mailto: hello@i2talk.com" target="_blank"><i class="fa fa-envelope"> </i> <span>hello@i2talk.com</span></a>&nbsp;&nbsp;&nbsp;
+          <a href="https://www.linkedin.com/in/i2talk" target="_blank"><i class="fab fa-linkedin"> </i> <span> i2talk</span></a>&nbsp;&nbsp;&nbsp;
+        </p>
       </form>
     </div>
     </main>
+    <!-- LIVECHAT -->
+    <input type="checkbox" id="click">
+    <label class="livechat-label" for="click">
+      <i class="fab fa-facebook-messenger"></i>
+      <i class="fas fa-times"></i>
+    </label>
+    <div class="livechat-wrapper">
+      <div class="head-text">Let's chat? - Online</div>
+      <div class="livechat-chat-box">
+        <div class="desc-text">Please fill out the form below to start chatting with the next available agent.</div>
+        <form action="#">
+          <div class="livechat-field">
+            <input type="text" placeholder="Your Name" required>
+          </div>
+          <div class="livechat-field">
+            <input type="email" placeholder="Email Address" required>
+          </div>
+          <div class="livechat-field livechat-textarea">
+            <textarea cols="30" rows="10" placeholder="Explain your queries.." required></textarea>
+          </div>
+          <div class="livechat-field">
+            <button type="submit" class="sub-btn">Start Chat</button>
+          </div>
+        </form>
+      </div>
+    </div>
     
     <!-- Footer -->		
 	<footer id="footer">
