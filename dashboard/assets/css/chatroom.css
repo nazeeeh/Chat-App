@@ -1,20 +1,17 @@
 #chatrooms-container{
-	background-color: var(--light-color);
+	background-color: var(--bg-color-alt);
 	/* width: 60%; */
-	overflow-y: scroll;
-	height:100vh;
+	/* overflow-y: scroll; */
+	height:100%;
 }
 
 .chatrooms-title-bar{
-	background-color: var(--primary-color);
-	position:sticky;
-	top:0;
-	color: #fff;
+	background-color: var(--bg-color-alt);
+	color: var(--primary-color);
 	display:flex;
 	align-items: center;
 	justify-content: space-between;
 	/* padding: 20px 20px; */
-	border-bottom: 1px solid var(--light-color);
 }
 
 .chatrooms-title-bar h2 {
@@ -42,6 +39,7 @@
 	width:50%;
 	padding:10px;
 	margin:0px;
+	color: var(--bg-color);
 }
 
 #chatrooms-page{
@@ -50,6 +48,7 @@
 
 .chatroom-page-body{
 	overflow-y: scroll;
+	height: 81%;
 }
 .chatrooms-items{
 	background-color: #fff;
@@ -71,9 +70,11 @@
 	width: 10%;
 	margin-right: 10px;
 }
-
+#active-btn {
+	color: var(--primary-color);
+}
 #chatrooms-btn{
-	background: var(--secondary-color);
+	background: var(--primary-color);
     color: #fff;
 }
 

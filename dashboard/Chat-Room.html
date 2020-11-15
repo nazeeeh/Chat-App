@@ -15,88 +15,109 @@
 </head>
 
 <body>
-<div class="chat-container">
-  <!-- Side Bar Menu-->
-  <div class="side-bar scrollbar" id="user-side-bar">
-	<div class="chat-header">
-		<a class="profile-back-arrow" onclick="showSideBar('user-chat-menu', 'user-side-bar')"><i class="fas fa-long-arrow-alt-left"></i></a>
-		<h3>Profile</h3>
-	</div>
-  	<div id="profile" class="side-bar-profile"></div>
-  	<div id="profile-box"></div>
-  	<div id="side-menu-container" class="side-menu"></div>
-  </div>
-  
-  <!-- Chat Menu-->
-  <div class="chat-menu scrollbar" id="user-chat-menu">
-	<div class="chat-menu-profile">
-		<div id="menu-profile" onclick="showSideBar('user-side-bar', 'user-chat-menu')" class="chat-menu-open side-bar-profile"></div>
-		<div class="tooltip">
-			<a href="./isearch.html"><i class="fas fa-search fa-1x"></i></a>
-			<p class="tooltiptext">iSearch</p>
-		</div>
-		<div class="tooltip">
-			<a href=""><i class="far fa-comment-dots"></i></a>
-			<p class="tooltiptext">New Chat</p>
-		</div>
-		<div class="tooltip">
-			<a onclick=""><i class="fas fa-ellipsis-v"></i></a>
-			<p class="tooltiptext">Menu</p>
-		</div>
-	</div>
-  	<div class="chat-header">
-		<span>Chats</span>
-		<span class="chat-counter"></span>
-	</div>
-	<div id="chat-menu">
-	</div>
-  </div>
-
-	<div class="chat-message-container">
-		<div class="chat-message" id="user-direct-chat">
-			<!-- Enter your code here -->
-			<div class="chat-header">
-				<a class="message-back-arrow" href="./chatroom.html"><i class="fas fa-long-arrow-alt-left"></i></a>
-				<div class="chat-head-username">
-					<span id="chat-header"></span>
-				</div>
-				<div class="chat-head-menu">
-					<a onclick="reveal('chat-menu-list')"><i class="fas fa-ellipsis-v"></i></a>
-				</div>
-				<ul class="" id="chat-menu-list">
-					<li>View Members</li>
-					<li>Mute notifications</li>
-					<li>Search</li>
-					<li>Report</li>
-					<li><button id="leaveRoomidd">Leave room</button></li>
+	<main class="chat-container-main">
+		<div class="chat-container-sidebar">
+			<div id="side-bar-icons">
+				<ul class="sidebar-icons-list">
+					<li><a href="./chatroom.html" class="tooltip"><i class="fas fa-comments fa-1x"></i> <span class="tooltiptext">Chat Rooms</span></a></li>
+				 	<li><a href="./idiary.html" class="tooltip"><i class="fas fa-book fa-1x"></i> <span class="tooltiptext">iDiary</span></a></li>
+					<li><a href="./ireminder.html" class="tooltip"><i class="fas fa-business-time fa-1x"></i> <span class="tooltiptext">iReminder</span></a></li>
+					<li><a href="./isearch.html" class="tooltip"><i class="fas fa-search fa-1x"></i> <span class="tooltiptext">iSearch</span></a></li>
+					<li><a href="./settings.html" class="tooltip"><i class="fas fa-cog fa-1x"></i> <span class="tooltiptext">Settings</span></a></li>   
+					<li id="admin-panel-container"></li>   
+					<li><a href="./logout.html" class="tooltip"><i class="fas fa-reply-all fa-1x"></i> <span class="tooltiptext">Log Out</span></a></li>
 				</ul>
 			</div>
-			<div class="chat-body scrollbar" id="style-2">
-				<div id="messages">
+		</div>
+		<div class="chat-container">
+			<!-- Side Bar Menu-->
+			<!-- <div class="side-bar scrollbar" id="user-side-bar">
+				<div class="chat-header">
+					<a class="profile-back-arrow" onclick="showSideBar('user-chat-menu', 'user-side-bar')"><i class="fas fa-long-arrow-alt-left"></i></a>
+					<h3>Profile</h3>
+				</div>
+				<div id="profile" class="side-bar-profile"></div>
+				<div id="profile-box"></div>
+				<div id="side-menu-container" class="side-menu"></div>
+			</div> -->
+			
+			<!-- Chat Menu-->
+			<div class="chat-menu">
+				<div class="chat-menu-head">
+					<div class="chat-menu-profile">
+						<div id="menu-profile" onclick="showSideBar('user-side-bar', 'user-chat-menu')" class="chat-menu-open side-bar-profile"></div>
+						<div class="tooltip">
+							<a href="./isearch.html"><i class="fas fa-search fa-1x"></i></a>
+							<p class="tooltiptext">iSearch</p>
+						</div>
+						<div class="tooltip">
+							<a href=""><i class="far fa-comment-dots"></i></a>
+							<p class="tooltiptext">New Chat</p>
+						</div>
+						<div class="tooltip">
+							<a onclick=""><i class="fas fa-ellipsis-v"></i></a>
+							<p class="tooltiptext">Menu</p>
+						</div>
+					</div>
+					<div class="chat-header">
+						<span>Chats</span>
+						<span class="chat-counter"></span>
+					</div>
+				</div>
+
+				<div class="chat-contact-list scrollbar" id="user-chat-menu">
+					<div id="chat-menu">
+					</div>
 				</div>
 			</div>
-			<div class="chat-form">
-				<form id="messageForm">
-					<textarea id="msg-input" autocapitalize= "sentences" autocomplete="on" placeholder="Type message here ..." rows="1"></textarea>
-					<button id="msg-btn"><i class="far fa-paper-plane"></i></button>
-				</form>
+			
+			<!-- Message Menu-->
+			<div class="chat-message-container" id="user-msg-container">
+				<div class="chat-message" id="user-direct-chat">
+					<!-- Enter your code here -->
+					<div class="chat-header">
+						<a class="message-back-arrow" href="./chatroom.html"><i class="fas fa-long-arrow-alt-left"></i></a>
+						<div class="chat-head-username">
+							<span id="chat-header"></span>
+						</div>
+						<div class="chat-head-menu">
+							<a onclick="reveal('chat-menu-list')"><i class="fas fa-ellipsis-v"></i></a>
+						</div>
+						<ul class="" id="chat-menu-list">
+							<li>View Members</li>
+							<li>Mute notifications</li>
+							<li>Search</li>
+							<li>Report</li>
+							<li><button id="leaveRoomidd">Leave room</button></li>
+						</ul>
+					</div>
+					<div class="chat-body scrollbar" id="style-2">
+						<div id="messages">
+						</div>
+					</div>
+					<div class="chat-form">
+						<form id="messageForm">
+							<textarea id="msg-input" autocapitalize= "sentences" autocomplete="on" placeholder="Type message here ..." rows="1"></textarea>
+							<button id="msg-btn"><i class="far fa-paper-plane"></i></button>
+						</form>
+					</div>
+				</div>
 			</div>
 		</div>
-	</div>
-	
-</div>
-<script src="https://www.gstatic.com/firebasejs/7.23.0/firebase-app.js"></script>
-<script src="https://www.gstatic.com/firebasejs/7.23.0/firebase-firestore.js"></script>
-<script src="https://www.gstatic.com/firebasejs/7.23.0/firebase-storage.js"></script>
-<script src="../db.js"></script>
-<!-- <script src="/script.js"></script> -->
-<script src="./assets/js/chats/chat-room.js"></script>
-<script src="./assets/js/users/users-db.js"></script>
-<script src="./assets/js/chats/chat-msg-db.js"></script>
-<script src="./assets/js/common/users.js"></script>
-<script src="./assets/js/users/users-mgt.js"></script>
-<script src="./assets/js/common/dashboard.js"></script>
-<script src="./assets/js/users/users-settings.js"></script>
-<!-- <script src="./assets/js/chats/chat-msg.js"></script> -->
+		
+	</main>
+	<script src="https://www.gstatic.com/firebasejs/7.23.0/firebase-app.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/7.23.0/firebase-firestore.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/7.23.0/firebase-storage.js"></script>
+	<script src="../db.js"></script>
+	<!-- <script src="/script.js"></script> -->
+	<script src="./assets/js/chats/chat-room.js"></script>
+	<script src="./assets/js/users/users-db.js"></script>
+	<script src="./assets/js/chats/chat-msg-db.js"></script>
+	<script src="./assets/js/common/users.js"></script>
+	<script src="./assets/js/users/users-mgt.js"></script>
+	<script src="./assets/js/common/dashboard.js"></script>
+	<script src="./assets/js/users/users-settings.js"></script>
+	<!-- <script src="./assets/js/chats/chat-msg.js"></script> -->
 </body>
 </html>

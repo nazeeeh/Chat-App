@@ -15,84 +15,101 @@
 </head>
 
 <body>
-<div class="chat-container">
-  <!-- Side Bar Menu-->
-  <div class="side-bar scrollbar" id="user-side-bar">
-	<div class="chat-header">
-		<a class="profile-back-arrow" onclick="showSideBar('user-chat-menu', 'user-side-bar')"><i class="fas fa-long-arrow-alt-left"></i></a>
-		<h3>Profile</h3>
-	</div>  
-	<div id="profile" class="side-bar-profile"></div>
-  	<div id="profile-box"></div>
-  	<div id="side-menu-container" class="side-menu"></div>
-  </div>
-  <!-- Chat Menu-->
-  <div class="chat-menu scrollbar"  id="user-chat-menu">
-	<div class="chat-menu-profile">
-		<div id="menu-profile" onclick="showSideBar('user-side-bar', 'user-chat-menu')" class="chat-menu-open side-bar-profile"></div>
-		<div class="tooltip">
-			<a href="./isearch.html"><i class="fas fa-search fa-1x"></i></a>
-			<p class="tooltiptext">iSearch</p>
-		</div>
-		<div class="tooltip">
-			<a href=""><i class="far fa-comment-dots"></i></a>
-			<p class="tooltiptext">New Chat</p>
-		</div>
-		<div class="tooltip">
-			<a onclick=""><i class="fas fa-ellipsis-v"></i></a>
-			<p class="tooltiptext">Menu</p>
-		</div>
-	</div>  
-	<div class="chat-header">
-		<span>Chats</span>
-		<span class="chat-counter"></span>
-	  </div>
-	  <div id="chat-menu">
-	</div>
-  </div>
-
-	<!--iReminder-->
-  <div class="chat-message-container" id="user-msg-container">
-	<div class="ireminder-container">
-		<div class="ireminder-header">
-			<a class="message-back-arrow" onclick="backToMenu('user-chat-menu', 'user-msg-container')"><i class="fas fa-long-arrow-alt-left"></i></a>
-			<h2>iReminder</h2>
-			<div class="ireminder-dropdown">
-				<span style="font-size:25px; color:#fff;">
-				<i class="fas fa-ellipsis-v"></i>
-				<i class="fas fa-cog"></i>
-				</span>
+	<main class="chat-container-main">
+		<div class="chat-container-sidebar">
+			<div id="side-bar-icons">
+				<ul class="sidebar-icons-list">
+					<li><a href="./chatroom.html" class="tooltip"><i class="fas fa-comments fa-1x"></i> <span class="tooltiptext">Chat Rooms</span></a></li>
+				 	<li><a href="./idiary.html" class="tooltip"><i class="fas fa-book fa-1x"></i> <span class="tooltiptext">iDiary</span></a></li>
+					<li><a href="./ireminder.html" class="tooltip"><i class="fas fa-business-time fa-1x"></i> <span class="tooltiptext">iReminder</span></a></li>
+					<li><a href="./isearch.html" class="tooltip"><i class="fas fa-search fa-1x"></i> <span class="tooltiptext">iSearch</span></a></li>
+					<li><a href="./settings.html" class="tooltip"><i class="fas fa-cog fa-1x"></i> <span class="tooltiptext">Settings</span></a></li>   
+					<li id="admin-panel-container"></li>   
+					<li><a href="./logout.html" class="tooltip"><i class="fas fa-reply-all fa-1x"></i> <span class="tooltiptext">Log Out</span></a></li>
+				</ul>
 			</div>
 		</div>
+		<div class="chat-container">
+			<!-- Side Bar Menu-->
+			<!-- <div class="side-bar scrollbar" id="user-side-bar">
+				<div class="chat-header">
+					<a class="profile-back-arrow" onclick="showSideBar('user-chat-menu', 'user-side-bar')"><i class="fas fa-long-arrow-alt-left"></i></a>
+					<h3>Profile</h3>
+				</div>
+				<div id="profile" class="side-bar-profile"></div>
+				<div id="profile-box"></div>
+				<div id="side-menu-container" class="side-menu"></div>
+			</div> -->
+			
+			<!-- Chat Menu-->
+			<div class="chat-menu">
+				<div class="chat-menu-head">
+					<div class="chat-menu-profile">
+						<div id="menu-profile" onclick="showSideBar('user-side-bar', 'user-chat-menu')" class="chat-menu-open side-bar-profile"></div>
+						<div class="tooltip">
+							<a href="./isearch.html"><i class="fas fa-search fa-1x"></i></a>
+							<p class="tooltiptext">iSearch</p>
+						</div>
+						<div class="tooltip">
+							<a href=""><i class="far fa-comment-dots"></i></a>
+							<p class="tooltiptext">New Chat</p>
+						</div>
+						<div class="tooltip">
+							<a onclick=""><i class="fas fa-ellipsis-v"></i></a>
+							<p class="tooltiptext">Menu</p>
+						</div>
+					</div>
+					<div class="chat-header">
+						<span>Chats</span>
+						<span class="chat-counter"></span>
+					</div>
+				</div>
 
-	<div class="ireminder-formarea" id="ireminderForm">
-	<textarea class="ireminder-textarea" id="ireminderDesc" placeholder="Reminder Details"></textarea>
-	<form action="/action_page.php" id="ireminder-date">
-		<label for="birthday">Reminder:</label>
-		<input type="date" id="ireminder" name="birthday">
-		<button class="ireminder-button" id="reminderDesc"><i class="fas fa-plus-circle"></i>Set a New Reminder</button>
-	</form>
-
-	<div class="ireminder-result" id="ireminder-textspace"></div>
-
-	</div>    
-
-	</div>
-  </div>
-	 
-</div>
-<script src="https://www.gstatic.com/firebasejs/7.23.0/firebase-app.js"></script>
-<script src="https://www.gstatic.com/firebasejs/7.23.0/firebase-firestore.js"></script>
-<script src="https://www.gstatic.com/firebasejs/7.23.0/firebase-storage.js"></script>
-<script src="../db.js"></script>
-<script src="./assets/js/users/users-db.js"></script>
-<script src="./assets/js/chats/chat-msg.js"></script>
-<script src="./assets/js/common/users.js"></script>
-<script src="./assets/js/common/chat.js"></script>
-<script src="./assets/js/features/ireminder.js"></script>
-<script src="./assets/js/users/users-mgt.js"></script>
-<script src="./assets/js/common/dashboard.js"></script>
-
-
+				<div class="chat-contact-list scrollbar" id="user-chat-menu">
+					<div id="chat-menu">
+					</div>
+				</div>
+			</div>
+			
+			<!-- Message Menu-->
+			<div class="chat-message-container" id="user-msg-container">
+				<div class="ireminder-container">
+					<div class="ireminder-header">
+						<a class="message-back-arrow" onclick="backToMenu('user-chat-menu', 'user-msg-container')"><i class="fas fa-long-arrow-alt-left"></i></a>
+						<h2>iReminder</h2>
+						<div class="ireminder-dropdown">
+							<span style="font-size:25px; color:var(--primary-color);">
+								<i class="fas fa-ellipsis-v"></i>
+								<i class="fas fa-cog"></i>
+							</span>
+						</div>
+					</div>
+	
+					<div class="ireminder-formarea" id="ireminderForm">
+						<textarea class="ireminder-textarea" id="ireminderDesc" placeholder="Reminder Details"></textarea>
+						<form action="/action_page.php" id="ireminder-date">
+							<label for="birthday">Reminder:</label>
+							<input type="date" id="ireminder" name="birthday">
+							<button class="ireminder-button" id="reminderDesc"><i class="fas fa-plus-circle"></i>Set a New Reminder</button>
+						</form>
+	
+						<div class="ireminder-result" id="ireminder-textspace"></div>
+					</div>    
+				</div>
+			</div>
+		</div>
+		
+	</main>
+	<script src="https://www.gstatic.com/firebasejs/7.23.0/firebase-app.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/7.23.0/firebase-firestore.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/7.23.0/firebase-storage.js"></script>
+	<script src="../db.js"></script>
+	<script src="./assets/js/users/users-db.js"></script>
+	<script src="./assets/js/chats/chat-msg.js"></script>
+	<script src="./assets/js/common/users.js"></script>
+	<script src="./assets/js/common/chat.js"></script>
+	<script src="./assets/js/features/ireminder.js"></script>
+	<script src="./assets/js/users/users-mgt.js"></script>
+	<script src="./assets/js/common/dashboard.js"></script>
 </body>
 </html>

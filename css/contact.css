@@ -9,19 +9,18 @@
     --primary-color: #9398a0;
     --secondary-color: #577399;
     --light-color: #bdd5ea;
-    --link-color: #fe5f55;
+    --link-color: #6277d3;
     --bg-color: #fff;
     --wave-height: 20vmin;
     --bg-color-alternate: #e5e5e5;
 } --primary-color: #495867; */
 :root {
-    --primary-color: #000;
-    --secondary-color: #333;
-    --light-color: #e5e5e5;
-    --link-color: #fe5f55;
-    --bg-color: #fff;
-    --wave-height: 15vmin;
-    --bg-color-alternate: #e5e5e5;
+  --primary-color: #03045e;
+  --secondary-color: #5568bd;
+  --text-color: #03045e;
+  --bg-color: #fff;
+  --wave-height: 15vmin;
+  --bg-color-alt: #eff2fd;
 }
 
 /* ******************************************************* */
@@ -40,7 +39,7 @@ html, body {
     padding: 0;
 }
 a {
-    color: var(--link-color);
+    color: var(--secondary-color);
     text-decoration: none;
     cursor: pointer;
 }
@@ -57,7 +56,7 @@ button:focus,
 button:hover {
     outline: none;
     border: none;
-    background: var(--link-color);
+    background: var(--secondary-color);
     color: white;
 }
 
@@ -78,6 +77,9 @@ nav {
     font-size: 20px;
     padding: 7.5px 10px 7.5px 0;
 }
+.logo a {
+  color: var(--bg-color)
+}
 .item {
     padding: 10px;
 }
@@ -89,7 +91,7 @@ nav {
 }
 .item a:hover,
 .item a:hover::after {
-    color: var(--link-color);
+    color: var(--secondary-color);
 }
 
 /** MOBILE MENU NAVBAR **/
@@ -110,7 +112,7 @@ nav {
     color: var(--bg-color);
 }
 .toggle i:hover {
-    color: var(--link-color);
+    color: var(--secondary-color);
 }
 .item {
     order: 2;
@@ -164,7 +166,7 @@ nav {
     }
     .nav-button a:hover {
         text-decoration: none;
-        background: var(--link-color);
+        background: var(--secondary-color);
         color: var(--bg-color);;
     }
     .nav-button {
@@ -202,7 +204,7 @@ nav {
 	list-style: none;	
 }
 .footer-row a:hover {
-	color: var(--link-color);
+	color: var(--secondary-color);
 }
 .footer-bar {
 	background: var(--secondary-color);
@@ -221,7 +223,7 @@ nav {
     color: var(--bg-color);
 }
 .box h4 span {
-    color: var(--light-color);
+    color: var(--bg-color-alt);
 }
 
 
@@ -279,7 +281,7 @@ main {
   align-items: center;
   justify-content: center;
   padding: 40px;
-  background: linear-gradient(115deg, #ddd 10%, #aaa 90%);
+  background: var(--bg-color-alt)
 }
 .container{
   max-width: 800px;
@@ -325,7 +327,7 @@ form .form-row .textarea{
 .input-data input:valid ~ label, .textarea textarea:valid ~ label{
   transform: translateY(-23px);
   font-size: 14px;
-  color: var(--link-color);
+  color: var(--secondary-color);
   border: none;
 }
 .input-data input:focus, .textarea textarea:focus {
@@ -359,7 +361,7 @@ form .form-row .textarea{
   content: "";
   height: 2px;
   width: 100%;
-  background:var(--link-color);
+  background:var(--secondary-color);
   transform: scaleX(0);
   transform-origin: center;
   transition: transform 0.3s ease;
@@ -408,21 +410,21 @@ form .form-row .textarea{
   padding: 10px 10px 20px;
 }
 .contact-plist a {
-    color: var(--primary-color);
+    color: var(--secondary-color);
 }
 .contact-plist a:hover {
-  color: var(--link-color);
+  text-decoration: underline;
 }
 .sub-btn {
-    color: #fff;
-    border: none;
-    font-size: 14px;
-    font-weight: 500;
-    width: 30%;
-    border-radius: 10px;
-    cursor: pointer;
-    background: var(--secondary-color);
-    transition: all 0.3s ease;
+  color: #fff;
+  border: none;
+  font-size: 14px;
+  font-weight: 500;
+  width: 30%;
+  border-radius: 10px;
+  cursor: pointer;
+  background: var(--primary-color);
+  transition: all 0.3s ease;
 	margin: auto;
 	text-align: center;
 }
@@ -488,7 +490,7 @@ form .form-row .textarea{
   right: 30px;
   bottom: 0px;
   max-width: 400px;
-  background: #eee;
+  background: var(--bg-color-alt);
   border-radius: 15px;
   box-shadow: 0px 15px 20px rgba(0,0,0,0.1);
   opacity: 0;
@@ -548,7 +550,7 @@ form .livechat-textarea textarea{
 }
 form .livechat-field input:focus,
 form .livechat-textarea textarea:focus{
-  border-color: var(--link-color);
+  border-color: var(--secondary-color);
 }
 form .livechat-field input::placeholder,
 form .livechat-textarea textarea::placeholder{
@@ -581,7 +583,7 @@ form .livechat-textarea textarea:focus::placeholder{
   transition: all 0.3s ease;
 }
 .livechat-chat-box form .livechat-field button:hover {
-  background: var(--link-color);
+  background: var(--secondary-color);
 }
 .livechat-chat-box form .livechat-field button:active{
   transform: scale(0.97);

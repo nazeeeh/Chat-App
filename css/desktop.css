@@ -21,7 +21,7 @@
 	list-style: none;	
 }
 .footer-row a:hover {
-	color: var(--link-color);
+	color: var(--secondary-color);
 }
 .footer-bar {
 	background: var(--secondary-color);
@@ -40,7 +40,7 @@
     color: var(--bg-color);
 }
 .box h4 span {
-    color: var(--light-color);
+    color: var(--bg-color-alt);
 }
 
 /* ========================================================
@@ -77,7 +77,7 @@
 
 .feature-items > i{
     font-size:50px;
-    color: var(--link-color);
+    color: var(--secondary-color);
     margin-bottom:20px;
 }
 
@@ -92,18 +92,18 @@
 .feature-btn{
     padding:10px;
     border-radius:20px;
-    background-color:var(--secondary-color);
+    background-color:var(--primary-color);
     color:#fff;
     width:40%;
     outline-style:none;
-    border:2px solid var(--secondary-color);
+    border:2px solid var(--primary-color);
     margin-left:20px;
 }
 
 .feature-btn:hover{
-    background-color: #fe5f55;
+    background-color: #6277d3;
     color:#fff;
-    border:2px solid  #fe5f55;
+    border:2px solid  #6277d3;
 }
 
 
@@ -183,22 +183,22 @@ margin-top: 50px;
 	margin-bottom: 15px;
 }
 #sp1-content #profile {
-	background: var(--light-color);
+	background: var(--bg-color-alt);
 	padding: 10px;
 	margin-bottom: 10px;
 }
 #sp1-content #history {
-	background: var(--light-color);
+	background: var(--bg-color-alt);
 	padding: 10px;
 	margin-bottom: 10px;
 }
 #sp1-content #bookmarks {
-	background: var(--light-color);
+	background: var(--bg-color-alt);
 	padding: 10px;
 	margin-bottom: 10px;
 }
 #sp1-content #logout {
-	background: var(--light-color);
+	background: var(--bg-color-alt);
 	padding: 10px;
 	margin-bottom: 10px;
 }
