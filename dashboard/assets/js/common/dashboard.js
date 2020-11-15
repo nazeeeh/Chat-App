@@ -42,7 +42,21 @@ sideMenu = `<ul class="side-menu">
           ${isAdmin}  
           <li><a href="./logout.html"><i class="fas fa-reply-all fa-1x"></i> Log Out</a></li>   			
         </ul>`
+
 document.getElementById("side-menu-container").innerHTML = sideMenu; 
+
+// sideBarIcons = `<div>
+//                 <ul>
+//                   <li><a href="./chatroom.html"><i class="fas fa-comments fa-1x"></i> Chat Rooms</a></li>
+//                   <li><a href="./idiary.html"><i class="fas fa-book fa-1x"></i> iDiary</a></li>
+//                   <li><a href="./ireminder.html"><i class="fas fa-business-time fa-1x"></i> iReminder</a></li>
+//                   <li><a href="./isearch.html"><i class="fas fa-search fa-1x"></i> iSearch</a></li>
+//                   <li><a href="./settings.html"><i class="fas fa-cog fa-1x"></i> Settings</a></li> 
+//                     ${isAdmin}  
+//                   <li><a href="./logout.html"><i class="fas fa-reply-all fa-1x"></i> Log Out</a></li>
+//                 </ul>
+//               </div>`
+// document.getElementById("side-bar-icons").innerHTML = sideBarIcons; 
 
 
 // Declaration of variables
