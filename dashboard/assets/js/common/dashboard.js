@@ -21,7 +21,7 @@ profile = `<div class="side-profile-img">
 </div>
 <p>@${loggedUserRecord.userName}</p>
 `;
-document.getElementById("profile").innerHTML = profile; 
+// document.getElementById("profile").innerHTML = profile; 
 
 document.getElementById("menu-profile").innerHTML = profile; 
 
