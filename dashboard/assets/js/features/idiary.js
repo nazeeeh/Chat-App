@@ -60,17 +60,20 @@ logged=JSON.parse(localStorage.getItem("logged"))
 	
 		//TO SHOW THE ADD NEW MESSAGE FORM
 		function addNewMessage(){
-		document.getElementById("overlay").style.display="block"
-		document.getElementById("addNew").style.display="inline-block"
+		//document.getElementById("overlay").style.display="block"
+		document.getElementById("addNew").style.display="block"
 		document.getElementById("top").style.display="none"
+		document.getElementById("messages").style.display="none"
+		document.getElementById("top-heading").style.display="none"
 		document.getElementById("messageInput").value=""
 		}
 
 		//TO DISPLAY ALL SAVED NOTES PLUS NEWLY ADDED NOTE
 		function displayAddedMessage(){
-		document.getElementById("overlay").style.display="none"
 		document.getElementById("top").style.display="block"
 		document.getElementById("addNew").style.display="none"
+		document.getElementById("top-heading").style.display="block"
+		document.getElementById("messages").style.display="block"
 		todaysDate= new Date()//TO GET THE TIME STAMP FOR ALL MESSAGES
 	
 		newMessage={
@@ -89,15 +92,22 @@ logged=JSON.parse(localStorage.getItem("logged"))
 		  .then(() => {
 			console.log("Document added");
 			displayMessages()
+			
 		});
 		});
+		
+
 		}
+
+
 	
 		//FUNCTION TO DISPLAY EDIT MESSAGE FORM
 		function showEditMessageForm(x){
-		document.getElementById("overlay").style.display="block"	
+		//document.getElementById("overlay").style.display="block"	
 		document.getElementById("editNew").style.display="block"
 		document.getElementById("top").style.display="none"
+		document.getElementById("messages").style.display="none"
+		document.getElementById("top-heading").style.display="none"
 	
 		//SHOWS USER DETAILS AS VALUES TO BE EDITED
 		db.collection("users").where("userName", "==", logged).get().then((querySnapshot) => {
@@ -113,12 +123,13 @@ logged=JSON.parse(localStorage.getItem("logged"))
 		});})}
 	
 	
-		//FUNCTION FOR EDITING USERS
+		//FUNCTION FOR EDITING MESSAGES
 		function displayEditedMessage(x){
-		document.getElementById("overlay").style.display="none"
+		//document.getElementById("overlay").style.display="none"
 		document.getElementById("top").style.display="block"
 		document.getElementById("editNew").style.display="none"
-	
+		document.getElementById("top-heading").style.display="block"
+		document.getElementById("messages").style.display="block"
 		todaysDate= new Date()//TO GET THE TIME STAMP FOR ALL MESSAGES
 		messageId= document.getElementById("messageId").value
 	
@@ -150,15 +161,17 @@ logged=JSON.parse(localStorage.getItem("logged"))
 					  .then(() => {
 						swal("GREAT!", "You have successfully edited this note!", "success");
 						displayMessages()
+						//document.getElementById("messages").style.display="block"
 					});
 				  }
 
 				
 		})});
+		//document.getElementById("messages").style.display="none"
 		}
 	
 	
-		//FUNCTION FOR DELETING USERS
+		//FUNCTION FOR DELETING MESSAGES
 		function deleteMessages(x){
 			swal({
 				title: "Are you sure?",
@@ -240,8 +253,8 @@ logged=JSON.parse(localStorage.getItem("logged"))
 		for(var x=y-1; x>=0; x--){
 			content+=`
 				<div id="messageContainer">
-				<sup>${ToTime(iDairy[x].time)}</sup><br>
-				<p> ${iDairy[x].message}</p><br>
+				<sup>${ToTime(iDairy[x].time)}</sup>
+				<p> ${iDairy[x].message}</p>
 				<div id="buttons">
 					<span style="font-size:20px; color:#03045e;" id="edit-icon" onclick="showEditMessageForm(${x})" align="right">
 					<i class="far fa-edit"></i>
@@ -259,3 +272,20 @@ logged=JSON.parse(localStorage.getItem("logged"))
 		}
 	
 		displayMessages()
+
+		var autoExpand = function (field) {
+
+		// Reset field height
+		field.style.height = 'inherit';
+
+		// Calculate the height
+		var height = field.scrollHeight - 19
+		             
+		field.style.height = height + 'px';
+
+		};
+
+		document.addEventListener('input', function (event) {
+			if (event.target.tagName.toLowerCase() !== 'textarea') return;
+			autoExpand(event.target);
+		}, false);

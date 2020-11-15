@@ -1,6 +1,6 @@
 //CHECKS IF A USER IS LOGGED IN. IF NOT REDIRECT BACK TO LOGIN
 if(isLoggedIn() == false) {
-  window.location.assign("../login.html");
+  window.location.assign("../index.html");
 }
 else {
   var loggedUser = isLoggedIn();

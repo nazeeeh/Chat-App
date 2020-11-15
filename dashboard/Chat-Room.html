@@ -120,5 +120,26 @@
 	<script src="./assets/js/common/dashboard.js"></script>
 	<script src="./assets/js/users/users-settings.js"></script>
 	<!-- <script src="./assets/js/chats/chat-msg.js"></script> -->
+
+	<script>
+	
+	var autoExpand = function (field) {
+
+	// Reset field height
+	field.style.height = 'inherit';
+
+	// Calculate the height
+	var height = field.scrollHeight - 19
+	             
+	field.style.height = height + 'px';
+
+	};
+
+	document.addEventListener('input', function (event) {
+		if (event.target.tagName.toLowerCase() !== 'textarea') return;
+		autoExpand(event.target);
+	}, false);
+
+</script>
 </body>
 </html>

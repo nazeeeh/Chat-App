@@ -353,7 +353,7 @@ a {
 	font-size: 10px;
 	background-color: var(--secondary-color);
 	color: var(--bg-color);
-	padding: 6px 8px;
+	padding: 6px 10px;
 }
 .chat-contact-list {
 	height: 70%;
@@ -572,6 +572,8 @@ a {
 }
 .chat-form form textarea {
 	width: 100%;
+	font-family: 'Roboto', Tahoma, 'Geneva', Verdana, sans-serif;
+	max-height: 30vh;
 	resize: none;
 	padding: 10px;
 	font-size: 1rem;
@@ -583,7 +585,7 @@ a {
 .chat-form form textarea:focus,
 .chat-form form textarea:hover {
 	outline: none;
-	background-color: var(--light-color);
+	background-color: var(--bg-color-alt);
 }
 .chat-form form button:hover,
 .chat-form form button:focus {

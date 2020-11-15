@@ -11,6 +11,7 @@
 	display:flex;
 	align-items: center;
 	justify-content: space-between;
+	border-bottom:2px solid var(--primary-color);
 	/* padding: 20px 20px; */
 }
 
@@ -53,7 +54,7 @@
 .chatrooms-items{
 	background-color: #fff;
 	height: 90px;
-	padding: 10px 20px;
+	
 	margin-bottom:10px;
 	box-shadow:1px 1px 1px 1px var(--primary-color);
 	cursor: pointer;
@@ -62,15 +63,15 @@
 
 .chatrooms-items:hover{
 	background-color: var(--light-color);
-	box-shadow:2px 2px 2px 2px var(--primary-color);
 	border-top:2px solid var(--primary-color);
 }
 
 .chatrooms-items > span{
 	width: 10%;
-	margin-right: 10px;
+	margin: 25px 10px;
 }
 #active-btn {
+	background-color: var(--secondary-color);
 	color: var(--primary-color);
 }
 #chatrooms-btn{
